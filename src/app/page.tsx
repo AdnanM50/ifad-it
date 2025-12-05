@@ -1,9 +1,9 @@
-import Image from "next/image";
+import { HeroSection } from "@/components/landing/herosection";
 
 export default function Home() {
   return (
   <>
- <h1>Home</h1> 
+<HeroSection />
   </>
   );
 }
