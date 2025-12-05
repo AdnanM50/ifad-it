@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
+import PrimaryButton from "../common/primary-button"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -16,7 +17,7 @@ export function Header() {
         <Link href="/" className="font-bold text-2xl flex items-center gap-2">
           {/* <span className="text-primary text-3xl">🚀</span> */}
           <Image src="/logo.png" alt="Logo" width={1000} height={1000} className="w-[131px] h-[37px] object-fill" />
-          <span className="text-foreground amiko-regular">Information & Technology Ltd.</span>
+          <span className="mt-2 md:flex hidden amiko-regular">Information & Technology Ltd.</span>
           {/* <span className="text-primary">IT</span> */}
         </Link>
 
@@ -41,7 +42,7 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">Contact Us</Button>
+          <PrimaryButton>Contact Us</PrimaryButton>
         </div>
 
         {/* Mobile Menu Button */}
@@ -68,7 +69,7 @@ export function Header() {
               <Link href="#" className="text-foreground hover:text-primary transition-colors">
                 Blog
               </Link>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">Contact Us</Button>
+              <PrimaryButton className="w-full">Contact Us</PrimaryButton>
             </div>
           </div>
         )}

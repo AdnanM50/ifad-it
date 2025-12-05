@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import PrimaryButton from "../common/primary-button"
 
 export function HeroSection() {
   return (
@@ -21,9 +22,9 @@ export function HeroSection() {
         <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl">
           Vehicle Tracking | Analytics | Software Development
         </p>
-        <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8">
+        <PrimaryButton >
           Get in Touch
-        </Button>
+        </PrimaryButton>
       </div>
 
       {/* Scroll Indicator */}
