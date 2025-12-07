@@ -265,48 +265,19 @@ body {
     /* font-weight: 400; */
   font-style: normal;
 }
-
-/* globals.css (or index.css) — add below your Tailwind directives */
-
-/* marquee wrapper hides overflow */
-.marquee {
-  overflow: hidden;
-  position: relative;
-}
-
-/* track holds two copies of the content side-by-side */
-.marquee-track {
-  display: flex;
-  width: 200%; /* important: double width so -50% translate reveals duplicate */
-  align-items: center;
-  /* animation: duration here controls speed */
-  animation: marquee 18s linear infinite;
-}
-
-.marquee-group {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-
-  width: 50%;
-  box-sizing: border-box;
-  white-space: nowrap;
-}
-
 @keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-/* Pause on hover */
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
+.animate-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
 }
-
-.marquee-item {
-  flex-shrink: 0;
-}
-
 .arial-font {
   font-family: 'ArialCE' !important;
 }
