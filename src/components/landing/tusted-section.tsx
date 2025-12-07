@@ -29,7 +29,7 @@ const TrustedSection = () => {
     },
     {
       name: "Spherule",
-      icon: '/icons/6th.svg',
+      icon: '/icons/6th.png',
       type: 'image' as const,
     },
   ];
@@ -37,8 +37,8 @@ const TrustedSection = () => {
   const marqueeItems = [...trustedCompanies, ...trustedCompanies];
 
   return (
-    <section className="py-12 bg-white">
-      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">
+    <section className="py-12 md:py-[120px] bg-white">
+      <h2 className="text-2xl sm:text-5xl !font-bold text-center mb-8 md:mb-[64px] arial-font" >
         Trusted by 100+ Companies
       </h2>
 
