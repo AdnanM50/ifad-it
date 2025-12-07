@@ -12,7 +12,7 @@ export function Header() {
 
   return (
     <header className="fixed top-0 w-full bg-[#FFFFFF] backdrop-blur-md z-50 border-b border-border">
-      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <nav className="max-w-8xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="font-bold text-2xl flex items-center gap-2">
           {/* <span className="text-primary text-3xl">🚀</span> */}

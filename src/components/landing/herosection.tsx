@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+
 import PrimaryButton from "../common/primary-button"
 
 export function HeroSection() {
@@ -16,10 +16,10 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 max-w-4xl text-balance">
+        <h1 className="text-4xl md:text-5xl arial-font lg:text-6xl font-bold text-white mb-4 max-w-4xl text-balance">
           Smart Solutions for a Connected & Secure Future
         </h1>
-        <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl">
+        <p className="text-xl md:text-2xl text-white/90 !font-inter mb-8 max-w-2xl">
           Vehicle Tracking | Analytics | Software Development
         </p>
         <PrimaryButton >
