@@ -64,7 +64,7 @@ const TrustedSection = () => {
                   {item.icon}
                 </div>
               )}
-              {/* <span className="text-white font-semibold text-lg">{item.name}</span> */}
+      
             </div>
           ))}
 
