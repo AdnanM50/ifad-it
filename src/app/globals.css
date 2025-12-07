@@ -255,6 +255,11 @@ body {
   }
 }
 
+.container {
+  max-width: 1420px;
+  margin: 0 auto;
+}
+
 .amiko-regular {
   font-family: "Amiko";
   font-weight: 400;

@@ -12,17 +12,17 @@ export function Header() {
 
   return (
     <header className="fixed top-0 w-full bg-[#FFFFFF] backdrop-blur-md z-50 border-b border-border">
-      <nav className="max-w-8xl mx-auto px-4 py-4 flex items-center justify-between">
+      <nav className="container xl:px-0 px-4 py-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="font-bold text-2xl flex items-center gap-2">
           {/* <span className="text-primary text-3xl">🚀</span> */}
           <Image src="/logo.png" alt="Logo" width={1000} height={1000} className="w-[131px] h-[37px] object-fill" />
-          <span className="mt-2 md:flex hidden amiko-regular">Information & Technology Ltd.</span>
+          <span className="mt-2 xl:flex hidden amiko-regular">Information & Technology Ltd.</span>
           {/* <span className="text-primary">IT</span> */}
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden text-xl md:flex items-center text-[#1A1A1A] gap-8">
+        <div className="hidden text-xl font-inter md:flex items-center text-[#1A1A1A] gap-8">
           <Link href="#" className=" hover:text-primary transition-colors">
             Home
           </Link>

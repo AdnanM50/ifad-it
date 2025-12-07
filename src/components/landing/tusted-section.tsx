@@ -1,5 +1,4 @@
 import Image from "next/image";
-// import "./TrustedSection.css"; // Optional: if you put CSS in a separate file
 
 const TrustedSection = () => {
   const trustedCompanies = [
