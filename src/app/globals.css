@@ -286,3 +286,14 @@ body {
 .arial-font {
   font-family: 'ArialCE' !important;
 }
+
+.card-hover:hover {
+ border-radius: 24px;
+border: 1px solid #F36A10;
+background: linear-gradient(331deg, rgba(255, 255, 255, 0.00) 19.67%, rgba(243, 106, 16, 0.15) 98.78%), linear-gradient(180deg, rgba(243, 243, 243, 0.05) 0%, rgba(141, 141, 141, 0.00) 100%);
+}
+.card-hover{
+  border-radius: 24px;
+border: 1px solid rgba(255, 255, 255, 0.15);
+background: linear-gradient(180deg, rgba(243, 243, 243, 0.05) 0%, rgba(141, 141, 141, 0.00) 100%);
+}
