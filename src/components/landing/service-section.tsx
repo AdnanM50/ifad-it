@@ -148,7 +148,7 @@ const ServiceSection = () => {
               <div
                 key={index}
                 //   className={`bg-[${service.bgColor}] rounded-xl p-6 border  transition-transform hover:card-hover`}
-                className={`card-hover bg-[${service.bgColor}] rounded-[24px] px-4 md:px-6 py-4 md:py-8 border transition-all duration-300`}
+                className={`card-hover bg-[${service.bgColor}] rounded-3xl px-4 md:px-6 py-4 md:py-8 border transition-all duration-300`}
               >
                 <div className="mb-4">{service.icon}</div>
                 <h3 className="text-lg sm:text-xl xl:text-[28px] font-semibold text-white mb-3">

@@ -6,10 +6,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// Import Swiper modules
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
-// Define Testimonial type
 interface Testimonial {
   id: number;
   name: string;
@@ -44,7 +42,7 @@ const TestimonialCarousel: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-white">
+    <section className="py-16 px-4 md:px-8 bg-[#FFFAF5]">
       {/* Tagline */}
       <div className="text-center mb-4">
         <span className="text-[#F36A10] text-sm font-medium uppercase tracking-wide">
@@ -83,7 +81,7 @@ const TestimonialCarousel: React.FC = () => {
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
-              <div className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-8 bg-gray-50 rounded-xl">
+              <div className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-8  rounded-xl">
                 {/* Client Image */}
                 <div className="w-full md:w-1/3 flex justify-center">
                   <div className="relative w-64 h-64 rounded-lg overflow-hidden border-4 border-[#F36A10]">

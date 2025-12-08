@@ -1,5 +1,6 @@
 import AboutSection from "@/components/landing/about-section";
 import WhyChooseUs from "@/components/landing/choose-section";
+import FAQSection from "@/components/landing/faqSection";
 import FeaturedOn from "@/components/landing/featured";
 import { HeroSection } from "@/components/landing/herosection";
 import ServiceSection from "@/components/landing/service-section";
@@ -17,6 +18,7 @@ export default function Home() {
       <TechStack />
       <WhyChooseUs />
       <TestimonialCarousel />
+      <FAQSection />
       <FeaturedOn />
     </>
   );
