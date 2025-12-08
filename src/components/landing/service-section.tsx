@@ -15,7 +15,7 @@ const ServiceSection = () => {
 </svg>
       ),
       bgColor: '#141414',
-      borderColor: '#FFA500',
+      borderColor: '#F36A10',
     },
     {
       title: "MIS & BI Solutions",
@@ -27,7 +27,7 @@ const ServiceSection = () => {
 </svg>
       ),
       bgColor: '#141414',
-      borderColor: '#FFA500',
+      borderColor: '#F36A10',
     },
     {
       title: "IT Security & Training",
@@ -41,7 +41,7 @@ const ServiceSection = () => {
 </svg>
       ),
       bgColor: '#141414',
-      borderColor: '#FFA500',
+      borderColor: '#F36A10',
     },
     {
       title: "Development",
@@ -53,7 +53,7 @@ const ServiceSection = () => {
 </svg>
       ),
       bgColor: '#141414',
-      borderColor: '#FFA500',
+      borderColor: '#F36A10',
     },
   ];
 
@@ -80,11 +80,11 @@ const ServiceSection = () => {
       <div className="container ">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-sm text-[#F36A10] font-inter font-medium mb-2">Our Services</h2>
-          <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
+          <h2 className="text-lg text-[#F36A10] font-inter font-medium mb-2">Our Services</h2>
+          <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold !arial-font text-white mb-4">
             Smart IT Solutions for Businesses in Bangladesh
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-white text-lg max-w-2xl font-inter mx-auto">
             Explore how our cutting-edge IT services can transform your organization.
           </p>
         </div>
@@ -98,13 +98,14 @@ const ServiceSection = () => {
             className={`card-hover bg-[${service.bgColor}] rounded-[24px] p-6 border transition-all duration-300`}
             >
               <div className="mb-4">{service.icon}</div>
-              <h3 className="text-lg font-semibold text-white mb-3">{service.title}</h3>
-              <p className="text-sm text-gray-300 mb-4">{service.description}</p>
+              <h3 className="text-lg sm:text-xl xl:text-[28px] font-semibold text-white mb-3">{service.title}</h3>
+              <p className="text-sm sm:text-base font-inter text-gray-300 mb-4">{service.description}</p>
               <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-md flex items-center justify-center space-x-2 transition-colors">
-                <span>{service.buttonLabel}</span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <span className='text-xl font-inter font-medium'>{service.buttonLabel}</span>
+               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+  <path d="M3.25 0.75L9.32106 0.750007C9.87335 0.750008 10.3211 1.19772 10.3211 1.75001L10.3211 7.82107" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M0.75 10.25L9.25 1.75" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
               </button>
             </div>
           ))}
