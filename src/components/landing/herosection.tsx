@@ -3,7 +3,7 @@ import PrimaryButton from "../common/primary-button"
 
 export function HeroSection() {
   return (
-    <section className="relative w-full h-[600px] md:h-[700px] pt-20 overflow-hidden">
+    <section className="relative w-full h-[600px] md:h-[815px] pt-20 overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"

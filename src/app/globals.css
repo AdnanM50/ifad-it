@@ -297,3 +297,24 @@ background: linear-gradient(331deg, rgba(255, 255, 255, 0.00) 19.67%, rgba(243, 
 border: 1px solid rgba(255, 255, 255, 0.15);
 background: linear-gradient(180deg, rgba(243, 243, 243, 0.05) 0%, rgba(141, 141, 141, 0.00) 100%);
 }
+
+.section-title {
+  @apply text-[#F36A10] text-lg font-medium uppercase;
+  font-family: "Inter";
+}
+.section-subtitle {
+  @apply text-3xl md:text-5xl font-bold  text-[#1A1A1A] leading-tight;
+  font-family: 'ArialCE' !important;
+}
+.section-description {
+  @apply text-[#6F7377] text-lg leading-relaxed;
+  font-family: "Inter";
+}
+
+.chooes-us-shadow:hover {
+box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.05);
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  @apply scale-110;
+}

@@ -80,16 +80,16 @@ const AboutSection = () => {
 
         {/* Right: Text Content */}
         <div className="w-full lg:w-1/2">
-          <h3 className="text-[#F36A10] text-sm font-semibold font-inter uppercase tracking-wider">
+          <h3 className="section-title">
             About IFAD Information & Technology Limited
           </h3>
-          <h2 className="text-3xl md:text-5xl font-bold !arial-font text-[#1A1A1A] leading-tight mt-6 mb-5">
+          <h2 className="section-subtitle mt-6 mb-5">
             Your Trusted IT Partner in Bangladesh
           </h2>
-          <p className="text-gray-600 leading-relaxed font-inter mb-3">
+          <p className="section-description mb-3">
             Innovative, Scalable, and Secure IT Solutions for Every Business. Selecting the right IT company in Bangladesh can significantly enhance how your business operates. At IFAD IT LTD, we bring over 10 years of proven experience helping startups, enterprises, and government organizations build smart, future-ready IT infrastructures.
           </p>
-          <p className="text-gray-600 leading-relaxed font-inter">
+          <p className="section-description">
             Our approach combines technology, strategy, and innovation to ensure every solution we build adds measurable value to your operations.
           </p>
 

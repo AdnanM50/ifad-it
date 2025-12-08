@@ -1,10 +1,11 @@
 import React, { Children } from 'react'
 
-const PrimaryButton = ({children, className}: {children: React.ReactNode, className?: string}) => {
+const PrimaryButton = ({children, className,onClick}: {children: React.ReactNode, className?: string, onClick?: () => void}) => {
   return (
     <button
-      className={`flex justify-center px-6 py-3 rounded-[8px]  w-fit bg-[#F36A10] text-white !font-medium !font-inter  text-xl  whitespace-nowrap items-center ${className}  `}
+      className={`flex justify-center px-6 py-3 rounded-[8px]  w-fit bg-[#F36A10] hover:bg-orange-600 duration-500 text-white !font-medium !font-inter  text-xl  whitespace-nowrap items-center ${className}  `}
       type="button"
+      onClick={onClick}
     >
       {/* <span className="inline-flex gap-1.5 flex-[0_0_auto] items-center relative"> */}
         <span className="">
