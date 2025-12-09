@@ -318,3 +318,12 @@ box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.05);
 .swiper-button-prev:hover {
   @apply scale-110;
 }
+.contact-bg{
+  background: linear-gradient(0deg, rgba(5, 1, 0, 0.60) 0%, rgba(5, 1, 0, 0.60) 100%), url(/contact.jpg) lightgray -21px -6.772px / 102.552% 102.49% no-repeat;
+@apply bg-cover bg-center ;  
+}
+
+.about-bg{
+  background: linear-gradient(0deg, rgba(5, 1, 0, 0.60) 0%, rgba(5, 1, 0, 0.60) 100%), url(/aboutpage.png) lightgray -21px -6.772px / 102.552% 102.49% no-repeat;
+@apply bg-cover bg-center ;  
+}

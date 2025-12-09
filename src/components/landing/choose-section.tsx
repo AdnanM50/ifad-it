@@ -77,7 +77,7 @@ const WhyChooseUs: React.FC = () => {
       </div>
 
       {/* Main Heading */}
-      <h2 className="section-subtitle max-w-[1163px] mx-auto mb-4">
+      <h2 className="section-subtitle max-w-[1163px] text-center mx-auto mb-4">
         Why We’re a Top-Rated IT Company in Bangladesh
       </h2>
 

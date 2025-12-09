@@ -23,19 +23,19 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden text-xl font-inter md:flex items-center text-[#1A1A1A] gap-8">
-          <Link href="#" className=" hover:text-primary transition-colors">
+          <Link href="/" className=" hover:text-primary transition-colors">
             Home
           </Link>
-          <Link href="#" className=" hover:text-primary transition-colors">
+          <Link href="/about" className=" hover:text-primary transition-colors">
             About
           </Link>
-          <Link href="#" className=" hover:text-primary transition-colors">
+          <Link href="/solutions" className=" hover:text-primary transition-colors">
             Solutions
           </Link>
-          <Link href="#" className=" hover:text-primary transition-colors">
+          <Link href="/gallery" className=" hover:text-primary transition-colors">
             Gallery
           </Link>
-          <Link href="#" className=" hover:text-primary transition-colors">
+          <Link href="/blog" className=" hover:text-primary transition-colors">
             Blog
           </Link>
         </div>
@@ -54,19 +54,19 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="absolute top-full left-0 right-0 bg-white border-b border-border md:hidden">
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-              <Link href="#" className="text-foreground hover:text-primary transition-colors">
+              <Link href="/" className="text-foreground hover:text-primary transition-colors">
                 Home
               </Link>
-              <Link href="#" className="text-foreground hover:text-primary transition-colors">
+              <Link href="/about" className="text-foreground hover:text-primary transition-colors">
                 About
               </Link>
-              <Link href="#" className="text-foreground hover:text-primary transition-colors">
+              <Link href="/solutions" className="text-foreground hover:text-primary transition-colors">
                 Solutions
               </Link>
-              <Link href="#" className="text-foreground hover:text-primary transition-colors">
+              <Link href="/gallery" className="text-foreground hover:text-primary transition-colors">
                 Gallery
               </Link>
-              <Link href="#" className="text-foreground hover:text-primary transition-colors">
+              <Link href="/blog" className="text-foreground hover:text-primary transition-colors">
                 Blog
               </Link>
               <PrimaryButton className="w-full">Contact Us</PrimaryButton>
