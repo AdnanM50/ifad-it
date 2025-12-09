@@ -1,26 +1,17 @@
 'use client';
 
 import CountingAnimation from '@/components/common/CountingAnimation';
-// import { useState, useEffect } from 'react';
+import MissionVisionSection from './missionSection';
 
 const StorySection = () => {
-//   const [isMobile, setIsMobile] = useState(false);
 
-//   useEffect(() => {
-//     const checkMobile = () => {
-//       setIsMobile(window.innerWidth < 768);
-//     };
-
-//     checkMobile();
-//     window.addEventListener('resize', checkMobile);
-//     return () => window.removeEventListener('resize', checkMobile);
-//   }, []);
 
   return (
-    <div className="py-12 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+    <>
+    <div className="py-12 px-4 md:px-8 lg:px-16 container">
       <div className={`flex flex-col md:flex-row items-center gap-8`}>
         
-        {/* Left Text Content */}
+  
         <div className={`w-full md:w-1/2 space-y-4`}>
           <h3 className="text-sm font-medium text-orange-500 uppercase tracking-wide">Our Story</h3>
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
@@ -37,7 +28,7 @@ const StorySection = () => {
         {/* Right Image */}
         <div className={`w-full md:w-1/2 rounded-xl overflow-hidden shadow-lg`}>
           <img 
-            src="https://via.placeholder.com/800x500" // Replace with your actual image URL
+            src="/SectionImageContainer.png"
             alt="Team collaborating on IT solutions"
             className="w-full h-auto object-cover transition-transform duration-300 hover:scale-[1.02]"
             onError={(e) => {
@@ -46,8 +37,11 @@ const StorySection = () => {
           />
         </div>
       </div>
-      <CountingAnimation />
+     
     </div>
+     <CountingAnimation />
+      <MissionVisionSection />
+    </>
   );
 };
 
