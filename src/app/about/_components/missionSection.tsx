@@ -52,10 +52,10 @@ const MissionVisionSection = () => {
                 </defs>
               </svg>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-2xl md:text-[32px] font-bold text-[#1A1A1A] font-inter">
               Our Mission
             </h2>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-[#6F7377] font-inter text-base ">
               To empower businesses with transformative IT solutions that drive
               growth, efficiency, and innovation. We’re committed to delivering
               excellence through technology that makes a real difference,
@@ -83,7 +83,7 @@ const MissionVisionSection = () => {
                       />
                     </svg>
                   </span>
-                  <span className="text-gray-600">{item}</span>
+                  <span className="text-[#6F7377] font-inter text-base">{item}</span>
                 </li>
               ))}
             </ul>
@@ -125,10 +125,10 @@ const MissionVisionSection = () => {
                 />
               </svg>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-2xl md:text-[32px] font-bold text-[#1A1A1A] font-inter">
               Our Vision
             </h2>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-[#6F7377] font-inter text-base leading-relaxed">
               To be the most trusted technology partner for businesses
               worldwide, recognized for innovation, reliability, and exceptional
               service that creates lasting value. We aim to build long-term
@@ -157,7 +157,7 @@ const MissionVisionSection = () => {
                       />
                     </svg>
                   </span>
-                  <span className="text-gray-600">{item}</span>
+                  <span className="text-[#6F7377] font-inter text-base">{item}</span>
                 </li>
               ))}
             </ul>

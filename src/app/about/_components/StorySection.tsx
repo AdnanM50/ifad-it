@@ -8,19 +8,19 @@ const StorySection = () => {
 
   return (
     <>
-    <div className="py-12 px-4 md:px-8 lg:px-16 container">
+    <div className="py-12 md:py-[120px] xl:px-0 px-2 container">
       <div className={`flex flex-col md:flex-row items-center gap-8`}>
         
   
         <div className={`w-full md:w-1/2 space-y-4`}>
-          <h3 className="text-sm font-medium text-orange-500 uppercase tracking-wide">Our Story</h3>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
+          <h3 className="section-title">Our Story</h3>
+          <h1 className="section-subtitle">
             Empowering Businesses Through <span className="text-orange-500">Smart IT Solutions</span>
           </h1>
-          <p className="text-gray-600 mt-4 leading-relaxed">
+          <p className="section-description mt-4 ">
             Founded with a vision to revolutionize the IT landscape, we've grown from a small startup to a trusted partner for businesses worldwide. Our journey is defined by innovation, dedication, and an unwavering commitment to excellence.
           </p>
-          <p className="text-gray-600 mt-4 leading-relaxed">
+          <p className="section-description mt-4 ">
             We think tech should be easy to use, flexible, and game-changing. Every solution we build isn't just about solving today's problems; it's also about getting ready for what's coming next.
           </p>
         </div>
