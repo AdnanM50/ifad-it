@@ -48,7 +48,7 @@ const BoardMembers: React.FC = () => {
   return (
     <section className="py-12 px-4 md:px-8 lg:px-16 bg-white">
       {/* Section Title */}
-     <div className="max-w-[1280px] mx-auto">
+     <div className="max-w-7xl mx-auto">
          <div className="text-center mb-8">
         <p className="text-xs text-orange-500 uppercase tracking-wider">Our Team</p>
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mt-1">Board Members</h2>

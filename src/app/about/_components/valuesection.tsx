@@ -116,7 +116,7 @@ const CoreValuesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white sm:px-6 p-4 sm:py-8 py-4 card-hover2 rounded-[24px] border border-[#EBECF0]  transition-shadow duration-700"
+              className="bg-white sm:px-6 p-4 sm:py-8 py-4 card-hover2 rounded-3xl border border-[#EBECF0]  transition-shadow duration-700"
             >
               <div className="mb-4 size-16 bg-[#FEF7F0] rounded-full flex items-center justify-center">
                 {value.icon}
