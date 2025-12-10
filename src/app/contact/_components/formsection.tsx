@@ -15,10 +15,10 @@ import {
 const ContactSection = () => {
   return (
     <section className="w-full py-12 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="container">
         <div className="flex lg:flex-row flex-col gap-10 bg-white rounded-xl ">
           {/* Left: Contact Form */}
-          <div className="w-full">
+          <div className="w-full max-w-[841px]">
             <h2 className="text-2xl font-semibold text-gray-900">
               Send Us Message
             </h2>
