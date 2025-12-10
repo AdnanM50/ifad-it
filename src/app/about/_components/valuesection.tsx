@@ -98,13 +98,13 @@ const CoreValuesSection = () => {
       <div className="container ">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h3 className="text-orange-500 text-sm font-semibold uppercase tracking-wider mb-2">
+          <h3 className="section-title mb-2">
             Our Values
           </h3>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="section-subtitle mb-4">
             Our Core Values
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
+          <p className="section-description max-w-2xl mx-auto">
             The principles that guide everything we do at IFAD IT LTD
           </p>
         </div>
@@ -121,7 +121,7 @@ const CoreValuesSection = () => {
               <div className="mb-4 size-16 bg-[#FEF7F0] rounded-full flex items-center justify-center">
                 {value.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">
+              <h3 className="text-xl font-semibold text-[#1A1A1A] mb-3">
                 {value.title}
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
