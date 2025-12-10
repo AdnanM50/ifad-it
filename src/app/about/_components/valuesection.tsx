@@ -94,7 +94,7 @@ const CoreValuesSection = () => {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-16 bg-white">
+    <section className="py-16 xl:py-[120px] xl:px-0 px-2 bg-white">
       <div className="container ">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -116,15 +116,15 @@ const CoreValuesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white p-6 rounded-[24px] border border-gray-100  transition-shadow duration-300"
+              className="bg-white sm:px-6 p-4 sm:py-8 py-4 card-hover2 rounded-[24px] border border-[#EBECF0]  transition-shadow duration-700"
             >
               <div className="mb-4 size-16 bg-[#FEF7F0] rounded-full flex items-center justify-center">
                 {value.icon}
               </div>
-              <h3 className="text-xl font-semibold text-[#1A1A1A] mb-3">
+              <h3 className="text-2xl font-semibold font-inter text-[#1A1A1A] mb-3">
                 {value.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-[#6F7377] text-base font-inter font-normal">
                 {value.description}
               </p>
             </motion.div>
