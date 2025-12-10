@@ -1,43 +1,59 @@
 "use client"
 
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import PrimaryButton from "../common/primary-button"
+
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Solutions", path: "/solutions" },
+  { name: "Gallery", path: "/gallery" },
+  { name: "Blog", path: "/blog" },
+]
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  const toggleMenu = () => setMobileMenuOpen((prev) => !prev)
+
+  const isActive = (path: string) => pathname === path
 
   return (
     <header className="fixed top-0 w-full bg-[#FFFFFF] backdrop-blur-md z-50 border-b border-border">
       <nav className="container xl:px-0 px-4 py-6 flex items-center justify-between">
+
         {/* Logo */}
         <Link href="/" className="font-bold text-2xl flex items-center gap-2">
-          {/* <span className="text-primary text-3xl">🚀</span> */}
-          <Image src="/logo.png" alt="Logo" width={1000} height={1000} className="w-[131px] h-[37px] object-fill" />
-          <span className="mt-2 xl:flex hidden amiko-regular">Information & Technology Ltd.</span>
-          {/* <span className="text-primary">IT</span> */}
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={1000}
+            height={1000}
+            className="w-[131px] h-[37px] object-fill"
+          />
+          <span className="mt-2 xl:flex hidden amiko-regular">
+            Information & Technology Ltd.
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden text-xl font-inter md:flex items-center text-[#1A1A1A] gap-8">
-          <Link href="/" className=" hover:text-primary transition-colors">
-            Home
-          </Link>
-          <Link href="/about" className=" hover:text-primary transition-colors">
-            About
-          </Link>
-          <Link href="/solutions" className=" hover:text-primary transition-colors">
-            Solutions
-          </Link>
-          <Link href="/gallery" className=" hover:text-primary transition-colors">
-            Gallery
-          </Link>
-          <Link href="/blog" className=" hover:text-primary transition-colors">
-            Blog
-          </Link>
+        <div className="hidden md:flex items-center gap-8 text-xl font-inter">
+          {navLinks.map(({ name, path }) => (
+            <Link
+              key={name}
+              href={path}
+              className={`transition-colors ${
+                isActive(path) ? "text-[#F36A10]" : "text-[#1A1A1A] hover:text-primary"
+              }`}
+            >
+              {name}
+            </Link>
+          ))}
         </div>
 
         {/* Desktop CTA */}
@@ -46,7 +62,7 @@ export function Header() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <button onClick={toggleMenu} className="md:hidden">
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
@@ -54,21 +70,18 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="absolute top-full left-0 right-0 bg-white border-b border-border md:hidden">
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-              <Link href="/" className="text-foreground hover:text-primary transition-colors">
-                Home
-              </Link>
-              <Link href="/about" className="text-foreground hover:text-primary transition-colors">
-                About
-              </Link>
-              <Link href="/solutions" className="text-foreground hover:text-primary transition-colors">
-                Solutions
-              </Link>
-              <Link href="/gallery" className="text-foreground hover:text-primary transition-colors">
-                Gallery
-              </Link>
-              <Link href="/blog" className="text-foreground hover:text-primary transition-colors">
-                Blog
-              </Link>
+              {navLinks.map(({ name, path }) => (
+                <Link
+                  key={name}
+                  href={path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`transition-colors ${
+                    isActive(path) ? "text-[#F36A10]" : "text-foreground hover:text-primary"
+                  }`}
+                >
+                  {name}
+                </Link>
+              ))}
               <PrimaryButton className="w-full">Contact Us</PrimaryButton>
             </div>
           </div>

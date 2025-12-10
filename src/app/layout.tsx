@@ -16,11 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        // className={` antialiased`}
       >
         <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
