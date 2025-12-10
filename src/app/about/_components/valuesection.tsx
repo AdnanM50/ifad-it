@@ -96,7 +96,7 @@ const CoreValuesSection = () => {
   return (
     <section className="py-16 xl:py-[120px] xl:px-0 px-2 bg-white">
       <div className="container ">
-        {/* Section Header */}
+        
         <div className="text-center mb-12">
           <h3 className="section-title mb-2">
             Our Values
