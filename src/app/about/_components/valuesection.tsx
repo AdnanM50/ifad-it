@@ -1,14 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  Lightbulb,
-  Users,
-  Trophy,
-  ShieldCheck,
-  Zap,
-  Handshake
-} from 'lucide-react';
+
 
 const CoreValuesSection = () => {
   const values = [
