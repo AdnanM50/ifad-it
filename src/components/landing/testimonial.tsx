@@ -52,25 +52,21 @@ const TestimonialCarousel: FC = () => {
     <section className="py-12 sm:py-16 md:py-20 lg:py-[120px] bg-[#FFFAF5]">
       <div className="max-w-[1362px] overflow-hidden mx-auto px-4">
 
-        {/* Tagline */}
         <div className="text-center mb-6 sm:mb-8">
           <span className="text-[#F36A10] text-xs sm:text-sm font-semibold uppercase tracking-widest">
             Testimonial
           </span>
         </div>
 
-        {/* Main Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-[#1A1A1A] mb-4 sm:mb-6 text-balance">
           What Our Clients Say
         </h2>
 
-        {/* Subheading */}
         <p className="text-center text-[#6F7377] text-sm sm:text-base md:text-lg max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20 leading-relaxed">
           At IFAD IT LTD, our clients&apos; success stories reflect the trust and value we deliver through innovative IT
           solutions.
         </p>
 
-        {/* Swiper Slider */}
         <div className="relative">
           <Swiper
             modules={[Navigation]}
@@ -78,6 +74,7 @@ const TestimonialCarousel: FC = () => {
               prevEl: ".testimonial-prev",
               nextEl: ".testimonial-next",
             }}
+            autoplay={true}
             loop={true}
             slidesPerView={1}
             className="w-full"
@@ -87,24 +84,27 @@ const TestimonialCarousel: FC = () => {
                 <div className="rounded-lg md:rounded-2xl p-6 sm:p-8 md:p-12">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-[1074px] mx-auto">
 
-                    {/* Image */}
+                    {/* IMAGE WITH LEFT-DOWN EFFECT FIXED */}
                     <div
-                      className="relative w-52 sm:w-64 md:w-80 lg:w-96 rounded-[16px]  border-[#F36A10] overflow-hidden mx-auto"
+                      className="relative w-52 sm:w-64 md:w-80 lg:w-96 mx-auto"
                       style={{ aspectRatio: "382 / 448" }}
                     >
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        className="object-cover rounded-[16px]"
-                        priority
-                      />
+                      {/* Orange Background (NOW moves LEFT + DOWN) */}
+                      <div className="absolute left-0 bottom-0 w-full h-full bg-[#F36A10] rounded-[16px] -translate-x-3 translate-y-3"></div>
+
+                      {/* Actual Image */}
+                      <div className="relative w-full h-full overflow-hidden rounded-[16px]">
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          fill
+                          className="object-cover rounded-[16px]"
+                          priority
+                        />
+                      </div>
                     </div>
 
-                    {/* Content */}
                     <div className="flex flex-col">
-
-                      {/* Quote Icon */}
                       <div className="mb-4 sm:mb-6">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -121,13 +121,11 @@ const TestimonialCarousel: FC = () => {
                         </svg>
                       </div>
 
-                      {/* Quote Text */}
-                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#1A1A1A] font-medium leading-relaxed mb-6 sm:mb-8">
+                      <p className="text-base sm:text-lg md:text-xl lg:text-[22px] text-[#1A1A1A] font-normal leading-relaxed mb-6 sm:mb-8">
                         {item.quote}
                       </p>
 
-                      {/* Rating */}
-                      <div className="flex gap-1 sm:gap-2 mb-6 sm:mb-8">
+                      <div className="flex gap-1 sm:gap-2 mb-6 sm:mb-5">
                         {[...Array(item.rating)].map((_, i) => (
                           <svg
                             key={i}
@@ -146,13 +144,13 @@ const TestimonialCarousel: FC = () => {
                         ))}
                       </div>
 
-                      {/* Name */}
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-1 sm:mb-2">
+                      <h3 className="text-xl sm:text-2xl md:text-[38px] font-semibold text-[#1A1A1A] mb-1 sm:mb-2">
                         {item.name}
                       </h3>
 
-                      {/* Role */}
-                      <p className="text-sm sm:text-base md:text-lg text-[#6F7377] font-medium">{item.role}</p>
+                      <p className="text-sm sm:text-base md:text-xl text-[#6F7377] font-normal">
+                        {item.role}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -160,14 +158,14 @@ const TestimonialCarousel: FC = () => {
             ))}
           </Swiper>
 
-          <button className="testimonial-prev absolute -left-2  md:-left-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 border-[#F36A10] bg-white text-[#F36A10] flex items-center justify-center hover:bg-[#F36A10] hover:text-white transition-all duration-300 z-20">
+          <button className="testimonial-prev absolute -left-2 md:-left-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 border-[#F36A10] bg-white text-[#F36A10] flex items-center justify-center hover:bg-[#F36A10] hover:text-white transition-all duration-300 z-20">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 28 22" fill="none">
               <path d="M10.1715 1L1.58574 9.58579C0.804694 10.3668 0.804694 11.6332 1.58574 12.4142L10.1715 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               <path d="M26.172 11L2.172 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </button>
 
-          <button className="testimonial-next absolute -right-2  md:-right-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 bg-[#F36A10] text-white flex items-center justify-center hover:bg-white hover:text-[#F36A10] transition-all duration-300 border-[#F36A10] z-20">
+          <button className="testimonial-next absolute -right-2 md:-right-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 bg-[#F36A10] text-white flex items-center justify-center hover:bg-white hover:text-[#F36A10] transition-all duration-300 border-[#F36A10] z-20">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 28 22" fill="none">
               <path d="M17.0002 1L25.586 9.58579C26.3671 10.3668 26.3671 11.6332 25.586 12.4142L17.0002 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               <path d="M1 11L25 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
