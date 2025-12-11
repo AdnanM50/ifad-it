@@ -89,14 +89,14 @@ const TestimonialCarousel: FC = () => {
 
                     {/* Image */}
                     <div
-                      className="relative w-52 sm:w-64 md:w-80 lg:w-96 rounded-lg md:rounded-xl border-4 md:border-6 border-[#F36A10] overflow-hidden mx-auto"
+                      className="relative w-52 sm:w-64 md:w-80 lg:w-96 rounded-[16px]  border-[#F36A10] overflow-hidden mx-auto"
                       style={{ aspectRatio: "382 / 448" }}
                     >
                       <Image
                         src={item.image}
                         alt={item.name}
                         fill
-                        className="object-cover"
+                        className="object-cover rounded-[16px]"
                         priority
                       />
                     </div>
@@ -160,7 +160,6 @@ const TestimonialCarousel: FC = () => {
             ))}
           </Swiper>
 
-          {/* Navigation Arrows */}
           <button className="testimonial-prev absolute -left-2  md:-left-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 border-[#F36A10] bg-white text-[#F36A10] flex items-center justify-center hover:bg-[#F36A10] hover:text-white transition-all duration-300 z-20">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 28 22" fill="none">
               <path d="M10.1715 1L1.58574 9.58579C0.804694 10.3668 0.804694 11.6332 1.58574 12.4142L10.1715 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />

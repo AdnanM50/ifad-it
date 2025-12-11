@@ -332,7 +332,6 @@ box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.05);
  border-radius: 24px;
 background: var(--Color-White, #FFF);
 
-/* Shadow */
 box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.05);
 border: none ! important;
 }
