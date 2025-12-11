@@ -3,7 +3,7 @@
 import CountingAnimation from '@/components/common/CountingAnimation';
 import MissionVisionSection from './missionSection';
 
-const StorySection = () => {
+const PartStory = () => {
 
 
   return (
@@ -45,4 +45,4 @@ const StorySection = () => {
   );
 };
 
-export default StorySection;
+export default PartStory;
