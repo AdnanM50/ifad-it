@@ -16,7 +16,7 @@ const ContactSection = () => {
     <section className="w-full py-12 bg-white">
       <div className="container">
         <div className="flex lg:flex-row flex-col gap-10 bg-white rounded-xl ">
-          {/* Left: Contact Form */}
+        
           <div className="w-full max-w-[841px]">
             <h2 className="text-2xl font-semibold text-gray-900">
               Send Us Message
@@ -26,7 +26,7 @@ const ContactSection = () => {
             </p>
 
             <form className="mt-8 space-y-5">
-              {/* Name */}
+
               <div>
                 <label className="text-sm font-medium text-gray-700">
                   Name
@@ -38,7 +38,6 @@ const ContactSection = () => {
                 />
               </div>
 
-              {/* Phone + Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium text-gray-700">
@@ -63,7 +62,6 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              {/* Message */}
               <div>
                 <label className="text-sm font-medium text-gray-700">
                   Message
@@ -75,7 +73,6 @@ const ContactSection = () => {
                 />
               </div>
 
-              {/* Button */}
               <button
                 type="submit"
                 className="w-full h-12 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-md transition"
@@ -85,7 +82,6 @@ const ContactSection = () => {
             </form>
           </div>
 
-          {/* Right: Info Panel */}
           <div className="bg-white rounded-xl max-w-[523px] p-6 lg:p-8">
             <h3 className="text-2xl font-semibold text-gray-900">
               Get in Touch
