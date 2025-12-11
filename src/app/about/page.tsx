@@ -3,6 +3,7 @@ import AboutHero from './_components/aboutHero'
 import CoreValuesSection from './_components/valuesection'
 import BoardMembers from './_components/team'
 import PartStory from './_components/partstory'
+import CTASection from './_components/lowerSection'
 
 
 const About = () => {
@@ -12,6 +13,7 @@ const About = () => {
   <PartStory />
   <CoreValuesSection />
   <BoardMembers />
+  <CTASection />
   </>
   )
 }
