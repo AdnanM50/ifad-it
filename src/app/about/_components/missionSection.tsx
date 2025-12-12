@@ -3,7 +3,7 @@
 const MissionVisionSection = () => {
   return (
     <div className="bg-[#FCFCFD] py-12 md:py-[120px] px-2 lg:px-0 ">
-      {/* Mission Section */}
+  
       <div className="max-w-[1387px] mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
           <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-lg">

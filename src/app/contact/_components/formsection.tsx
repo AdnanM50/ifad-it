@@ -17,7 +17,7 @@ const ContactSection = () => {
       <div className="container">
         <div className="flex lg:flex-row flex-col gap-10 bg-white rounded-xl ">
         
-          <div className="w-full max-w-[841px]">
+          <div className="w-full p-4 sm:p-10 max-w-[841px]">
             <h2 className="text-2xl font-semibold text-gray-900">
               Send Us Message
             </h2>

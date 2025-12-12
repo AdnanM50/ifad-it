@@ -17,12 +17,6 @@ const CTASection: React.FC<CTASectionProps> = ({
   return (
     <div
       className="relative  py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 z-50"
-    //   style={{
-    //     backgroundImage: `url('/background.png')`,   // FIXED
-    //     backgroundSize: "cover",
-    //     backgroundPosition: "center",
-    //     backgroundRepeat: "no-repeat",
-    //   }}
     >
       <div className="absolute bg-[url('/background.png')] bg-cover bg-center bg-no-repeat inset-0 bg-orange-500 bg-opacity-90"></div>
 
