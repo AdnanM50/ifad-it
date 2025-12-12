@@ -53,20 +53,20 @@ const FAQSection = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-[#EBECF0] transition-colors"
+                className="w-full px-4 gap-1 sm:px-6 py-4 flex justify-between items-center text-left hover:bg-[#EBECF0] transition-colors"
               >
-                <span className="font-medium font-inter text-xl text-[#1A1A1A]">{faq.question}</span>
+                <span className="font-medium font-inter text-lg sm:text-xl text-[#1A1A1A]">{faq.question}</span>
                 <span className={`w-6 sm:h-8 h-6 sm:w-8 flex items-center justify-center rounded-[8px] transition-colors ${
                   openIndex === index 
                     ? 'bg-orange-500 text-white' 
                     : 'bg-[#F36A10] text-white'
                 }`}>
                   {openIndex === index ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 mx-1 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 12H5" />
                     </svg>
                   ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 mx-1 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   )}
