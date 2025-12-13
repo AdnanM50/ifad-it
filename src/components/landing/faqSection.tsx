@@ -3,7 +3,8 @@
 import { useState } from 'react';
 
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  // Open the 2nd FAQ initially
+  const [openIndex, setOpenIndex] = useState<number | null>(1);
 
   const faqs = [
     {
@@ -12,7 +13,7 @@ const FAQSection = () => {
     },
     {
       question: "What services does IFAD IT LTD provide?",
-      answer: "We offer a wide range of IT services, including vehicle tracking (we can find your lost rickshaw in 0.3 seconds), MIS & BI solutions (our dashboards predict tomorrow's weather AND your boss's mood), IT security & training (our firewalls are guarded by cyber-dragons), and software development (we specialize in apps that make your plants grow faster and your cat more polite)."
+      answer: "We offer a wide range of IT services, including vehicle tracking, MIS & BI solutions, IT security & training, and software development. Our team specializes in building smart, secure, and scalable digital ecosystems."
     },
     {
       question: "How do your IT solutions help businesses grow?",
@@ -47,20 +48,24 @@ const FAQSection = () => {
         {/* FAQ Accordion */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div 
-              key={index} 
-              className={`bg-white rounded-[8px] border border-[#EBECF0]  transition-all duration-300 `}
+            <div
+              key={index}
+              className="bg-white rounded-[8px] border border-[#EBECF0] transition-all duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-4 gap-1 sm:px-6 py-4 flex justify-between items-center text-left hover:bg-[#EBECF0] transition-colors"
               >
-                <span className="font-medium font-inter text-lg sm:text-xl text-[#1A1A1A]">{faq.question}</span>
-                <span className={`w-6 sm:h-8 h-6 sm:w-8 flex items-center justify-center rounded-[8px] transition-colors ${
-                  openIndex === index 
-                    ? 'bg-orange-500 text-white' 
-                    : 'bg-[#F36A10] text-white'
-                }`}>
+                <span className="font-medium font-inter text-lg sm:text-xl text-[#1A1A1A]">
+                  {faq.question}
+                </span>
+                <span
+                  className={`w-6 sm:h-8 h-6 sm:w-8 flex items-center justify-center rounded-[8px] transition-colors ${
+                    openIndex === index
+                      ? 'bg-orange-100 text-[#F36A10]'
+                      : 'bg-[#F36A10] text-white'
+                  }`}
+                >
                   {openIndex === index ? (
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 mx-1 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 12H5" />
@@ -72,13 +77,13 @@ const FAQSection = () => {
                   )}
                 </span>
               </button>
-              
-              <div 
-                className={` transition-all duration-300 ease-in-out ${
-                  openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  openIndex === index ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-6 pb-4 pt-0 text-base font-inter text-gray-600">
+                <div className="px-6 pb-4 pt-0 text-base font-normal font-inter text-[#6F7377]">
                   {faq.answer}
                 </div>
               </div>

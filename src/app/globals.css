@@ -335,3 +335,18 @@ background: var(--Color-White, #FFF);
 box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.05);
 border: none ! important;
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 18s linear infinite;
+}
