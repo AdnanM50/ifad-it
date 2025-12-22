@@ -9,7 +9,7 @@ interface FeaturedLogo {
   alt: string;
 }
 
-const FeaturedOn: React.FC = () => {
+const FeaturedOn = ({ data }: { data: any }) => {
   const logos: FeaturedLogo[] = [
     { name: "Clutch", src: "/clutch-seeklogo 1.png", alt: "Clutch Logo" },
     { name: "প্রথম আলো", src: "/download 1.png", alt: "Prothom Alo Logo" },

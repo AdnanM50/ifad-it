@@ -8,7 +8,7 @@ interface TechItem {
   svg: JSX.Element; // Inline SVG element
 }
 
-const TechStack: React.FC = () => {
+const TechStack = ({ data }: { data: any }) => {
   const techStack: TechItem[] = [
     {
       name: 'Figma',

@@ -23,7 +23,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon }) =
   );
 };
 
-const WhyChooseUs: React.FC = () => {
+const WhyChooseUs = ({ data }: { data: any }) => {
   const features = [
     {
       title: "Proven Expertise",

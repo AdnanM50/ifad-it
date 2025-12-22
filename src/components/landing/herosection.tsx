@@ -1,10 +1,10 @@
 
 import PrimaryButton from "../common/primary-button"
 
-export function HeroSection() {
+export function HeroSection({ data }: { data: any }) {
+  console.log("🚀 ~ HeroSection ~ data:", data)
   return (
     <section className="relative w-full h-[600px] md:h-[815px] pt-20 overflow-hidden">
-      {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{

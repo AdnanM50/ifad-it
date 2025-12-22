@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const TrustedSection = () => {
+const TrustedSection = ({ data }: { data: any }) => {
   const trustedCompanies = [
     { name: "Interlock", icon: '/icons/1st.svg', type: 'image' as const },
     { name: "Alt+Shift", icon: '/icons/2nd.png', type: 'image' as const },

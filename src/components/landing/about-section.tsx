@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import CountingAnimation from '../common/CountingAnimation';
 
-const AboutSection = () => {
+const AboutSection = ({ data }: { data: any }) => {
 
 
   return (

@@ -47,7 +47,7 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-const TestimonialCarousel: FC = () => {
+const TestimonialCarousel = ({ data }: { data: any }) => {
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-[120px] bg-[#FFFAF5]">
       <div className="max-w-[1362px] overflow-hidden mx-auto px-4">

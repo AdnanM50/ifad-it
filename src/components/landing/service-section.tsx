@@ -1,6 +1,6 @@
 "use client";
 
-const ServiceSection = () => {
+const ServiceSection = ({ data }: { data: any }) => {
   const services = [
     {
       title: "Vehicle Tracking",
