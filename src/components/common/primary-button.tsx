@@ -7,10 +7,10 @@ const PrimaryButton = ({children, className,onClick}: {children: React.ReactNode
       type="button"
       onClick={onClick}
     >
-      {/* <span className="inline-flex gap-1.5 flex-[0_0_auto] items-center relative"> */}
+    
         <span className="">
           {children}
-        {/* </span> */}
+     
       </span>
     </button>
   )
