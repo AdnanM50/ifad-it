@@ -11,7 +11,8 @@ import {
   Youtube,
 } from "lucide-react"
 
-const ContactSection = () => {
+const ContactSection = ({ data }: { data: any }) => {
+  console.log("🚀 ~ ContactSection ~ data:", data)
   return (
     <section className="w-full py-12 bg-white">
       <div className="container">
