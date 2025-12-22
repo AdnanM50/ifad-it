@@ -1,73 +1,38 @@
-"use client";
+"use client"
 
-import { FC } from "react";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import Image from "next/image"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation } from "swiper/modules"
 
-import "swiper/css";
-import "swiper/css/navigation";
-
-interface Testimonial {
-  id: number;
-  name: string;
-  role: string;
-  quote: string;
-  image: string;
-  rating: number;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: "Alex Smith",
-    role: "Engineer",
-    quote:
-      "The Information Technology (IT) field offers a broad range of careers and opportunities. IT professionals use technology, systems, and software to design, develop, manage, and maintain the infrastructure.",
-    image: "/Rectangle.png",
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: "Sarah Johnson",
-    role: "Product Manager",
-    quote:
-      "IFAD IT LTD delivered our project ahead of schedule with zero bugs. Their team is highly skilled and communicative throughout the process.",
-    image: "/Rectangle.png",
-    rating: 5,
-  },
-  {
-    id: 3,
-    name: "Michael Lee",
-    role: "CTO",
-    quote:
-      "Their innovative approach to solving complex IT challenges saved us time and money. I highly recommend them for any enterprise-level project.",
-    image: "/Rectangle.png",
-    rating: 5,
-  },
-];
+import "swiper/css"
+import "swiper/css/navigation"
 
 const TestimonialCarousel = ({ data }: { data: any }) => {
+  console.log("🚀 ~ TestimonialCarousel ~ data:", data)
+  if (!data) return null
+
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-[120px] bg-[#FFFAF5]">
-      <div className="max-w-[1362px] overflow-hidden mx-auto px-4">
-
+      <div className="max-w-[1362px] mx-auto px-4">
+        {/* Section tag */}
         <div className="text-center mb-6 sm:mb-8">
           <span className="text-[#F36A10] text-xs sm:text-sm font-semibold uppercase tracking-widest">
-            Testimonial
+            {data.title}
           </span>
         </div>
 
+        {/* Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-[#1A1A1A] mb-4 sm:mb-6 text-balance">
-          What Our Clients Say
+          {data.headline}
         </h2>
 
+        {/* Subtitle */}
         <p className="text-center text-[#6F7377] text-sm sm:text-base md:text-lg max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20 leading-relaxed">
-          At IFAD IT LTD, our clients&apos; success stories reflect the trust and value we deliver through innovative IT
-          solutions.
+          {data.subTitle}
         </p>
 
-        <div className="relative">
+        {/* Slider Wrapper */}
+        <div className="relative overflow-visible">
           <Swiper
             modules={[Navigation]}
             navigation={{
@@ -77,26 +42,24 @@ const TestimonialCarousel = ({ data }: { data: any }) => {
             autoplay={true}
             loop={true}
             slidesPerView={1}
-            className="w-full"
+            className="w-full overflow-hidden"
           >
-            {testimonials.map((item) => (
+            {data.testimonial.map((item: any) => (
               <SwiperSlide key={item.id}>
                 <div className="rounded-lg md:rounded-2xl p-6 sm:p-8 md:p-12">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-[1074px] mx-auto">
 
-                    {/* IMAGE WITH LEFT-DOWN EFFECT FIXED */}
+                    {/* Image */}
                     <div
                       className="relative w-52 sm:w-64 md:w-80 lg:w-96 mx-auto"
                       style={{ aspectRatio: "382 / 448" }}
                     >
-                      {/* Orange Background (NOW moves LEFT + DOWN) */}
                       <div className="absolute left-0 bottom-0 w-full h-full bg-[#F36A10] rounded-[16px] -translate-x-3 translate-y-3"></div>
 
-                      {/* Actual Image */}
                       <div className="relative w-full h-full overflow-hidden rounded-[16px]">
                         <Image
-                          src={item.image}
-                          alt={item.name}
+                          src={item.image.url}
+                          alt={item.image.alternativeText || item.name}
                           fill
                           className="object-cover rounded-[16px]"
                           priority
@@ -104,6 +67,7 @@ const TestimonialCarousel = ({ data }: { data: any }) => {
                       </div>
                     </div>
 
+                    {/* Content */}
                     <div className="flex flex-col">
                       <div className="mb-4 sm:mb-6">
                         <svg
@@ -121,10 +85,11 @@ const TestimonialCarousel = ({ data }: { data: any }) => {
                         </svg>
                       </div>
 
-                      <p className="text-base sm:text-lg md:text-xl lg:text-[22px] text-[#1A1A1A] font-normal leading-relaxed mb-6 sm:mb-8">
-                        {item.quote}
+                      <p className="text-base sm:text-lg md:text-xl lg:text-[22px] text-[#1A1A1A] font-normal leading-relaxed mb-6 sm:mb-8 whitespace-pre-line">
+                        {item.review}
                       </p>
 
+                      {/* Rating */}
                       <div className="flex gap-1 sm:gap-2 mb-6 sm:mb-5">
                         {[...Array(item.rating)].map((_, i) => (
                           <svg
@@ -149,7 +114,7 @@ const TestimonialCarousel = ({ data }: { data: any }) => {
                       </h3>
 
                       <p className="text-sm sm:text-base md:text-xl text-[#6F7377] font-normal">
-                        {item.role}
+                        {item.designation}
                       </p>
                     </div>
                   </div>
@@ -158,14 +123,16 @@ const TestimonialCarousel = ({ data }: { data: any }) => {
             ))}
           </Swiper>
 
-          <button className="testimonial-prev absolute -left-2 md:-left-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 border-[#F36A10] bg-white text-[#F36A10] flex items-center justify-center hover:bg-[#F36A10] hover:text-white transition-all duration-300 z-20">
+          {/* Prev */}
+          <button className="testimonial-prev absolute -left-2 md:-left-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 border-[#F36A10] bg-white text-[#F36A10] flex items-center justify-center hover:bg-[#F36A10] hover:text-white transition-all duration-300 z-50">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 28 22" fill="none">
               <path d="M10.1715 1L1.58574 9.58579C0.804694 10.3668 0.804694 11.6332 1.58574 12.4142L10.1715 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               <path d="M26.172 11L2.172 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </button>
 
-          <button className="testimonial-next absolute -right-2 md:-right-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 bg-[#F36A10] text-white flex items-center justify-center hover:bg-white hover:text-[#F36A10] transition-all duration-300 border-[#F36A10] z-20">
+          {/* Next */}
+          <button className="testimonial-next absolute -right-2 md:-right-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 bg-[#F36A10] text-white flex items-center justify-center hover:bg-white hover:text-[#F36A10] transition-all duration-300 border-[#F36A10] z-50">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 28 22" fill="none">
               <path d="M17.0002 1L25.586 9.58579C26.3671 10.3668 26.3671 11.6332 25.586 12.4142L17.0002 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               <path d="M1 11L25 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -174,7 +141,7 @@ const TestimonialCarousel = ({ data }: { data: any }) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default TestimonialCarousel;
+export default TestimonialCarousel

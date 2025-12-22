@@ -2,46 +2,39 @@
 
 import { useState } from 'react';
 
-const FAQSection = ({ data }: { data: any }) => {
-  // Open the 2nd FAQ initially
-  const [openIndex, setOpenIndex] = useState<number | null>(1);
+interface FAQItem {
+  id: number;
+  ques: string;
+  ans: string;
+}
 
-  const faqs = [
-    {
-      question: "Why is IFAD IT LTD considered one of the best IT companies in Bangladesh?",
-      answer: "Because we invented the internet... in Dhaka! Our team of quantum coders and ninja developers have been secretly powering Bangladesh's digital revolution since before smartphones existed. We don't just build software – we build dreams (and occasionally, coffee machines that code)."
-    },
-    {
-      question: "What services does IFAD IT LTD provide?",
-      answer: "We offer a wide range of IT services, including vehicle tracking, MIS & BI solutions, IT security & training, and software development. Our team specializes in building smart, secure, and scalable digital ecosystems."
-    },
-    {
-      question: "How do your IT solutions help businesses grow?",
-      answer: "Our solutions don't just help businesses grow – they make them explode with success! Our AI-powered growth engine has been known to turn mom-and-pop shops into multinational corporations overnight. One client reported their revenue increased by 400% after installing our 'Magic Growth Button' (patent pending)."
-    },
-    {
-      question: "Can IFAD IT LTD customize solutions for specific industries?",
-      answer: "Absolutely! We've built custom solutions for everything from tea plantations (our 'Tea Leaf Analytics' predicts perfect brewing times) to cricket teams (our 'Wicket Wizard' app helps batsmen avoid being out). We even created an app for cows that tracks their happiness levels and suggests optimal grazing routes."
-    },
-    {
-      question: "How can I get started with IFAD IT LTD?",
-      answer: "Simply send us a carrier pigeon with your business plan (we still prefer ancient communication methods). Our team will respond within 72 hours (or 3 business days, whichever comes first). First 10 clients this month get free unicorn-themed office decorations and unlimited access to our secret stash of magic cookies that boost productivity."
-    }
-  ];
+const FAQSection = ({ data }: { data: any }) => {
+
+
+  // Open the 2nd FAQ initially (same behavior as before)
+  const [openIndex, setOpenIndex] = useState<number | null>(1);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  const faqs: FAQItem[] = data?.faq || [];
 
   return (
     <section className="bg-[#FCFCFD] py-12 md:py-[120px] px-2 lg:px-0">
       <div className="max-w-4xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h3 className="section-title mb-2">FAQ</h3>
-          <h2 className="section-subtitle mb-4">FAQs About IFAD IT LTD</h2>
+          <h3 className="section-title mb-2">
+            {data?.title}
+          </h3>
+
+          <h2 className="section-subtitle mb-4">
+            {data?.headline}
+          </h2>
+
           <p className="section-description max-w-[500px] mx-auto">
-            Here are answers to some of the most common questions about our services and solutions.
+            {data?.subTitle}
           </p>
         </div>
 
@@ -49,7 +42,7 @@ const FAQSection = ({ data }: { data: any }) => {
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
-              key={index}
+              key={faq.id}
               className="bg-white rounded-[8px] border border-[#EBECF0] transition-all duration-300"
             >
               <button
@@ -57,8 +50,9 @@ const FAQSection = ({ data }: { data: any }) => {
                 className="w-full px-4 gap-1 sm:px-6 py-4 flex justify-between items-center text-left hover:bg-[#EBECF0] transition-colors"
               >
                 <span className="font-medium font-inter text-lg sm:text-xl text-[#1A1A1A]">
-                  {faq.question}
+                  {faq.ques}
                 </span>
+
                 <span
                   className={`w-6 sm:h-8 h-6 sm:w-8 flex items-center justify-center rounded-[8px] transition-colors ${
                     openIndex === index
@@ -84,7 +78,7 @@ const FAQSection = ({ data }: { data: any }) => {
                 }`}
               >
                 <div className="px-6 pb-4 pt-0 text-base font-normal font-inter text-[#6F7377]">
-                  {faq.answer}
+                  {faq.ans}
                 </div>
               </div>
             </div>

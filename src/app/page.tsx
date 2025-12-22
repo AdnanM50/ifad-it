@@ -11,7 +11,7 @@ import { getHomePage } from "@/lib/homeAPI"
 
 export default async function HomePage() {
   const data = await getHomePage()
-  console.log("🚀 ~ HomePage ~ data:", data)
+  // console.log("🚀 ~ HomePage ~ data:", data)
 
   // 🔹 Extract blocks manually
   const heroData = data.blocks.find(

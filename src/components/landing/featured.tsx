@@ -1,36 +1,33 @@
-'use client';
+
 
 import Image from 'next/image';
-import React from 'react';
 
-interface FeaturedLogo {
-  name: string;
-  src: string;
-  alt: string;
+
+interface LogoItem {
+  id: number;
+  url: string;
+  alternativeText: string | null;
 }
 
 const FeaturedOn = ({ data }: { data: any }) => {
-  const logos: FeaturedLogo[] = [
-    { name: "Clutch", src: "/clutch-seeklogo 1.png", alt: "Clutch Logo" },
-    { name: "প্রথম আলো", src: "/download 1.png", alt: "Prothom Alo Logo" },
-    { name: "The Daily Star", src: "/download (1) 1.png", alt: "The Daily Star Logo" },
-    { name: "কালের কণ্ঠ", src: "/Link → kaler-kantho.png", alt: "Kaler Kontho Logo" },
 
-  ];
+  const logos: LogoItem[] = data?.logos || [];
 
   return (
     <section className="py-12 md:py-[119px] container px-2 lg:px-0 bg-white">
-      <h2 className="section-subtitle text-center mb-8">Featured On</h2>
+      <h2 className="section-subtitle text-center mb-8">
+        {data?.heading}
+      </h2>
 
       <div className="relative max-w-[899px] mx-auto overflow-hidden">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-[110px]">
-          {[...logos].map((logo, index) => (
-            <div key={index} className="flex items-center justify-center">
+          {logos.map((logo) => (
+            <div key={logo.id} className="flex items-center justify-center">
               <Image
                 width={1000}
                 height={1000}
-                src={logo.src}
-                alt={logo.alt}
+                src={logo.url}
+                alt={logo.alternativeText || 'Featured logo'}
                 className="h-8 md:h-10 w-[120px] object-contain"
               />
             </div>
