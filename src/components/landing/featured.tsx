@@ -22,7 +22,6 @@ const FeaturedOn: React.FC = () => {
     <section className="py-12 md:py-[119px] container px-2 lg:px-0 bg-white">
       <h2 className="section-subtitle text-center mb-8">Featured On</h2>
 
-      {/* Marquee Wrapper */}
       <div className="relative max-w-[899px] mx-auto overflow-hidden">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-[110px]">
           {[...logos].map((logo, index) => (
