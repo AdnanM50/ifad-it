@@ -135,7 +135,7 @@ const AboutSection = ({ data }: AboutSectionProps) => {
         </div>
       </div>
 
-      <CountingAnimation />
+      <CountingAnimation data={data} />
     </div>
   )
 }
