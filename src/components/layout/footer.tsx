@@ -59,7 +59,7 @@ const Footer = ({ data }: { data: any }) => {
           <h3 className="font-semibold text-lg mb-4">Important Links</h3>
           <ul className="space-y-2 text-sm">
             {data.navigation.map((item: any) => (
-              <li key={item.id}>
+              <li className="text-base" key={item.id}>
                 <Link href={item.href}>{item.text}</Link>
               </li>
             ))}
@@ -69,7 +69,7 @@ const Footer = ({ data }: { data: any }) => {
         {/* Contact */}
         <div className="lg:ml-auto">
           <h3 className="font-semibold text-lg mb-4">Get In Touch</h3>
-          <div className="space-y-3 text-sm">
+          <div className="space-y-3 text-base">
             <p className="flex gap-2">
               <MapPin size={18} />
               <span className="whitespace-pre-line">

@@ -6,6 +6,7 @@ import { getContactPage } from "@/lib/contactAPI"
 
 export default async function ContactPage() {
   const page = await getContactPage()
+
   if (!page) return null
 
   const blocks = page.blocks || []
@@ -16,6 +17,10 @@ export default async function ContactPage() {
 
   const formData = blocks.find(
     (b: any) => b.__component === "blocks.form-block"
+    
+  )
+  const contactinfo = blocks.find(
+     (b: any) => b.__component === "blocks.contact-block"
   )
 
   const contactData = blocks.find(
@@ -25,7 +30,7 @@ export default async function ContactPage() {
   return (
     <>
       {heroData && <ContactHero data={heroData} />}
-      {formData && <ContactSection data={formData} />}
+      {formData && <ContactSection data={formData} contactinfo={contactinfo} />}
       {contactData && <MapSection data={contactData} />}
     </>
   )
