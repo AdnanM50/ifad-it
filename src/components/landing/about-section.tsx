@@ -39,7 +39,7 @@ const AboutSection = ({
         {/* LEFT IMAGE */}
         <div className="relative w-full lg:w-1/2">
           <div className="absolute md:flex hidden -top-16 left-0 z-30">
-            <div className="bg-orange-500 text-white rounded-full w-20 h-20 sm:w-40 sm:h-40 border-4 border-white flex flex-col items-center justify-center text-center font-bold">
+            <div className="bg-[#F36A10] text-white rounded-full w-20 h-20 sm:w-40 sm:h-40 border-4 border-white flex flex-col items-center justify-center text-center font-bold">
               <span className="text-[40px] arial-font">
                 {data.experience?.match(/\d+/)?.[0] || "10"}+
               </span>

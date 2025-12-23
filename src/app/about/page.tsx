@@ -39,7 +39,6 @@ export default async function About() {
   const ctaData = blocks.find(
     (b: any) => b.__component === "blocks.cta-section"
   )
-  console.log("🚀 ~ About ~ ctaData:", ctaData)
 
   return (
     <>

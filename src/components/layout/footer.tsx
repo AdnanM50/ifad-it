@@ -3,15 +3,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { MapPin, Phone, Mail } from "lucide-react"
-import { FacebookSVG, InstagramSVG, LinkedinSVG, TwitterSVG, YoutubeSVG } from "./social-icons"
-// import {
-//   FacebookSVG,
-//   InstagramSVG,
-//   TwitterSVG,
-//   LinkedinSVG,
-//   YoutubeSVG,
-//   PrinterstSVG,
-// } from "./social-icons"
+import { FacebookSVG, InstagramSVG, LinkedinSVG, PrinterstSVG, TwitterSVG, YoutubeSVG } from "./social-icons"
+
 
 const socialMap: any = {
   facebook: FacebookSVG,
@@ -19,10 +12,11 @@ const socialMap: any = {
   twitter: TwitterSVG,
   linkdin: LinkedinSVG,
   youtube: YoutubeSVG,
-  // pinterest: PrinterstSVG,
+  pinterest: PrinterstSVG,
 }
 
 const Footer = ({ data }: { data: any }) => {
+  console.log("🚀 ~ Footer ~ data:", data)
   if (!data) return null
 
   return (
@@ -47,7 +41,7 @@ const Footer = ({ data }: { data: any }) => {
             {data.description}
           </p>
 
-          <div className="flex gap-3">
+          <div className="flex gap-3 items-center">
             {Object.entries(data.social).map(([key, url]: any) => {
               const Icon = socialMap[key]
               if (!Icon) return null

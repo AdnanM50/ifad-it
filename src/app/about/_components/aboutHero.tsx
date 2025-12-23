@@ -21,7 +21,7 @@ const AboutHero = ({ data }: { data: any }) => {
       }}
     >
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-white">
-        <h2 className="text-4xl md:text-5xl lg:text-[72px] !arial-font font-bold mb-4 sm:mb-6">
+        <h2 className="text-4xl md:text-5xl lg:text-[72px] arial-font font-bold mb-4 sm:mb-6">
           {data.title}
         </h2>
 

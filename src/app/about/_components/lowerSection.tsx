@@ -7,7 +7,7 @@ const CTASection = ({ data }: { data: any }) => {
     <div className="relative py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 z-50">
       
       {/* BACKGROUND (UNCHANGED) */}
-      <div className="absolute bg-[url('/background.png')] bg-cover bg-center bg-no-repeat inset-0 bg-orange-500 bg-opacity-90"></div>
+      <div className="absolute bg-[url('/background.png')] bg-cover bg-center bg-no-repeat inset-0 bg-[#F36A10] "></div>
 
       {/* CONTENT */}
       <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -23,7 +23,7 @@ const CTASection = ({ data }: { data: any }) => {
           <Link
             href={data.cta.href}
             target={data.cta.isExternal ? "_blank" : "_self"}
-            className="inline-block bg-white text-orange-500 font-medium font-inter py-2.5 sm:py-3 px-5 sm:px-6 rounded-lg hover:bg-gray-50 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 text-sm sm:text-base"
+            className="inline-block bg-white text-[#F36A10] font-medium font-inter py-2.5 sm:py-3 px-5 sm:px-6 rounded-lg hover:bg-gray-50 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 text-sm sm:text-base"
           >
             {data.cta.text}
           </Link>

@@ -16,18 +16,18 @@ const TestimonialCarousel = ({ data }: { data: any }) => {
       <div className="max-w-[1362px] mx-auto px-4">
         {/* Section tag */}
         <div className="text-center mb-6 sm:mb-8">
-          <span className="text-[#F36A10] text-xs sm:text-sm font-semibold uppercase tracking-widest">
+          <span className="section-title">
             {data.title}
           </span>
         </div>
 
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-[#1A1A1A] mb-4 sm:mb-6 text-balance">
+        <h2 className="section-subtitle text-center text-[#1A1A1A] mb-4 sm:mb-6 text-balance">
           {data.headline}
         </h2>
 
         {/* Subtitle */}
-        <p className="text-center text-[#6F7377] text-sm sm:text-base md:text-lg max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20 leading-relaxed">
+        <p className="text-center section-description max-w-[589px] mx-auto mb-12 sm:mb-16 md:mb-20 leading-relaxed">
           {data.subTitle}
         </p>
 
