@@ -19,9 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body
       >
-        <Header />
+        <Header data={global.header} />
         {children}
-        <Footer />
+                <Footer data={global.footer} />
+
       </body>
     </html>
   );
