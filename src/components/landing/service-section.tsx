@@ -41,7 +41,7 @@ const ServiceSection = ({ data }: ServiceSectionProps) => {
             {data.title}
           </h2>
 
-          <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold !arial-font text-white mb-4">
+          <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold arial-font text-white mb-4">
             {data.headline}
           </h1>
 
