@@ -7,50 +7,65 @@ import ServiceSection from "@/components/landing/service-section"
 import TechStack from "@/components/landing/technology"
 import TestimonialCarousel from "@/components/landing/testimonial"
 import TustedSection from "@/components/landing/tusted-section"
+
 import { getHomePage } from "@/lib/homeAPI"
 
 export default async function HomePage() {
   const data = await getHomePage()
-  // console.log("🚀 ~ HomePage ~ data:", data)
+  if (!data) return null
 
-  // 🔹 Extract blocks manually
-  const heroData = data.blocks.find(
+  const blocks = data.blocks || []
+
+  // ================= HERO =================
+  const heroData = blocks.find(
     (b: any) => b.__component === "blocks.hero-section"
   )
 
-  const trustedData = data.blocks.find(
+  // ================= TRUSTED =================
+  const trustedData = blocks.find(
     (b: any) =>
       b.__component === "blocks.slider-block" &&
       b.heading === "Trusted by 100+ Companies"
   )
 
-  const aboutData = data.blocks.find(
+  // ================= ABOUT + STATS =================
+  const aboutData = blocks.find(
     (b: any) => b.__component === "blocks.about-section"
   )
 
-  const serviceData = data.blocks.find(
+  const statsData = blocks.find(
+    (b: any) => b.__component === "blocks.stats-block"
+  )
+
+  // ================= SERVICES =================
+  const serviceData = blocks.find(
     (b: any) => b.__component === "blocks.service-section"
   )
 
-  const techStackData = data.blocks.find(
+  // ================= TECH STACK =================
+  const techStackData = blocks.find(
     (b: any) =>
       b.__component === "blocks.slider-block" &&
       b.heading === "Technology Stack"
   )
 
-  const whyChooseData = data.blocks.find(
+  // ================= WHY CHOOSE =================
+  const whyChooseData = blocks.find(
     (b: any) => b.__component === "blocks.why-choose-section"
   )
 
-  const testimonialData = data.blocks.find(
+  // ================= TESTIMONIAL =================
+  const testimonialData = blocks.find(
     (b: any) => b.__component === "blocks.testimonial-section"
   )
 
-  const faqData = data.blocks.find(
+  // ================= FAQ =================
+  const faqData = blocks.find(
     (b: any) => b.__component === "blocks.faq-section"
   )
 
-  const featuredData = data.blocks.find(
+  // ================= FEATURED =================
+  const featuredData = blocks.find(
     (b: any) =>
       b.__component === "blocks.slider-block" &&
       b.heading === "Featured On"
@@ -62,7 +77,10 @@ export default async function HomePage() {
 
       {trustedData && <TustedSection data={trustedData} />}
 
-      {aboutData && <AboutSection data={aboutData} />}
+      {/* 🔥 ABOUT + STATS (IMPORTANT FIX) */}
+      {aboutData && (
+        <AboutSection data={aboutData} stats={statsData} />
+      )}
 
       {serviceData && <ServiceSection data={serviceData} />}
 

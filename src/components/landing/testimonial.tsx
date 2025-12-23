@@ -124,7 +124,7 @@ const TestimonialCarousel = ({ data }: { data: any }) => {
           </Swiper>
 
           {/* Prev */}
-          <button className="testimonial-prev absolute -left-2 md:-left-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 border-[#F36A10] bg-white text-[#F36A10] flex items-center justify-center hover:bg-[#F36A10] hover:text-white transition-all duration-300 z-50">
+          <button className="testimonial-prev absolute -left-2 md:-left-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 border-[#F36A10] bg-white text-[#F36A10] flex items-center justify-center hover:bg-[#F36A10] hover:text-white transition-all duration-300 z-20">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 28 22" fill="none">
               <path d="M10.1715 1L1.58574 9.58579C0.804694 10.3668 0.804694 11.6332 1.58574 12.4142L10.1715 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               <path d="M26.172 11L2.172 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -132,7 +132,7 @@ const TestimonialCarousel = ({ data }: { data: any }) => {
           </button>
 
           {/* Next */}
-          <button className="testimonial-next absolute -right-2 md:-right-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 bg-[#F36A10] text-white flex items-center justify-center hover:bg-white hover:text-[#F36A10] transition-all duration-300 border-[#F36A10] z-50">
+          <button className="testimonial-next absolute -right-2 md:-right-4 top-[40%] md:top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full border-2 md:border-3 bg-[#F36A10] text-white flex items-center justify-center hover:bg-white hover:text-[#F36A10] transition-all duration-300 border-[#F36A10] z-20">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 28 22" fill="none">
               <path d="M17.0002 1L25.586 9.58579C26.3671 10.3668 26.3671 11.6332 25.586 12.4142L17.0002 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               <path d="M1 11L25 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />

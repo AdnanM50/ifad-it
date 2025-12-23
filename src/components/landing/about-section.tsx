@@ -2,48 +2,46 @@ import Image from "next/image"
 import CountingAnimation from "../common/CountingAnimation"
 import Link from "next/link"
 
-type AboutSectionProps = {
-  data: {
-    experience: string
-    subHeading: string
-    heading: string
-    content: string
-    image?: {
-      url: string
-      alternativeText?: string | null
-    }
-    aboutCTA?: {
-      text: string
-      href: string
-      isExternal: boolean
-    }
-  }
-}
+const CheckIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    className="mt-1 flex-shrink-0"
+  >
+    <path
+      d="M11.6667 0C5.23833 0 0 5.23833 0 11.6667C0 18.095 5.23833 23.3333 11.6667 23.3333C18.095 23.3333 23.3333 18.095 23.3333 11.6667C23.3333 5.23833 18.095 0 11.6667 0ZM17.2433 8.98333L10.6283 15.5983C10.465 15.7617 10.2433 15.855 10.01 15.855C9.77667 15.855 9.555 15.7617 9.39167 15.5983L6.09 12.2967C5.75167 11.9583 5.75167 11.3983 6.09 11.06C6.42833 10.7217 6.98833 10.7217 7.32667 11.06L10.01 13.7433L16.0067 7.74667C16.345 7.40833 16.905 7.40833 17.2433 7.74667C17.5817 8.085 17.5817 8.63333 17.2433 8.98333Z"
+      fill="#F36A10"
+    />
+  </svg>
+)
 
-const AboutSection = ({ data }: AboutSectionProps) => {
+const AboutSection = ({
+  data,
+  stats,
+}: {
+  data: any
+  stats?: any
+}) => {
   if (!data) return null
 
-  const contentParts = data.content.split("\n\n")
+  const lines = data.content?.split("\n").filter(Boolean) || []
 
-  const description1 = contentParts[0]
-  const description2 = contentParts[1]
-
-  const bulletPoints =
-    contentParts
-      .find((p) => p.startsWith("We help you"))
-      ?.split("\n")
-      .filter((line) => line.startsWith("-"))
-      .map((line) => line.replace("- ", "")) || []
+  const bulletLines = lines.filter((l: string) => l.trim().startsWith("-"))
+  const normalLines = lines.filter((l: string) => !l.trim().startsWith("-"))
 
   return (
     <div className="bg-[#FCFCFD] py-12 md:py-[120px] px-2 lg:px-0">
       <div className="container px-2 sm:px-0 flex flex-col lg:flex-row gap-12 items-center">
-        {/* Left: Image & Badge */}
+
+        {/* LEFT IMAGE */}
         <div className="relative w-full lg:w-1/2">
           <div className="absolute md:flex hidden -top-16 left-0 z-30">
             <div className="bg-orange-500 text-white rounded-full w-20 h-20 sm:w-40 sm:h-40 border-4 border-white flex flex-col items-center justify-center text-center font-bold">
               <span className="text-[40px] arial-font">
-                {data.experience.split(" ")[0]}
+                {data.experience?.match(/\d+/)?.[0] || "10"}+
               </span>
               <span className="text-lg font-inter">
                 Years of Experience
@@ -53,26 +51,16 @@ const AboutSection = ({ data }: AboutSectionProps) => {
 
           <div className="relative rounded-lg">
             <Image
-              src={data.image?.url || "/about.png"}
-              alt={data.image?.alternativeText || "About Image"}
-              width={1000}
-              height={1000}
-              className="w-full h-auto xl:w-[578px] xl:h-[611px] mx-auto object-cover rounded-[24px] relative z-20"
+              src={data.image?.url}
+              alt={data.image?.alternativeText || "About IFAD IT"}
+              width={578}
+              height={611}
+              className="w-full h-auto xl:w-[578px] xl:h-[611px] mx-auto object-cover relative z-20"
             />
-
-            <div className="absolute md:flex hidden -bottom-6 right-6 z-10">
-              <Image
-                src="/obj.png"
-                alt="Decorative Shape"
-                width={150}
-                height={150}
-                className="w-32 h-32 object-contain"
-              />
-            </div>
           </div>
         </div>
 
-        {/* Right: Text Content */}
+        {/* RIGHT CONTENT */}
         <div className="w-full lg:w-1/2">
           <h3 className="section-title">
             {data.subHeading}
@@ -82,52 +70,30 @@ const AboutSection = ({ data }: AboutSectionProps) => {
             {data.heading}
           </h2>
 
-          <p className="section-description mb-3">
-            {description1}
-          </p>
+          {/* Normal paragraphs */}
+          {normalLines.map((line: string, i: number) => (
+            <p key={i} className="section-description mb-3 ">
+              {line}
+            </p>
+          ))}
 
-          <p className="section-description">
-            {description2}
-          </p>
-
-          {bulletPoints.length > 0 && (
-            <div className="mt-7">
-              <h4 className="font-semibold text-[#1A1A1A] text-lg font-inter mb-3">
-                We help you:
-              </h4>
-
-              <ul className="space-y-3">
-                {bulletPoints.map((item, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <span className="text-[#F36A10] mr-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="28"
-                        height="28"
-                        viewBox="0 0 28 28"
-                        fill="none"
-                      >
-                        <path
-                          d="M14 2.33325C7.57171 2.33325 2.33337 7.57159 2.33337 13.9999C2.33337 20.4283 7.57171 25.6666 14 25.6666C20.4284 25.6666 25.6667 20.4283 25.6667 13.9999C25.6667 7.57159 20.4284 2.33325 14 2.33325ZM19.5767 11.3166L12.9617 17.9316C12.7984 18.0949 12.5767 18.1883 12.3434 18.1883C12.11 18.1883 11.8884 18.0949 11.725 17.9316L8.42337 14.6299C8.08504 14.2916 8.08504 13.7316 8.42337 13.3933C8.76171 13.0549 9.32171 13.0549 9.66004 13.3933L12.3434 16.0766L18.34 10.0799C18.6784 9.74159 19.2384 9.74159 19.5767 10.0799C19.915 10.4183 19.915 10.9666 19.5767 11.3166Z"
-                          fill="#F36A10"
-                        />
-                      </svg>
-                    </span>
-                    <span className="text-[#1A1A1A] text-lg font-inter">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* SVG bullet list */}
+          {bulletLines.length > 0 && (
+            <ul className="space-y-3 mt-4">
+              {bulletLines.map((line: string, i: number) => (
+                <li key={i} className="flex gap-3">
+                  <CheckIcon />
+                  <span className="section-description !text-[#1A1A1A]">
+                    {line.replace(/^-/, "").trim()}
+                  </span>
+                </li>
+              ))}
+            </ul>
           )}
 
           {data.aboutCTA?.href && (
-            <Link
-              href={data.aboutCTA.href}
-              target={data.aboutCTA.isExternal ? "_blank" : "_self"}
-            >
-              <button className="mt-6 bg-[#F36A10] text-xl hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-md transition duration-300">
+            <Link href={data.aboutCTA.href}>
+              <button className="mt-6 bg-[#F36A10] text-xl hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-md transition">
                 {data.aboutCTA.text}
               </button>
             </Link>
@@ -135,7 +101,8 @@ const AboutSection = ({ data }: AboutSectionProps) => {
         </div>
       </div>
 
-      <CountingAnimation data={data} />
+      {/* STATS (unchanged) */}
+      <CountingAnimation data={stats} />
     </div>
   )
 }

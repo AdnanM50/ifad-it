@@ -4,7 +4,21 @@ import React, { useEffect, useRef, useState } from 'react'
 const parseNumber = (value?: string) =>
   value ? parseInt(value.replace(/\D/g, ''), 10) : 0
 
-const CountingAnimation = ({ data }: { data: any }) => {
+type StatsBlock = {
+  experience?: string
+  clients?: string
+  team?: string
+}
+
+type CountingAnimationProps = {
+  data?: StatsBlock        // About page
+  stats?: StatsBlock       // Home page
+}
+
+const CountingAnimation = ({ data, stats }: CountingAnimationProps) => {
+  // ✅ normalize source (works for BOTH pages)
+  const source = data || stats
+
   const [counts, setCounts] = useState({ exp: 0, clients: 0, team: 0 })
   const [hasAnimated, setHasAnimated] = useState(false)
   const statsRef = useRef<HTMLDivElement | null>(null)
@@ -28,20 +42,20 @@ const CountingAnimation = ({ data }: { data: any }) => {
   }
 
   useEffect(() => {
-    if (!data || hasAnimated) return
+    if (!source || hasAnimated) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setHasAnimated(true)
 
-          animateCount(0, parseNumber(data.experience), 1500, (v) =>
+          animateCount(0, parseNumber(source.experience), 1500, (v) =>
             setCounts((p) => ({ ...p, exp: v }))
           )
-          animateCount(0, parseNumber(data.clients), 1800, (v) =>
+          animateCount(0, parseNumber(source.clients), 1800, (v) =>
             setCounts((p) => ({ ...p, clients: v }))
           )
-          animateCount(0, parseNumber(data.team), 1200, (v) =>
+          animateCount(0, parseNumber(source.team), 1200, (v) =>
             setCounts((p) => ({ ...p, team: v }))
           )
         }
@@ -52,11 +66,11 @@ const CountingAnimation = ({ data }: { data: any }) => {
     const el = statsRef.current
     if (el) observer.observe(el)
 
-    // ✅ CLEANUP — ALWAYS RETURNS VOID
+    // ✅ SAFE CLEANUP (TS-friendly)
     return () => {
       if (el) observer.unobserve(el)
     }
-  }, [data, hasAnimated])
+  }, [source, hasAnimated])
 
   return (
     <div ref={statsRef} className="mt-16 bg-orange-50 py-12 md:py-16">
