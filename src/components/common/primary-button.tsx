@@ -7,7 +7,6 @@ const PrimaryButton = ({children, className,onClick}: {children: React.ReactNode
       type="button"
       onClick={onClick}
     >
-    
         <span className="">
           {children}
      

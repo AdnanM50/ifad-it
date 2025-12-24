@@ -1,5 +1,7 @@
 'use client'
 
+import PrimaryButton from "@/components/common/primary-button"
+
 const MeetITracker = () => {
   return (
     <section className="bg-white py-20">
@@ -7,30 +9,31 @@ const MeetITracker = () => {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           {/* LEFT CONTENT */}
           <div>
-            <p className="text-sm font-medium text-[#F3680C]">
+            <p className="section-title !capitalize">
               Your Fleet Management Partner
             </p>
 
-            <h2 className="mt-2 text-3xl font-extrabold text-[#1C1C1C] sm:text-4xl">
+            <h2 className="mt-2 section-subtitle">
               Meet iTracker
             </h2>
 
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#6B7280] sm:text-base">
+            <p className="mt-4 section-description">
               Managing vehicles shouldn’t be stressful. iTracker delivers
               real-time GPS tracking, instant security alerts, and actionable
               insights—helping businesses across Bangladesh reduce costs,
               improve safety, and operate smarter.
             </p>
 
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#6B7280] sm:text-base">
+            <p className="mt-4 section-description">
               From single cars to 500+ vehicle fleets, iTracker serves logistics
               companies, transportation services, construction firms,
               government agencies, and private vehicle owners nationwide.
             </p>
 
-            <button className="mt-8 rounded-md bg-[#F3680C] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#e05f0a]">
+            {/* <button className="mt-8 rounded-md bg-[#F3680C] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#e05f0a]">
               Explore iTracker Solutions
-            </button>
+            </button> */}
+            <PrimaryButton className="mt-8" children="Explore iTracker Solutions" />
           </div>
 
           {/* RIGHT STATS */}
