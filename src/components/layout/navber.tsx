@@ -19,7 +19,6 @@ export function Header({ data }: { data: any }) {
     <header className="fixed top-0 w-full bg-[#FFFFFF] backdrop-blur-md z-50 border-b border-border">
       <nav className="container xl:px-0 px-4 py-6 flex items-center justify-between">
 
-        {/* Logo */}
         <Link href="/" className="font-bold text-2xl flex items-center gap-2">
           <Image
             src={data.logo.image.url}
