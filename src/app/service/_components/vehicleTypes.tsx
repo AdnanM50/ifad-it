@@ -36,7 +36,7 @@ const vehicleTypes = [
   },
 ]
 
-export default function VehicleTypes() {
+export default function VehicleTypes({ data }: { data: any }) {
   return (
     <section className="bg-white py-24 lg:py-[120px]">
       <div className="container">

@@ -1,19 +1,85 @@
-import MeetITracker from "./_components/meetITracker"
-import ServiceHero from "./_components/serviceHerosection"
-import VehicleTypes from "./_components/vehicleTypes"
-import WhyITracker from "./_components/whyITracker"
-import WhyWeRecommend from "./_components/whyWeRecommend"
+// import { getServicePage } from "@/lib/serviceAPI"
 
-const Page = () => {
+import ServiceHero from "./_components/serviceHerosection"
+import MeetITracker from "./_components/meetITracker"
+import WhyITracker from "./_components/whyITracker"
+import VehicleTypes from "./_components/vehicleTypes"
+import WhyWeRecommend from "./_components/whyWeRecommend"
+import ServiceFAQSection from "./_components/servicefaq"
+import ServiceCTA from "./_components/ctaService"
+import { getServicePage } from "@/lib/servicegps"
+
+export default async function Page() {
+  const page = await getServicePage("gps-vehicle-tracking")
+  console.log("🚀 ~ Page ~ page:", page)
+  if (!page) return null
+
+  const blocks = page.blocks || []
+
+  // ===== BLOCK EXTRACTION =====
+  const heroData = blocks.find(
+    (b: any) => b.__component === "blocks.cta-section"
+  )
+
+  const meetData = blocks.find(
+    (b: any) => b.__component === "blocks.policy-block" && b.Title === "Meet iTracker"
+  )
+
+  const meetLink = blocks.find(
+    (b: any) => b.__component === "elements.link" && b.text === "Explore iTracker Solutions"
+  )
+
+  const statsData = blocks.find(
+    (b: any) => b.__component === "blocks.card-section"
+  )
+
+  const whyITrackerData = blocks.find(
+    (b: any) =>
+      b.__component === "blocks.our-values-section" &&
+      b.title === "Why iTracker Stands Out"
+  )
+
+  const vehicleTypesData = blocks.find(
+    (b: any) =>
+      b.__component === "blocks.our-values-section" &&
+      b.title === "Versatile Solutions"
+  )
+
+  const recommendData = blocks.find(
+    (b: any) => b.__component === "blocks.policy-block" && b.Title === "Why We Recommend iTracker"
+  )
+
+  const recommendLink = blocks.find(
+    (b: any) => b.__component === "elements.link" && b.text === "Price Inquiry"
+  )
+
+  const faqData = blocks.find(
+    (b: any) => b.__component === "blocks.faq-section"
+  )
+
+  const bottomCTA = blocks
+    .filter((b: any) => b.__component === "blocks.cta-section")
+    .at(-1)
+
   return (
     <div className="mt-[85px] lg:mt-[100px]">
-      <ServiceHero />
-      <MeetITracker />
-      <WhyITracker />
-      <VehicleTypes />
-      <WhyWeRecommend />
+      {heroData && <ServiceHero data={heroData} />}
+
+      {meetData && (
+        <MeetITracker data={meetData} link={meetLink} />
+      )}
+
+      {statsData && <WhyITracker data={statsData} />}
+
+      {vehicleTypesData && <VehicleTypes data={vehicleTypesData} />}
+
+      {recommendData && (
+        <WhyWeRecommend data={recommendData} link={recommendLink} />
+      )}
+
+      {faqData && <ServiceFAQSection data={faqData} />}
+
+      {bottomCTA && <ServiceCTA data={bottomCTA} />}
     </div>
   )
 }
-
-export default Page 

@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import FeatureCard from "./featureCard";
 
-const WhyITracker = () => {
+const WhyITracker = ({ data }: { data: any }) => {
   return (
     <section className="bg-[#FCFCFD] py-20 lg:py-[120px]">
       <div className="container">

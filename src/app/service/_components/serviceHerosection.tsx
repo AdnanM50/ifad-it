@@ -2,7 +2,7 @@
 
 import PrimaryButton from "@/components/common/primary-button"
 
-export default function ServiceHero() {
+const ServiceHero = ({ data }: { data: any }) => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-[#ECF8FE] via-[#F7FBFF] to-[#FFF6EC]">
       {/* LEFT BLUR CIRCLE */}
@@ -62,6 +62,7 @@ export default function ServiceHero() {
     </section>
   )
 }
+export default ServiceHero
 
 function Feature({ text,icon }: { text: string, icon: any }) {
   return (

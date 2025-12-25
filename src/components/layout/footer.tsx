@@ -16,7 +16,6 @@ const socialMap: any = {
 }
 
 const Footer = ({ data }: { data: any }) => {
-  console.log("🚀 ~ Footer ~ data:", data)
   if (!data) return null
 
   return (

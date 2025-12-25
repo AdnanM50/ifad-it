@@ -2,7 +2,7 @@
 
 import PrimaryButton from "@/components/common/primary-button"
 
-const MeetITracker = () => {
+const MeetITracker = ({ data ,link }: { data: any ,link:any }) => {
   return (
     <section className="bg-white py-20 lg:py-[120px]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
