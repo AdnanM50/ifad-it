@@ -21,7 +21,7 @@ const ServiceHero = ({ data }: { data: any }) => {
             </span>
           </h1>
 
-          <p className="mx-auto mt-6  text-sm sm:text-base lg:text-lg leading-relaxed font-inter font-normal text-[#6F7377] sm:text-base">
+          <p className="mx-auto mt-6  text-sm sm:text-base lg:text-lg leading-relaxed font-inter font-normal text-[#6F7377]">
             Real-time fleet monitoring. Fuel savings up to 30%.
             Complete vehicle security.
             <br />

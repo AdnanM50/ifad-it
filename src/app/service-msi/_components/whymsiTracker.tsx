@@ -1,8 +1,9 @@
 "use client";
 
-import FeatureCard from "./featureCard";
+import FeatureCard from "@/app/service/_components/featureCard";
 
-const WhyITracker = ({ data }: { data: any }) => {
+
+const WhyMSITracker = () => {
   return (
     <section className="bg-[#FCFCFD] py-20 lg:py-[120px]">
       <div className="container">
@@ -165,4 +166,4 @@ const WhyITracker = ({ data }: { data: any }) => {
   );
 };
 
-export default WhyITracker;
+export default WhyMSITracker;
