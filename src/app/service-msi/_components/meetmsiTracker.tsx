@@ -5,56 +5,44 @@ import PrimaryButton from '@/components/common/primary-button'
 const MeetMSITracker = () => {
   return (
     <section className="bg-white py-20 lg:py-[120px]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="container ">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           {/* LEFT CONTENT */}
           <div>
             <p className="section-title capitalize!">
-              Your Fleet Management Partner
+             The Challenge
             </p>
 
-            <h2 className="mt-2 section-subtitle">
-              Meet iTracker
+            <h2 className="mt-6 section-subtitle">
+             Management Information
+Systems Built for Your Business
             </h2>
 
             <p className="mt-4 section-description">
-              Managing vehicles shouldn’t be stressful. iTracker delivers
-              real-time GPS tracking, instant security alerts, and actionable
-              insights—helping businesses across Bangladesh reduce costs,
-              improve safety, and operate smarter.
+        Drowning in spreadsheets? Struggling to get accurate reports? Our MIS and Business 
+Intelligence solutions transform raw data into clear, actionable insights that help 
+you make faster, smarter decisions.
             </p>
 
             <p className="mt-4 section-description">
-              From single cars to 500+ vehicle fleets, iTracker serves logistics
-              companies, transportation services, construction firms,
-              government agencies, and private vehicle owners nationwide.
+          We build custom systems that integrate with your existing operations—giving you 
+real-time visibility into sales, inventory, finance, operations, and more.
             </p>
 
             {/* ✅ TRUSTED SINCE 2015 (ADDED PART) */}
-            <div className="mt-8 flex max-w-sm items-center gap-3 rounded-[12px] border border-[#FFE7DB] bg-[#FFF7F2] px-4 py-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFE2D5]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M4 12L9 17L20 6"
-                    stroke="#F3680C"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+            <div className="mt-8 flex max-w-sm items-center gap-3 rounded-[12px] bg-[#FBFAF9]  p-4">
+              <div className="flex size-12 items-center justify-center rounded-[12px]  bg-[#FEF4EC]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M22 7L13.5 15.5L8.5 10.5L2 17" stroke="#F36A10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 7H22V13" stroke="#F36A10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
               </div>
 
               <div>
-                <p className="text-sm font-semibold text-[#1A1A1A]">
+                <p className="text-lg font-inter font-semibold text-[#1A1A1A]">
                   Trusted Since 2015
                 </p>
-                <p className="text-xs text-[#6F7377]">
+                <p className="text-sm text-[#6F7377]">
                   By enterprises and government organizations
                 </p>
               </div>
@@ -64,47 +52,68 @@ const MeetMSITracker = () => {
           {/* RIGHT STATS */}
           <div className="grid grid-cols-2 gap-6">
             <StatCard
-              value="200+"
-              label="Companies Served"
-              bg="bg-[#FAFDFF]"
-              iconBg="bg-[#EBF7FE]"
-              border="border-[#DDF0FD]"
+              value="Spreadsheet Chaos"
+              label="Multiple versions, manual errors,
+and no single source of truth."
+              bg="bg-[#FFFAFA]"
+              iconBg="bg-[#FDECEC]"
+              border="border-[#FDE8E8]"
               icon={
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M6 22V4C6 3.47 6.21 2.96 6.59 2.59C6.96 2.21 7.47 2 8 2H16C16.53 2 17.04 2.21 17.41 2.59C17.79 2.96 18 3.47 18 4V22H6Z" stroke="#3BA8F6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 12H4C3.47 12 2.96 12.21 2.59 12.59C2.21 12.96 2 13.47 2 14V20C2 20.53 2.21 21.04 2.59 21.41C2.96 21.79 3.47 22 4 22H6" stroke="#3BA8F6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M18 9H20C20.53 9 21.04 9.21 21.41 9.59C21.79 9.96 22 10.47 22 11V20C22 20.53 21.79 21.04 21.41 21.41C21.04 21.79 20.53 22 20 22H18" stroke="#3BA8F6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+  <path d="M15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z" stroke="#EF4343" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20" stroke="#EF4343" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 13H10" stroke="#EF4343" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14 13H16" stroke="#EF4343" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 17H10" stroke="#EF4343" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14 17H16" stroke="#EF4343" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
               }
             />
 
             <StatCard
-              value="500+"
-              label="Vehicles Tracked"
-              bg="bg-[#FFFBFA]"
-              iconBg="bg-[#FDEFEC]"
-              border="border-[#FDEBE7]"
-              icon={
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M19 17H21C21.6 17 22 16.6 22 16V13C22 12.1 21.3 11.3 20.5 11.1C18.7 10.6 16 10 16 10C16 10 14.7 8.6 13.8 7.7C13.3 7.3 12.7 7 12 7H5C4.4 7 3.9 7.4 3.6 7.9L2.2 10.8C2.07 11.19 2 11.59 2 12V16C2 16.6 2.4 17 3 17H5" stroke="#EF6043" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              }
-            />
-
-            <StatCard
-              value="40+"
-              label="Years of IFAD Excellence"
+              value="Inaccurate Reports"
+              label="Decisions made on outdated or
+incomplete information."
               bg="bg-[#FFFDFA]"
-              iconBg="bg-[#FEF6EB]"
-              border="border-[#FEF0DD]"
+              iconBg="bg-[#FEF7EB]"
+              border="border-[#FEF1DD]"
+              icon={
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 8V12" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 16H12.01" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+              }
             />
 
             <StatCard
-              value="24/7"
-              label="Support Available"
-              bg="bg-[#FBFEFD]"
-              iconBg="bg-[#E2FFF5]"
-              border="border-[#CDF4E6]"
+              value="Time Wasted"
+              label="Hours spent compiling data
+instead of analyzing it."
+              bg="bg-[#FAFCFF]"
+              iconBg="bg-[#EBF3FE]"
+              border="border-[#DDE9FD]"
+              icon={
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 6V12L16 14" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+              }
+            />
+
+            <StatCard
+              value="Our Solution"
+              label="Real-time insights, automated
+reports, smarter decisions."
+              bg="bg-[#FAFFFC]"
+              iconBg="bg-[#EBFFF2]"
+              border="border-[#C2FFDB]"
+              icon={
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M22 7L13.5 15.5L8.5 10.5L2 17" stroke="#00A23C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 7H22V13" stroke="#00A23C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+              }
             />
           </div>
         </div>
@@ -122,17 +131,19 @@ function StatCard({
   iconBg,
   border,
   icon,
+  start,
 }: {
   value: string
   label: string
   bg: string
   iconBg: string
   border?: string
+  start?: boolean
   icon?: React.ReactNode
 }) {
   return (
     <div
-      className={`flex flex-col items-center justify-center rounded-[16px] border ${border} p-6 text-center ${bg}`}
+      className={`flex flex-col items-start  justify-start rounded-[16px] border ${border} p-6 text-start ${bg}`}
     >
       <div
         className={`mb-4 flex size-12 items-center justify-center rounded-md ${iconBg}`}

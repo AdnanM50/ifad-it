@@ -9,17 +9,17 @@ const WhyMSITracker = () => {
       <div className="container">
         {/* HEADER */}
         <div className=" text-center">
-          <p className="section-title capitalize!">Why iTracker Stands Out</p>
+          <p className="section-title capitalize!">Our Services</p>
 
           <h2 className="mt-6 section-subtitle">
-            Built for Bangladesh.
-            <br />
-            Trusted Across Industries.
+            What We Deliver
+       
           </h2>
 
-          <p className="mt-5 section-description">
-            Delivering reliable, scalable solutions designed to meet the needs
-            of businesses nationwide.
+          <p className="mt-5 section-description max-w-[406px] mx-auto">
+           Comprehensive MIS and Bl solutions tailored to 
+transform your business
+operations.
           </p>
         </div>
 

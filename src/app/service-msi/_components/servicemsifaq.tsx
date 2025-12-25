@@ -31,7 +31,7 @@ const faqs: FAQItem[] = [
   },
 ]
 
-const ServiceFAQSection = ({ data }: { data: any }) => {
+const ServiceMSIFAQSection = () => {
   // Open the 2nd FAQ by default
   const [openIndex, setOpenIndex] = useState<number | null>(1)
 
@@ -50,7 +50,7 @@ const ServiceFAQSection = ({ data }: { data: any }) => {
             Common Questions About iTracker
           </h2>
 
-          <p className="section-description max-w-[500px] mx-auto">
+          <p className="section-description  mx-auto">
             Here are answers to some of the most common questions about iTracker.
           </p>
         </div>
@@ -130,4 +130,4 @@ const ServiceFAQSection = ({ data }: { data: any }) => {
   )
 }
 
-export default ServiceFAQSection
+export default ServiceMSIFAQSection

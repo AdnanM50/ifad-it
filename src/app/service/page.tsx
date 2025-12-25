@@ -1,6 +1,6 @@
 // import { getServicePage } from "@/lib/serviceAPI"
 
-import ServiceHero from "./_components/serviceHerosection"
+// import ServiceHero from "./_components/serviceHerosection"
 import MeetITracker from "./_components/meetITracker"
 import WhyITracker from "./_components/whyITracker"
 import VehicleTypes from "./_components/vehicleTypes"
@@ -8,6 +8,7 @@ import WhyWeRecommend from "./_components/whyWeRecommend"
 import ServiceFAQSection from "./_components/servicefaq"
 import ServiceCTA from "./_components/ctaService"
 import { getServicePage } from "@/lib/servicegps"
+import ServiceHero from "./_components/serviceHerosection"
 
 export default async function Page() {
   const page = await getServicePage("gps-vehicle-tracking")
