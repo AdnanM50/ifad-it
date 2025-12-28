@@ -5,6 +5,7 @@ import WhyMSITracker from './_components/whymsiTracker'
 import IndustriesSection from './_components/industriesSection'
 import ServiceMSICTA from './_components/ctamsiService'
 import ServiceMSIFAQSection from './_components/servicemsifaq'
+import WhyMSIChooseIFAD from './_components/whymsiChooseIFAD'
 
 
 const Page = () => {
@@ -14,6 +15,7 @@ const Page = () => {
         <MeetMSITracker />
         <WhyMSITracker />
         {/* <IndustriesSection /> */}
+        {/* <WhyMSIChooseIFAD /> */}
         <ServiceMSIFAQSection />
         <ServiceMSICTA />
     </div>

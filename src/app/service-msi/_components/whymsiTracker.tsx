@@ -1,6 +1,8 @@
 "use client";
 
-import FeatureCard from "@/app/service/_components/featureCard";
+import FeatureCard from "@/app/service-gps/_components/featureCard";
+
+// import FeatureCard from "@/app/service/_components/featureCard";
 
 
 const WhyMSITracker = () => {
