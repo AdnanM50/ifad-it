@@ -14,7 +14,7 @@ const Page = () => {
         <ServiceMSIHero />
         <MeetMSITracker />
         <WhyMSITracker />
-        {/* <IndustriesSection /> */}
+        <IndustriesSection />
         {/* <WhyMSIChooseIFAD /> */}
         <ServiceMSIFAQSection />
         <ServiceMSICTA />
