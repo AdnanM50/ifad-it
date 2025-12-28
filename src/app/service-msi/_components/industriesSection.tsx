@@ -1,11 +1,13 @@
 'use client'
 
+import React from 'react'
+
 type Industry = {
   title: string
   description: string
   image: string
   icon: React.ReactNode
-  gridClass?: string // ← New field for precise grid placement
+  height?: any
 }
 
 const industries: Industry[] = [
@@ -13,8 +15,7 @@ const industries: Industry[] = [
     title: 'Manufacturing & Production',
     description:
       'Production tracking, quality control, and inventory management.',
-    image: '/Image.png', // ← Use correct image
-    gridClass: 'col-span-2', // ← Top-left, spans 2 columns
+    image: '/Image.png',
     icon: (
       <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
         <path
@@ -31,7 +32,6 @@ const industries: Industry[] = [
     title: 'Retail & E-commerce',
     description: 'Sales analytics, inventory sync, customer insights.',
     image: '/Image.png',
-    gridClass: 'col-start-2 row-start-2', // ← Middle-center
     icon: (
       <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
         <path
@@ -46,8 +46,7 @@ const industries: Industry[] = [
     title: 'Healthcare & Pharmaceuticals',
     description:
       'Patient data, appointment systems, and inventory tracking.',
-    image: '/Image.png', // ← Correct image!
-    gridClass: 'row-span-2 col-start-3 row-start-2', // ← Right side, spans 2 rows
+    image: '/Image.png',
     icon: (
       <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
         <path
@@ -63,7 +62,6 @@ const industries: Industry[] = [
     description:
       'Transaction monitoring, compliance reporting, risk analytics.',
     image: '/Image.png',
-    gridClass: 'col-start-1 row-start-2', // ← Middle-left
     icon: (
       <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
         <path
@@ -84,56 +82,90 @@ const industries: Industry[] = [
       </svg>
     ),
   },
-
+  {
+    title: 'Government & NGOs',
+    description:
+      'Program tracking, budget monitoring, and impact measurement.',
+    image: '/Image.png',
+    icon: (
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="6" stroke="white" strokeWidth="2" />
+        <path d="M12 14V20" stroke="white" strokeWidth="2" />
+        <path d="M8 20H16" stroke="white" strokeWidth="2" />
+      </svg>
+    ),
+  },
 ]
+
+
+const IndustryCard = ({ title, description, image, icon, height = false }: Industry) => {
+  const heightClass = height === false ? 'h-full' : height;
+
+  return (
+    <div className={`relative ${heightClass} w-full overflow-hidden rounded-2xl bg-[#122349]`}>
+      <img
+        src={image}
+        alt={title}
+        className="h-full w-full object-cover"
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#122349]/60 to-[#122349]" />
+
+      {/* Content */}
+      <div className="absolute bottom-0 z-10 p-5">
+        <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-md bg-[#F3680C]">
+          {icon}
+        </div>
+        <h3 className="text-sm font-semibold text-white">{title}</h3>
+        <p className="mt-1 text-xs text-gray-200">{description}</p>
+      </div>
+    </div>
+  )
+}
 
 export default function IndustriesSection() {
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* HEADER */}
+      <div className="container mx-auto px-4">
+        {/* Header */}
         <div className="mb-14 text-center">
-          <p className="text-sm font-medium text-[#F3680C]">Industries</p>
-          <h2 className="mt-2 text-3xl font-extrabold text-[#1A1A1A] sm:text-4xl">
-            Built For Your Industry
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm text-[#6F7377]">
+          <p className="section-title capitalize">Industries</p>
+          <h2 className="mt-2 section-subtitle">Built For Your Industry</h2>
+          <p className="mx-auto mt-4 max-w-xl section-description">
             Specialized solutions designed for the unique challenges of each
             sector.
           </p>
         </div>
 
-        {/* GRID - EXACT 5x5 PATTERN */}
-        <div className="grid grid-cols-5 grid-rows-5 gap-4">
-          {industries.map((item, index) => (
-            <div
-              key={index}
-              className={`relative overflow-hidden rounded-[16px] ${item.gridClass ?? ''}`}
-            >
-              {/* IMAGE */}
-              <img
-                src={item.image}
-                alt={item.title}
-                className="h-full w-full object-cover"
-              />
+        <div className="mx-auto max-w-6xl">
+          {/* 🔑 FIX IS HERE: items-stretch */}
+          <div className="flex flex-col md:flex-row gap-5 md:items-stretch">
+            {/* Large Card */}
+            <div className="w-full md:w-[760px] h-[524px]">
+              <IndustryCard {...industries[0]} />
+            </div>
 
-              <div className="absolute inset-0 bg-gradient-to-b from-[#122349]/0 via-[#122349]/60 to-[#122349]" />
-
-              <div className="absolute bottom-0 z-10 p-5">
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-md bg-[#F3680C]">
-                  {item.icon}
-                </div>
-
-                <h3 className="text-sm font-semibold text-white">
-                  {item.title}
-                </h3>
-
-                <p className="mt-1 text-xs text-[#E5E7EB]">
-                  {item.description}
-                </p>
+            {/* Right Column */}
+            <div className="flex flex-col gap-5 w-full md:w-[368px] h-[524px]">
+              <div className="h-[250px]">
+                <IndustryCard {...industries[1]} />
+              </div>
+              <div className="h-[524px]">
+                <IndustryCard height="h-[524px]" {...industries[2]} />
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Bottom Row */}
+          <div className="mt-5 flex flex-col w-fit md:flex-row gap-5">
+            <div className="w-full md:w-[368px] h-[250px]">
+              <IndustryCard {...industries[3]} />
+            </div>
+            <div className="w-full md:w-[368px] h-[250px]">
+              <IndustryCard {...industries[4]} />
+            </div>
+          </div>
         </div>
       </div>
     </section>
