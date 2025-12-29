@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 const ContactSection = ({ data, contactinfo }: { data: any, contactinfo: any } ) => {
-  console.log("🚀 ~ ContactSection ~ mmmmmmmcontactinfo:", contactinfo)
 
   // const { toast } = useInstantLayoutTransition()
 

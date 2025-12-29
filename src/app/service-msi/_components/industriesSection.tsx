@@ -97,7 +97,6 @@ const industries: Industry[] = [
   },
 ]
 
-
 const IndustryCard = ({ title, description, image, icon, height = false }: Industry) => {
   const heightClass = height === false ? 'h-full' : height;
 
@@ -113,18 +112,18 @@ const IndustryCard = ({ title, description, image, icon, height = false }: Indus
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#122349]/60 to-[#122349]" />
 
       {/* Content */}
-      <div className="absolute bottom-0 z-10 p-5">
-        <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-md bg-[#F3680C]">
+      <div className="absolute bottom-0 z-10 sm:p-5 p-3 xl:p-8">
+        <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-md bg-[#F3680C]">
           {icon}
         </div>
-        <h3 className="text-sm font-semibold text-white">{title}</h3>
-        <p className="mt-1 text-xs text-gray-200">{description}</p>
+        <h3 className="text-2xl font-inter font-semibold mt-6 text-white">{title}</h3>
+        <p className="mt-2 text-base font-inter text-gray-200">{description}</p>
       </div>
     </div>
   )
 }
 
-export default function IndustriesSection() {
+export default function IndustriesSection({policy,cards}: any) {
   return (
     <section className="bg-white py-24">
       <div className="container mx-auto px-4">
@@ -139,15 +138,15 @@ export default function IndustriesSection() {
         </div>
 
         <div className="mx-auto max-w-6xl">
-          {/* 🔑 FIX IS HERE: items-stretch */}
-          <div className="flex flex-col md:flex-row gap-5 md:items-stretch">
+          {/* Large Device Layout (XL) - Keep as is */}
+          <div className="hidden xl:flex gap-5">
             {/* Large Card */}
-            <div className="w-full md:w-[760px] h-[524px]">
+            <div className="w-[760px] h-[524px]">
               <IndustryCard {...industries[0]} />
             </div>
 
             {/* Right Column */}
-            <div className="flex flex-col gap-5 w-full md:w-[368px] h-[524px]">
+            <div className="flex flex-col gap-5 w-[368px] h-[524px]">
               <div className="h-[250px]">
                 <IndustryCard {...industries[1]} />
               </div>
@@ -157,12 +156,46 @@ export default function IndustriesSection() {
             </div>
           </div>
 
-          {/* Bottom Row */}
-          <div className="mt-5 flex flex-col w-fit md:flex-row gap-5">
-            <div className="w-full md:w-[368px] h-[250px]">
+          {/* Medium Device Layout (MD) */}
+          <div className="hidden md:flex xl:hidden gap-5">
+            {/* Large Card */}
+            <div className="w-[760px] h-[524px]">
+              <IndustryCard {...industries[0]} />
+            </div>
+
+            {/* Right Column */}
+            <div className="flex flex-col gap-5 w-[368px] h-[524px]">
+              <div className="h-[250px]">
+                <IndustryCard {...industries[1]} />
+              </div>
+              <div className="h-[524px]">
+                <IndustryCard height="h-[524px]" {...industries[2]} />
+              </div>
+            </div>
+          </div>
+
+          <div className="md:hidden flex flex-col gap-3"> 
+            {industries.map((industry, index) => (
+              <div key={index} className="w-full h-auto min-h-[250px]"> 
+                <IndustryCard {...industry} />
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 hidden md:flex gap-5">
+            <div className="w-[368px] h-[250px]">
               <IndustryCard {...industries[3]} />
             </div>
-            <div className="w-full md:w-[368px] h-[250px]">
+            <div className="w-[368px] h-[250px]">
+              <IndustryCard {...industries[4]} />
+            </div>
+          </div>
+
+          <div className="mt-5 md:hidden flex flex-col gap-3"> 
+            <div className="w-full h-auto min-h-[250px]">
+              <IndustryCard {...industries[3]} />
+            </div>
+            <div className="w-full h-auto min-h-[250px]">
               <IndustryCard {...industries[4]} />
             </div>
           </div>

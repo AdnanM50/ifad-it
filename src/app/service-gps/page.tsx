@@ -30,7 +30,7 @@ export default async function Page() {
     (b: any) => b.__component === "elements.link" && b.text === "Explore iTracker Solutions"
   )
 
-  const statsData = blocks.find(
+  const cardData = blocks.find(
     (b: any) => b.__component === "blocks.card-section"
   )
 
@@ -67,10 +67,10 @@ export default async function Page() {
       {heroData && <ServiceHero data={heroData} />}
 
       {meetData && (
-        <MeetITracker data={meetData} link={meetLink} />
+        <MeetITracker data={meetData} link={meetLink} cardData={cardData} />
       )}
 
-      {statsData && <WhyITracker data={statsData} />}
+      {whyITrackerData && <WhyITracker data={whyITrackerData} />}
 
       {vehicleTypesData && <VehicleTypes data={vehicleTypesData} />}
 

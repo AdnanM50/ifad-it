@@ -5,7 +5,7 @@ import FeatureCard from "@/app/service-gps/_components/featureCard";
 // import FeatureCard from "@/app/service/_components/featureCard";
 
 
-const WhyMSITracker = () => {
+const WhyMSITracker = ({ data }: { data: any }) => {
   return (
     <section className="bg-[#FCFCFD] py-20 lg:py-[120px]">
       <div className="container">

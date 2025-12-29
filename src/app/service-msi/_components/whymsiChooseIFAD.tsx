@@ -66,7 +66,7 @@ const whyUsData: WhyUsItem[] = [
   },
 ]
 
-export default function WhyMSIChooseIFAD() {
+export default function WhyMSIChooseIFAD({policy,cards}:any) {
   return (
     <section className="bg-white py-24">
       <div className="container">
