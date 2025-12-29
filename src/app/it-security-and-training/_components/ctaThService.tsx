@@ -6,7 +6,7 @@ const ServiceThCTA = ({ data }: { data: any }) => {
   if (!data) return null
 
   return (
-    <div className="relative py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 z-50">
+    <div className="relative py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 z-20">
       {/* BACKGROUND */}
       <div className="absolute inset-0 bg-[url('/background.png')] bg-cover bg-center bg-no-repeat bg-[#F36A10]" />
 
