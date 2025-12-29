@@ -8,32 +8,15 @@ interface FAQItem {
   ans: string
 }
 
-const faqs: FAQItem[] = [
-  {
-    id: 1,
-    ques: 'Is iTracker compatible with all vehicle types in Bangladesh?',
-    ans: 'Yes, iTracker works with most cars, motorcycles, and commercial vehicles commonly used in Bangladesh.',
-  },
-  {
-    id: 2,
-    ques: 'How quickly can I start tracking after installation?',
-    ans: 'Immediately. Once our technician installs the device, you’ll get instant access to your dashboard. Most installations take 30–45 minutes.',
-  },
-  {
-    id: 3,
-    ques: 'What happens if my vehicle is stolen?',
-    ans: 'You can track your vehicle in real time using the dashboard and share location details with law enforcement for quick recovery.',
-  },
-  {
-    id: 4,
-    ques: 'Does iTracker require a monthly subscription?',
-    ans: 'Yes, a minimal monthly subscription is required to maintain GPS connectivity and real-time tracking services.',
-  },
-]
+const ServiceThFAQSection = ({ data }: { data: any }) => {
+  if (!data) return null
 
-const ServiceThFAQSection = () => {
-  // Open the 2nd FAQ by default
-  const [openIndex, setOpenIndex] = useState<number | null>(1)
+  const faqs: FAQItem[] = data.faq || []
+
+  // Open 2nd FAQ by default (same behavior as before)
+  const [openIndex, setOpenIndex] = useState<number | null>(
+    faqs.length > 1 ? 1 : 0
+  )
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -41,22 +24,25 @@ const ServiceThFAQSection = () => {
 
   return (
     <section className="bg-white py-12 md:py-[120px] px-2 lg:px-0">
-      <div className="max-w-4xl mx-auto px-4">
-        {/* Header */}
+      <div className=" px-4">
+
+        {/* HEADER */}
         <div className="text-center mb-12">
-          <h3 className="section-title mb-2">FAQ</h3>
+          <h3 className="section-title mb-2">
+            {data.title}
+          </h3>
 
           <h2 className="section-subtitle mb-4">
-            Common Questions About iTracker
+            {data.headline}
           </h2>
 
-          <p className="section-description  mx-auto">
-            Here are answers to some of the most common questions about iTracker.
+          <p className="section-description mx-auto">
+            {data.subTitle}
           </p>
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="space-y-4">
+        {/* FAQ ACCORDION */}
+        <div className="space-y-4 max-w-4xl mx-auto px-4">
           {faqs.map((faq, index) => (
             <div
               key={faq.id}
@@ -118,13 +104,14 @@ const ServiceThFAQSection = () => {
                     : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-6 pb-4 text-base font-normal font-inter text-[#6F7377]">
+                <div className="px-6 pb-4 text-base font-normal font-inter text-[#6F7377] whitespace-pre-line">
                   {faq.ans}
                 </div>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )

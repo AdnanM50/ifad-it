@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-const ServiceSFCTA = () => {
+const ServiceSFCTA = ({ data }: { data: any }) => {
   return (
     <div className="relative py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 z-50">
       {/* BACKGROUND */}

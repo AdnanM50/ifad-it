@@ -3,7 +3,7 @@
 import PrimaryButton from "@/components/common/primary-button"
 
 const ServiceSFHero = ({ data }: { data: any }) => {
-  console.log("🚀 ~ ServiceMSIHero ~ data:", data)
+  console.log("🚀 ~ ServicesoftHero ~ data:", data)
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-[#ECF8FE] via-[#F7FBFF] to-[#FFF6EC]">
       {/* LEFT BLUR CIRCLE */}

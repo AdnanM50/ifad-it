@@ -31,7 +31,7 @@ const faqs: FAQItem[] = [
   },
 ]
 
-const ServiceSFFAQSection = () => {
+const ServiceSFFAQSection = ({ data }: { data: any }) => {
   // Open the 2nd FAQ by default
   const [openIndex, setOpenIndex] = useState<number | null>(1)
 
