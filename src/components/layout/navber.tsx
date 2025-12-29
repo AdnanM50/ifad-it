@@ -75,7 +75,7 @@ export function Header({ data }: { data: any }) {
             }}
           >
             <button
-              className={`transition-colors ${
+              className={`transition-colors cursor-pointer ${
                 serviceDropdownOpen
                   ? "text-[#F36A10]"
                   : "text-[#1A1A1A] hover:text-primary"
@@ -106,7 +106,7 @@ export function Header({ data }: { data: any }) {
                       key={service.id}
                       href={service.href}
                       target={service.isExternal ? "_blank" : "_self"}
-                      className={`block px-4 py-2 text-sm transition-colors ${
+                      className={`block px-4 py-2 text-sm cursor-pointer transition-colors ${
                         isActive(service.href)
                           ? "text-[#F36A10] font-inter bg-[#F9F9F9]"
                           : "text-[#1A1A1A] hover:bg-[#F9F9F9]"
