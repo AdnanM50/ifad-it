@@ -2,10 +2,8 @@
 
 import PrimaryButton from "@/components/common/primary-button"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 
 const ServiceSFHero = ({ data }: { data: any }) => {
-  const router = useRouter()
 
   if (!data) return null
 
@@ -16,13 +14,12 @@ const ServiceSFHero = ({ data }: { data: any }) => {
       {/* LEFT BLUR CIRCLE */}
       <div className="pointer-events-none absolute -left-20 top-[180px] h-[233px] w-[250px] rounded-full bg-[#94A492] blur-[300px]" />
 
-      {/* RIGHT BLUR CIRCLE */}
       <div className="pointer-events-none absolute -right-20 top-[220px] h-[233px] w-[250px] rounded-full bg-[#F36A10] blur-[250px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 py-26 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1046px] text-center">
           {/* HEADING */}
-          <h1 className="text-3xl font-extrabold arial-font tracking-tight text-[#1A1A1A] sm:text-4xl md:text-5xl xl:text-[72px]">
+          <h1 className="text-3xl  font-extrabold arial-font text-[#1A1A1A] sm:text-4xl md:text-5xl xl:text-[72px]">
             {title?.split(" ").slice(0, -2).join(" ")}
             <span className="mt-2 block text-[#F36A10]">
               {title?.split(" ").slice(-2).join(" ")}
