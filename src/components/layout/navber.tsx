@@ -1,24 +1,36 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
-import Image from "next/image"
-import { usePathname } from "next/navigation"
-import PrimaryButton from "../common/primary-button"
+import Link from "next/link";
+import { useState, useRef } from "react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import PrimaryButton from "../common/primary-button";
 
 export function Header({ data }: { data: any }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false); // For desktop
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false); // For mobile
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  if (!data) return null
+  const pathname = usePathname();
 
-  const isActive = (path: string) => pathname === path
+  if (!data) return null;
+
+  const isActive = (path: string) => pathname === path;
+
+  // Helper to safely clear timeout
+  const clearCloseTimeout = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
 
   return (
     <header className="fixed top-0 w-full bg-[#FFFFFF] backdrop-blur-md z-50 border-b border-border">
       <nav className="container xl:px-0 px-4 py-6 flex items-center justify-between">
-
+        {/* Logo */}
         <Link href="/" className="font-bold text-2xl flex items-center gap-2">
           <Image
             src={data.logo.image.url}
@@ -48,6 +60,69 @@ export function Header({ data }: { data: any }) {
               {item.text}
             </Link>
           ))}
+
+          {/* Services Dropdown (Desktop) */}
+          <div
+            className="relative"
+            onMouseEnter={() => {
+              clearCloseTimeout();
+              setServiceDropdownOpen(true);
+            }}
+            onMouseLeave={() => {
+              closeTimeoutRef.current = setTimeout(() => {
+                setServiceDropdownOpen(false);
+              }, 300);
+            }}
+          >
+            <button
+              className={`transition-colors ${
+                serviceDropdownOpen
+                  ? "text-[#F36A10]"
+                  : "text-[#1A1A1A] hover:text-primary"
+              }`}
+              onClick={() => {
+                setServiceDropdownOpen(!serviceDropdownOpen);
+                clearCloseTimeout();
+              }}
+            >
+              Services
+            </button>
+
+            {serviceDropdownOpen && (
+              <div
+                className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-md border border-border z-50"
+                onMouseEnter={() => {
+                  clearCloseTimeout();
+                }}
+                onMouseLeave={() => {
+                  closeTimeoutRef.current = setTimeout(() => {
+                    setServiceDropdownOpen(false);
+                  }, 300);
+                }}
+              >
+                <div className="py-2">
+                  {data.services.map((service: any) => (
+                    <Link
+                      key={service.id}
+                      href={service.href}
+                      target={service.isExternal ? "_blank" : "_self"}
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isActive(service.href)
+                          ? "text-[#F36A10] font-inter bg-[#F9F9F9]"
+                          : "text-[#1A1A1A] hover:bg-[#F9F9F9]"
+                      }`}
+                      onClick={() => {
+                        setServiceDropdownOpen(false);
+                        clearCloseTimeout();
+                      }}
+                    >
+                      {service.text}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Desktop CTA */}
@@ -61,7 +136,10 @@ export function Header({ data }: { data: any }) {
         </div>
 
         {/* Mobile Menu Button */}
-        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden">
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden"
+        >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
@@ -74,7 +152,7 @@ export function Header({ data }: { data: any }) {
                   key={item.id}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`transition-colors ${
+                  className={`transition-colors font-inter ${
                     isActive(item.href)
                       ? "text-[#F36A10]"
                       : "text-foreground hover:text-primary"
@@ -84,7 +162,48 @@ export function Header({ data }: { data: any }) {
                 </Link>
               ))}
 
-              <Link href={data.cta.href}>
+              {/* Mobile Services Accordion */}
+              <div className="">
+                <button
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className={`flex justify-between font-inter items-center w-full py-2 text-foreground hover:text-primary  ${
+                    mobileServicesOpen ? "text-[#F36A10]" : ""
+                  }`}
+                >
+                  Services
+                  <span className={`transform transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}>
+                    ▼
+                  </span>
+                </button>
+
+                {mobileServicesOpen && (
+                  <div className="pl-4 py-2 space-y-2 ">
+                    {data.services.map((service: any) => (
+                      <Link
+                        key={service.id}
+                        href={service.href}
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          setMobileServicesOpen(false);
+                        }}
+                        className={`block text-sm font-inter transition-colors ${
+                          isActive(service.href)
+                            ? "text-[#F36A10]"
+                            : "text-foreground hover:text-primary"
+                        }`}
+                      >
+                        {service.text}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile CTA */}
+              <Link
+                href={data.cta.href}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 <PrimaryButton className="w-full">
                   {data.cta.text}
                 </PrimaryButton>
@@ -94,5 +213,5 @@ export function Header({ data }: { data: any }) {
         )}
       </nav>
     </header>
-  )
+  );
 }

@@ -15,13 +15,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log("🚀 ~ global:", global)
   return (
     <html lang="en">
       <body
       >
         <Header data={global.header} />
         {children}
-                <Footer data={global.footer} />
+        <Footer data={global.footer} />
 
       </body>
     </html>

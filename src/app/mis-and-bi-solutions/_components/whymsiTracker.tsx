@@ -1,7 +1,8 @@
 'use client'
 
+import FeatureCard from '@/app/gps-vehicle-tracking/_components/featureCard'
 import Image from 'next/image'
-import FeatureCard from '@/app/service-gps/_components/featureCard'
+// import FeatureCard from '@/app/service-gps/_components/featureCard'
 
 const WhyMSITracker = ({ data }: { data: any }) => {
   if (!data) return null
