@@ -33,7 +33,7 @@ const ServiceMSIFAQSection = ({ data }: ServiceMSIFAQSectionProps) => {
 
   return (
     <section className="bg-white py-12 md:py-[120px] px-2 lg:px-0">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="container mx-auto xl:px-0 px-2">
         {/* HEADER */}
         <div className="text-center mb-12">
           {data.title && (
@@ -56,7 +56,7 @@ const ServiceMSIFAQSection = ({ data }: ServiceMSIFAQSectionProps) => {
         </div>
 
         {/* FAQ ACCORDION */}
-        <div className="space-y-4">
+        <div className="space-y-4 max-w-4xl mx-auto">
           {faqs.map((faq, index) => (
             <div
               key={faq.id}

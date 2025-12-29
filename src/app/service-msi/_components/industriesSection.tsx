@@ -2,106 +2,40 @@
 
 import React from 'react'
 
-type Industry = {
+type ApiImage = {
+  url: string
+  alternativeText?: string
+}
+
+type ApiCard = {
+  id: number
+  title: string
+  subTitle: string
+  image: ApiImage
+  icon: ApiImage
+}
+
+type IndustryCardProps = {
   title: string
   description: string
   image: string
-  icon: React.ReactNode
+  icon: string
   height?: any
 }
 
-const industries: Industry[] = [
-  {
-    title: 'Manufacturing & Production',
-    description:
-      'Production tracking, quality control, and inventory management.',
-    image: '/Image.png',
-    icon: (
-      <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-        <path
-          d="M3 21V7L9 3V7L15 3V7L21 3V21H3Z"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: 'Retail & E-commerce',
-    description: 'Sales analytics, inventory sync, customer insights.',
-    image: '/Image.png',
-    icon: (
-      <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-        <path
-          d="M6 2L3 6V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V6L18 2H6Z"
-          stroke="white"
-          strokeWidth="2"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: 'Healthcare & Pharmaceuticals',
-    description:
-      'Patient data, appointment systems, and inventory tracking.',
-    image: '/Image.png',
-    icon: (
-      <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-        <path
-          d="M12 21C12 21 4 13.5 4 8.5C4 6 6 4 8.5 4C10 4 11.4 4.8 12 6C12.6 4.8 14 4 15.5 4C18 4 20 6 20 8.5C20 13.5 12 21 12 21Z"
-          stroke="white"
-          strokeWidth="2"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: 'Financial Services',
-    description:
-      'Transaction monitoring, compliance reporting, risk analytics.',
-    image: '/Image.png',
-    icon: (
-      <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-        <path
-          d="M3 10H21M7 15H7.01M11 15H13"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <rect
-          x="3"
-          y="6"
-          width="18"
-          height="12"
-          rx="2"
-          stroke="white"
-          strokeWidth="2"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: 'Government & NGOs',
-    description:
-      'Program tracking, budget monitoring, and impact measurement.',
-    image: '/Image.png',
-    icon: (
-      <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-        <circle cx="12" cy="8" r="6" stroke="white" strokeWidth="2" />
-        <path d="M12 14V20" stroke="white" strokeWidth="2" />
-        <path d="M8 20H16" stroke="white" strokeWidth="2" />
-      </svg>
-    ),
-  },
-]
-
-const IndustryCard = ({ title, description, image, icon, height = false }: Industry) => {
-  const heightClass = height === false ? 'h-full' : height;
+const IndustryCard = ({
+  title,
+  description,
+  image,
+  icon,
+  height = false,
+}: IndustryCardProps) => {
+  const heightClass = height === false ? 'h-full' : height
 
   return (
-    <div className={`relative ${heightClass} w-full overflow-hidden rounded-2xl bg-[#122349]`}>
+    <div
+      className={`relative ${heightClass} w-full overflow-hidden rounded-2xl bg-[#122349]`}
+    >
       <img
         src={image}
         alt={title}
@@ -114,38 +48,52 @@ const IndustryCard = ({ title, description, image, icon, height = false }: Indus
       {/* Content */}
       <div className="absolute bottom-0 z-10 sm:p-5 p-3 xl:p-8">
         <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-md bg-[#F3680C]">
-          {icon}
+          <img src={icon} alt="" className="h-6 w-6" />
         </div>
-        <h3 className="text-2xl font-inter font-semibold mt-6 text-white">{title}</h3>
-        <p className="mt-2 text-base font-inter text-gray-200">{description}</p>
+
+        <h3 className="text-2xl font-inter font-semibold mt-6 text-white">
+          {title}
+        </h3>
+        <p className="mt-2 text-base font-inter text-gray-200">
+          {description}
+        </p>
       </div>
     </div>
   )
 }
 
-export default function IndustriesSection({policy,cards}: any) {
+export default function IndustriesSection({ policy, cards }: any) {
+  const industries: IndustryCardProps[] =
+    cards?.imageCards?.map((item: ApiCard) => ({
+      title: item.title,
+      description: item.subTitle,
+      image: item.image?.url,
+      icon: item.icon?.url,
+    })) || []
+
   return (
-    <section className="bg-white py-24">
-      <div className="container mx-auto px-4">
+    <section className="bg-white py-24 sm:py-[120px]">
+      <div className="container xl:px-0 px-2">
         {/* Header */}
         <div className="mb-14 text-center">
-          <p className="section-title capitalize">Industries</p>
-          <h2 className="mt-2 section-subtitle">Built For Your Industry</h2>
-          <p className="mx-auto mt-4 max-w-xl section-description">
-            Specialized solutions designed for the unique challenges of each
-            sector.
+          <p className="section-title capitalize!">
+            {policy?.SubTitle}
+          </p>
+          <h2 className="mt-2 section-subtitle">
+            {policy?.Title}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl section-description">
+            {policy?.content}
           </p>
         </div>
 
         <div className="mx-auto max-w-6xl">
-          {/* Large Device Layout (XL) - Keep as is */}
+          {/* XL Layout */}
           <div className="hidden xl:flex gap-5">
-            {/* Large Card */}
             <div className="w-[760px] h-[524px]">
               <IndustryCard {...industries[0]} />
             </div>
 
-            {/* Right Column */}
             <div className="flex flex-col gap-5 w-[368px] h-[524px]">
               <div className="h-[250px]">
                 <IndustryCard {...industries[1]} />
@@ -156,14 +104,12 @@ export default function IndustriesSection({policy,cards}: any) {
             </div>
           </div>
 
-          {/* Medium Device Layout (MD) */}
+          {/* MD Layout */}
           <div className="hidden md:flex xl:hidden gap-5">
-            {/* Large Card */}
             <div className="w-[760px] h-[524px]">
               <IndustryCard {...industries[0]} />
             </div>
 
-            {/* Right Column */}
             <div className="flex flex-col gap-5 w-[368px] h-[524px]">
               <div className="h-[250px]">
                 <IndustryCard {...industries[1]} />
@@ -174,14 +120,19 @@ export default function IndustriesSection({policy,cards}: any) {
             </div>
           </div>
 
-          <div className="md:hidden flex flex-col gap-3"> 
+          {/* Mobile */}
+          <div className="md:hidden flex flex-col gap-3">
             {industries.map((industry, index) => (
-              <div key={index} className="w-full h-auto min-h-[250px]"> 
+              <div
+                key={index}
+                className="w-full h-auto min-h-[250px]"
+              >
                 <IndustryCard {...industry} />
               </div>
             ))}
           </div>
 
+          {/* Bottom Cards */}
           <div className="mt-5 hidden md:flex gap-5">
             <div className="w-[368px] h-[250px]">
               <IndustryCard {...industries[3]} />
@@ -191,13 +142,9 @@ export default function IndustriesSection({policy,cards}: any) {
             </div>
           </div>
 
-          <div className="mt-5 md:hidden flex flex-col gap-3"> 
-            <div className="w-full h-auto min-h-[250px]">
-              <IndustryCard {...industries[3]} />
-            </div>
-            <div className="w-full h-auto min-h-[250px]">
-              <IndustryCard {...industries[4]} />
-            </div>
+          <div className="mt-5 md:hidden flex flex-col gap-3">
+            <IndustryCard {...industries[3]} />
+            <IndustryCard {...industries[4]} />
           </div>
         </div>
       </div>
