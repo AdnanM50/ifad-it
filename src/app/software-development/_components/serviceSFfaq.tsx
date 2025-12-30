@@ -7,7 +7,6 @@ const ServiceSFFAQSection = ({ data }: { data: any }) => {
 
   const { title, headline, subTitle, faq } = data
 
-  // Open the 2nd FAQ by default (same behavior as before)
   const [openIndex, setOpenIndex] = useState<number | null>(
     faq && faq.length > 1 ? 1 : null
   )
@@ -19,7 +18,7 @@ const ServiceSFFAQSection = ({ data }: { data: any }) => {
   return (
     <section className="bg-white py-12 md:py-[120px] px-2 lg:px-0">
       <div className=" mx-auto px-4">
-        {/* Header */}
+
         <div className="text-center mb-12">
           <h3 className="section-title mb-2">{title}</h3>
 
@@ -27,12 +26,11 @@ const ServiceSFFAQSection = ({ data }: { data: any }) => {
             {headline}
           </h2>
 
-          <p className="section-description mx-auto whitespace-pre-line">
+          <p className="section-description mx-auto ">
             {subTitle}
           </p>
         </div>
 
-        {/* FAQ Accordion */}
         <div className="space-y-4 max-w-4xl mx-auto">
           {faq?.map((item: any, index: number) => (
             <div

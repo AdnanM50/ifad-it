@@ -36,6 +36,11 @@ const ContactSection = ({ data, contactinfo }: { data: any, contactinfo: any } )
 
       if (!res.ok) throw new Error("Failed");
 
+      // toast.success("Message sent successfully");
+      toast.success('Form submitted successfully', {
+  position: "bottom-right",
+})
+      console.log("Message sent successfully");
       setName("");
       setPhone("");
       setEmail("");

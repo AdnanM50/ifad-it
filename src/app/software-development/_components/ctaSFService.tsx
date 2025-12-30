@@ -8,11 +8,11 @@ const ServiceSFCTA = ({ data }: { data: any }) => {
   const { title, subTitle, cta } = data
 
   return (
-    <div className="relative py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 z-50">
-      {/* BACKGROUND */}
+    <div className="relative py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 z-20">
+  
       <div className="absolute inset-0 bg-[url('/background.png')] bg-cover bg-center bg-no-repeat bg-[#F36A10]" />
 
-      {/* CONTENT */}
+     
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[40px] arial-font font-bold text-white mb-3 sm:mb-4 leading-tight md:leading-snug">
           {title}
