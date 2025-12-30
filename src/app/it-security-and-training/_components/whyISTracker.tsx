@@ -3,7 +3,7 @@
 import FeatureCard from '@/app/gps-vehicle-tracking/_components/featureCard'
 import Image from 'next/image'
 
-const WhyMSITracker = ({ data }: { data: any }) => {
+const WhyISTracker = ({ data }: { data: any }) => {
   if (!data) return null
 
   const { title, headline, subTitle, values = [] } = data
@@ -19,7 +19,7 @@ const WhyMSITracker = ({ data }: { data: any }) => {
             {headline}
           </h2>
 
-          <p className="mt-5 section-description max-w-[406px] mx-auto ">
+          <p className="mt-5 section-description max-w-[593px] mx-auto ">
             {subTitle}
           </p>
         </div>
@@ -48,4 +48,4 @@ const WhyMSITracker = ({ data }: { data: any }) => {
   )
 }
 
-export default WhyMSITracker
+export default WhyISTracker
