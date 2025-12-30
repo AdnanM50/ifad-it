@@ -23,7 +23,7 @@ const ServiceThFAQSection = ({ data }: { data: any }) => {
   }
 
   return (
-    <section className="bg-white py-12 md:py-[120px] px-2 lg:px-0">
+    <section className="bg-[#FCFCFD] py-12 md:py-[120px] px-2 lg:px-0">
       <div className=" px-4">
 
         {/* HEADER */}

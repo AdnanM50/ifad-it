@@ -6,6 +6,8 @@ import { getServiceITSecurityPage } from '@/lib/serviceIS'
 import MeetISTracker from './_components/meetISTracker'
 import WhyISTracker from './_components/whyISTracker'
 import ItProgram from './_components/itProgram'
+import ServeClient from './_components/serveclient'
+import WhyISChooseIFAD from './_components/whyISChooseIFAD'
 
 export default async function Page() {
   const page = await getServiceITSecurityPage('it-security-and-training')
@@ -29,6 +31,15 @@ export default async function Page() {
   const itTraningProgram = blocks.find(
     (b: any) => b.__component === 'blocks.our-values-section' && b.id === 75 
   )
+
+  const serveClient = blocks.find(
+    (b: any) => b.__component === 'blocks.our-values-section' && b.id === 76 
+  )
+
+  const whyISChooseIFAD = blocks.find(
+    (b: any) => b.__component === 'blocks.our-values-section' && b.id === 77 
+  )
+
   const faqData = blocks.find(
     (b: any) => b.__component === 'blocks.faq-section'
   )
@@ -43,6 +54,8 @@ export default async function Page() {
       <MeetISTracker data={meetPolicy} cards={meetCards} />
       {securityData && <WhyISTracker data={securityData} />}
       {itTraningProgram && <ItProgram data={itTraningProgram} />}
+      {serveClient && <ServeClient data={serveClient} />}
+      {whyISChooseIFAD && <WhyISChooseIFAD data={whyISChooseIFAD} />}
       {faqData && <ServiceThFAQSection data={faqData} />}
       {bottomCTA && <ServiceThCTA data={bottomCTA} />}
     </div>
