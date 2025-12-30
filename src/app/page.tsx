@@ -8,7 +8,7 @@ import TechStack from "@/components/landing/technology"
 import TestimonialCarousel from "@/components/landing/testimonial"
 import TustedSection from "@/components/landing/tusted-section"
 
-import { getHomePage } from "@/lib/homeAPI"
+import { getHomePage } from "@/lib/api/homeAPI"
 
 export default async function HomePage() {
   const data = await getHomePage()

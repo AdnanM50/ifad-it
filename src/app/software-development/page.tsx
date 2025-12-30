@@ -1,7 +1,7 @@
 import ServiceSFHero from './_components/heroSFsection'
 import ServiceSFFAQSection from './_components/serviceSFfaq'
 import ServiceSFCTA from './_components/ctaSFService'
-import { getServiceSoftwarePage } from '@/lib/serviceSd'
+import { getServiceSoftwarePage } from '@/lib/api/service/serviceSd'
 import WhySDChooseIFAD from './_components/whySdChooseIFAD'
 import WhySDTracker from './_components/whySDTracker'
 
@@ -33,7 +33,6 @@ export default async function Page() {
     .filter((b: any) => b.__component === 'blocks.cta-section')
     .at(-1)
 
-  // 🔹 RENDER
   return (
     <div className="mt-[85px] lg:mt-[100px]">
       {heroData && <ServiceSFHero data={heroData} />}

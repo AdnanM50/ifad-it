@@ -1,7 +1,7 @@
 'use client';
 
 const MapSection = ({ data }: { data: any }) => {
-  console.log("🚀 ~ MapSection ~ data:", data)
+ 
   return (
     <div className="py-12 px-4 container">
       <h2 className="text-xl sm:text-3xl text-[#1A1A1A] arial-font md:text-[40px] font-bold text-center mb-6 lg:mb-14">Find Us Here</h2>

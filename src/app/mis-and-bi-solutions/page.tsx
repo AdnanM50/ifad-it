@@ -6,7 +6,7 @@ import WhyMSIChooseIFAD from "./_components/whymsiChooseIFAD"
 import ServiceMSIFAQSection from "./_components/servicemsifaq"
 import ServiceMSICTA from "./_components/ctamsiService"
 
-import { getServiceMSIPage } from "@/lib/servicemsi"
+import { getServiceMSIPage } from "@/lib/api/service/servicemsi"
 
 /**
  * ✅ SERVER COMPONENT (SSR)

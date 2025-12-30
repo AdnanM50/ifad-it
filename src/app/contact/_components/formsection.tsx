@@ -3,7 +3,7 @@
 import { MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-
+import toast, { Toaster } from 'react-hot-toast';
 const ContactSection = ({ data, contactinfo }: { data: any, contactinfo: any } ) => {
 
   // const { toast } = useInstantLayoutTransition()
@@ -40,18 +40,11 @@ const ContactSection = ({ data, contactinfo }: { data: any, contactinfo: any } )
       setPhone("");
       setEmail("");
       setMessage("");
+    
 
-      // toast({
-      //   title: "Message Sent",
-      //   description: "We will get back to you shortly.",
-      //   className: "bg-orange-500 text-white border-none",
-      // })
     } catch (error) {
-      // toast({
-      //   title: "Something went wrong",
-      //   description: "Please try again later.",
-      //   variant: "destructive",
-      // })
+      // Show error toast
+      toast.error("Something went wrong");
     } finally {
       setLoading(false);
     }

@@ -8,7 +8,7 @@ import "swiper/css"
 import "swiper/css/navigation"
 
 const TestimonialCarousel = ({ data }: { data: any }) => {
-  console.log("🚀 ~ TestimonialCarousel ~ data:", data)
+ 
   if (!data) return null
 
   return (

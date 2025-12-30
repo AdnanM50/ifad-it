@@ -2,7 +2,7 @@
 import ServiceISHero from './_components/heroThsection'
 import ServiceThFAQSection from './_components/serviceThfaq'
 import ServiceThCTA from './_components/ctaThService'
-import { getServiceITSecurityPage } from '@/lib/serviceIS'
+import { getServiceITSecurityPage } from '@/lib/api/service/serviceIS'
 import MeetISTracker from './_components/meetISTracker'
 import WhyISTracker from './_components/whyISTracker'
 import ItProgram from './_components/itProgram'

@@ -7,17 +7,15 @@ import VehicleTypes from "./_components/vehicleTypes"
 import WhyWeRecommend from "./_components/whyWeRecommend"
 import ServiceFAQSection from "./_components/servicefaq"
 import ServiceCTA from "./_components/ctaService"
-import { getServicePage } from "@/lib/servicegps"
+import { getServicePage } from "@/lib/api/service/servicegps"
 import ServiceHero from "./_components/serviceHerosection"
 
 export default async function Page() {
   const page = await getServicePage("gps-vehicle-tracking")
-  console.log("🚀 ~ Page ~ page:", page)
   if (!page) return null
 
   const blocks = page.blocks || []
 
-  // ===== BLOCK EXTRACTION =====
   const heroData = blocks.find(
     (b: any) => b.__component === "blocks.cta-section"
   )

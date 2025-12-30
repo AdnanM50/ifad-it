@@ -2,7 +2,7 @@ import ContactHero from "./_components/contactHero"
 import ContactSection from "./_components/formsection"
 import MapSection from "./_components/mapsection"
 
-import { getContactPage } from "@/lib/contactAPI"
+import { getContactPage } from "@/lib/api/contactAPI"
 
 export default async function ContactPage() {
   const page = await getContactPage()

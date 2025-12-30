@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/navber";
 import Footer from "@/components/layout/footer";
-import { getGlobalData } from "@/lib/global";
+import { getGlobalData } from "@/lib/api/global";
 
 export const metadata: Metadata = {
   title: "IFAD IT",
@@ -15,7 +15,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log("🚀 ~ global:", global)
+ 
   return (
     <html lang="en">
       <body

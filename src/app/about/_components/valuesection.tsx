@@ -8,7 +8,7 @@ type CoreValuesSectionProps = {
 }
 
 const CoreValuesSection = ({ data }: CoreValuesSectionProps) => {
-  console.log('🚀 ~ CoreValuesSection ~ data:', data)
+ 
 
   if (!data) return null
 

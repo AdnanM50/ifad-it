@@ -4,7 +4,7 @@ import CoreValuesSection from "./_components/valuesection"
 import BoardMembers from "./_components/team"
 import CTASection from "./_components/lowerSection"
 
-import { getAboutPage } from "@/lib/aboutAPI"
+import { getAboutPage } from "@/lib/api/aboutAPI"
 
 export default async function About() {
   const page = await getAboutPage()
