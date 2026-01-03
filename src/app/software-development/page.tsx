@@ -4,6 +4,11 @@ import ServiceSFCTA from "./_components/ctaSFService";
 import { getServiceSoftwarePage } from "@/lib/api/service/serviceSd";
 import WhySDChooseIFAD from "./_components/whySdChooseIFAD";
 import WhySDTracker from "./_components/whySDTracker";
+// import DevelopmentApproach from "./_components/ourProcess";
+import OurProcess from "./_components/ourProcess";
+import DevelopmentApproach from "./_components/developApproce";
+import TechnologyStack from "./_components/developApproce";
+import IndustriesSection from "./_components/industriesSection";
 
 export default async function Page() {
   const page = await getServiceSoftwarePage("software-development");
@@ -35,6 +40,9 @@ export default async function Page() {
     <div className="mt-[85px] lg:mt-[100px]">
       {heroData && <ServiceSFHero data={heroData} />}
       {whySDTrackerData && <WhySDTracker data={whySDTrackerData} />}
+      {/* <OurProcess />
+      <IndustriesSection />
+      <TechnologyStack /> */}
       {whySDChooseIFAD && <WhySDChooseIFAD data={whySDChooseIFAD} />}
       {faqData && <ServiceSFFAQSection data={faqData} />}
       {bottomCTA && <ServiceSFCTA data={bottomCTA} />}

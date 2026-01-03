@@ -3,7 +3,7 @@
 import { MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 const ContactSection = ({ data, contactinfo }: { data: any, contactinfo: any } ) => {
 
   // const { toast } = useInstantLayoutTransition()
