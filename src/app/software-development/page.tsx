@@ -51,7 +51,7 @@ export default async function Page() {
     <div className="mt-[85px] lg:mt-[100px]">
       {heroData && <ServiceSFHero data={heroData} />}
       {whySDTrackerData && <WhySDTracker data={whySDTrackerData} />}
-      <OurProcess data={ourProcess} />
+      {ourProcess && <OurProcess data={ourProcess} />}
       {/* <IndustriesSection /> */}
       {developmentApproach && <TechnologyStack logos={logos} data={developmentApproach} /> }
       {whySDChooseIFAD && <WhySDChooseIFAD data={whySDChooseIFAD} />}
