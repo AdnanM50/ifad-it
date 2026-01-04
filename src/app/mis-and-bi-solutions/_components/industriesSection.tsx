@@ -104,20 +104,30 @@ export default function IndustriesSection({ policy, cards }: any) {
             </div>
           </div>
 
-          {/* MD Layout */}
-          <div className="hidden md:flex xl:hidden gap-5">
-            <div className="w-[760px] h-[524px]">
+          {/* MD Layout - Updated for 2 cards per row */}
+          <div className="hidden md:grid xl:hidden grid-cols-1 sm:grid-cols-2 gap-5">
+            {/* First Row */}
+            <div className="h-[300px] sm:h-[350px]">
               <IndustryCard {...industries[0]} />
             </div>
-
-            <div className="flex flex-col gap-5 w-[368px] h-[524px]">
-              <div className="h-[250px]">
-                <IndustryCard {...industries[1]} />
-              </div>
-              <div className="h-[524px]">
-                <IndustryCard height="h-[524px]" {...industries[2]} />
-              </div>
+            <div className="h-[300px] sm:h-[350px]">
+              <IndustryCard {...industries[1]} />
             </div>
+            
+            {/* Second Row */}
+            <div className="h-[300px] sm:h-[350px]">
+              <IndustryCard {...industries[2]} />
+            </div>
+            <div className="h-[300px] sm:h-[350px]">
+              <IndustryCard {...industries[3]} />
+            </div>
+            
+            {/* Third Row (if needed, centered) */}
+            {industries[4] && (
+              <div className="h-[300px] sm:h-[350px] sm:col-span-2">
+                <IndustryCard {...industries[4]} />
+              </div>
+            )}
           </div>
 
           {/* Mobile */}
@@ -132,8 +142,8 @@ export default function IndustriesSection({ policy, cards }: any) {
             ))}
           </div>
 
-          {/* Bottom Cards */}
-          <div className="mt-5 hidden md:flex gap-5">
+          {/* Bottom Cards - Only for XL */}
+          <div className="mt-5 hidden xl:flex gap-5">
             <div className="w-[368px] h-[250px]">
               <IndustryCard {...industries[3]} />
             </div>
@@ -142,10 +152,6 @@ export default function IndustriesSection({ policy, cards }: any) {
             </div>
           </div>
 
-          <div className="mt-5 md:hidden flex flex-col gap-3">
-            <IndustryCard {...industries[3]} />
-            <IndustryCard {...industries[4]} />
-          </div>
         </div>
       </div>
     </section>

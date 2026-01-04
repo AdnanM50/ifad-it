@@ -24,8 +24,19 @@ export default async function Page() {
     (b: any) => b.__component === "blocks.our-values-section" && b.id === 70
   );
 
+  const ourProcess = blocks.find(
+    (b: any) => b.__component === "blocks.our-values-section" && b.id === 71
+  );
+
+  const developmentApproach = blocks.find(
+    (b: any) => b.__component === "blocks.our-values-section" && b.id === 72 
+  );
+  const logos = blocks.find(
+   (b: any) => b.__component === "blocks.slider-block" && b.id === 44
+  );
+
   const whySDChooseIFAD = blocks.find(
-    (b: any) => b.__component === "blocks.our-values-section" && b.id === 73
+    (b: any) => b.__component === "blocks.our-values-section" && b.id === 73 
   );
 
   const faqData = blocks.find(
@@ -40,9 +51,9 @@ export default async function Page() {
     <div className="mt-[85px] lg:mt-[100px]">
       {heroData && <ServiceSFHero data={heroData} />}
       {whySDTrackerData && <WhySDTracker data={whySDTrackerData} />}
-      {/* <OurProcess />
-      <IndustriesSection />
-      <TechnologyStack /> */}
+      <OurProcess data={ourProcess} />
+      {/* <IndustriesSection /> */}
+      {developmentApproach && <TechnologyStack logos={logos} data={developmentApproach} /> }
       {whySDChooseIFAD && <WhySDChooseIFAD data={whySDChooseIFAD} />}
       {faqData && <ServiceSFFAQSection data={faqData} />}
       {bottomCTA && <ServiceSFCTA data={bottomCTA} />}

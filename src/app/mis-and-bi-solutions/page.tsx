@@ -77,7 +77,7 @@ export default async function Page() {
     .filter((b: any) => b.__component === "blocks.cta-section")
     .at(-1)
 
-  // ========= RENDER =========
+
   return (
     <div className="mt-[85px] lg:mt-[100px]">
       {heroData && <ServiceMSIHero data={heroData} />}

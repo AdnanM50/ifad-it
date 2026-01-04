@@ -1,84 +1,79 @@
 'use client'
 
 import Image from 'next/image'
-import { ShieldCheck, Zap } from 'lucide-react'
 
-const technologies = [
-  { name: 'React', src: '/tech/react.svg' },
-  { name: 'Node.js', src: '/tech/node.svg' },
-  { name: 'Python', src: '/tech/python.svg' },
-  { name: 'PHP', src: '/tech/php.svg' },
-  { name: 'Flutter', src: '/tech/flutter.svg' },
-  { name: 'TypeScript', src: '/tech/typescript.svg' },
-]
+export default function TechnologyStack({ data, logos }: any) {
+  if (!data) return null
 
-export default function TechnologyStack() {
   return (
     <section className="bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-[1353px] xl:px-0 px-2">
         <div className="grid items-center gap-12 lg:grid-cols-2">
 
-          {/* Left Content */}
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-orange-500">
-              Technology Stack
+            {/* Subtitle */}
+            <p className="section-title capitalize!">
+              {data.title}
             </p>
 
-            <h2 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
-              Modern, Proven <br /> Technologies
+            {/* Title */}
+            <h2 className="mt-2 section-subtitle max-w-[377px]">
+              {data.headline}
             </h2>
 
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-gray-500">
-              We use industry-standard frameworks and languages ensuring your
-              software is built on solid foundations that can scale with your business.
+            {/* Description */}
+            <p className="mt-4 max-w-[606px] section-description ">
+              {data.subTitle}
             </p>
 
-            {/* Features */}
+            {/* Features (API-driven) */}
             <div className="mt-6 space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-orange-100">
-                  <ShieldCheck size={18} className="text-orange-500" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    Secure Architecture
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    Cloud-ready infrastructure that handles growth and protects your data.
-                  </p>
-                </div>
-              </div>
+              {data.values?.map((item: any, index: number) => (
+                <div
+                  key={item.id}
+                  className="flex items-center gap-3"
+                >
+                  {/* Icon */}
+                  <div
+                    className={`flex size-10 items-center justify-center rounded-[8px] ${
+                      index === 0 ? 'bg-[#E8FDFB]' : 'bg-[#ECE8FD]'
+                    }`}
+                  >
+                    <Image
+                      src={item.icon.url}
+                      alt={item.icon.alternativeText || item.title}
+                      width={18}
+                      height={18}
+                    />
+                  </div>
 
-              <div className="flex items-start gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-orange-100">
-                  <Zap size={18} className="text-orange-500" />
+                  {/* Text */}
+                  <div>
+                    <p className="section-description font-semibold text-[#1A1A1A]!">
+                      {item.title}
+                    </p>
+                    <p className="text-sm! mt-1.5 section-description">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    High Performance
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    Optimized code and efficient databases for lightning-fast experiences.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Right Card */}
-          <div className="rounded-2xl border border-orange-100 bg-[#FFFAF5] p-8">
+          <div className="rounded-2xl max-w-[683px] border border-[#F36A1033] bg-[#FBFAF9] py-12 px-8">
             <div className="grid grid-cols-3 gap-6 sm:gap-8">
-              {technologies.map((tech) => (
+              {logos?.logos?.map((logo: any) => (
                 <div
-                  key={tech.name}
+                  key={logo.id}
                   className="flex items-center justify-center"
                 >
                   <Image
-                    src={tech.src}
-                    alt={tech.name}
+                    src={logo.url}
+                    alt={logo.alternativeText || 'Technology Logo'}
                     width={64}
                     height={64}
-                    className="h-14 w-14 object-contain sm:h-16 sm:w-16"
+                    className="size-16 object-contain sm:size-20"
                   />
                 </div>
               ))}

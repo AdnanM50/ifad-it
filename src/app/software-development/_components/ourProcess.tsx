@@ -1,123 +1,69 @@
 'use client'
 
-import {
-  Search,
-  PenTool,
-  Code2,
-  ShieldCheck,
-  Rocket,
-  Headphones,
-} from 'lucide-react'
+import Image from 'next/image'
 
-type Step = {
-  id: string
-  title: string
-  description: string
-  icon: React.ElementType
-}
+export default function OurProcess({ data }: any) {
+  if (!data) return null
 
-const steps: Step[] = [
-  {
-    id: '01',
-    title: 'Discovery & Planning',
-    description:
-      'Understand your goals, users, and requirements. We map out features and technical architecture.',
-    icon: Search,
-  },
-  {
-    id: '02',
-    title: 'Design & Prototyping',
-    description:
-      'Create intuitive interfaces and user experiences. You see what you’re getting before we code.',
-    icon: PenTool,
-  },
-  {
-    id: '03',
-    title: 'Agile Development',
-    description:
-      'Build in sprints with regular updates. You stay informed and can provide feedback throughout.',
-    icon: Code2,
-  },
-  {
-    id: '04',
-    title: 'Testing & Quality Assurance',
-    description:
-      'Rigorous testing ensures your software works flawlessly before launch.',
-    icon: ShieldCheck,
-  },
-  {
-    id: '05',
-    title: 'Deployment & Training',
-    description:
-      'Smooth launch with user training and documentation. Your team knows how to use it.',
-    icon: Rocket,
-  },
-  {
-    id: '06',
-    title: 'Ongoing Support',
-    description:
-      'Continuous monitoring, updates, and improvements as your needs evolve.',
-    icon: Headphones,
-  },
-]
-
-export default function OurProcess() {
   return (
-    <section className="relative bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section className="relative bg-white py-16 sm:py-[120px]">
+      <div className="mx-auto max-w-[996px] xl:px-0 px-4">
 
-        {/* Header */}
-        <div className="text-center mb-14">
-          <p className="text-sm font-semibold text-orange-500 uppercase tracking-wide">
-            Our Process
+        <div className="mb-14 text-center">
+          <p className="section-title capitalize!">
+            {data.title}
           </p>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-gray-900">
-            Development Approach
+
+          <h2 className="mt-2 section-subtitle">
+            {data.headline}
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-gray-500 text-sm sm:text-base">
-            A proven methodology that ensures your project is delivered on time,
-            on budget, and exceeds expectations.
+
+          <p className="mt-4 mx-auto max-w-2xl section-description ">
+            {data.subTitle}
           </p>
         </div>
 
-        {/* Timeline */}
         <div className="relative">
 
-          {/* Vertical dotted line */}
-          <div className="absolute left-6 top-0 h-full w-px border-l border-dashed border-orange-200 hidden sm:block" />
+          {/* Vertical dashed line (UNCHANGED) */}
+          <div className="absolute left-8 top-6 bottom-20 hidden w-px border-l border-dashed border-orange-200 sm:block" />
 
           <div className="space-y-6">
-            {steps.map((step) => {
-              const Icon = step.icon
-
-              return (
-                <div
-                  key={step.id}
-                  className="relative flex items-start gap-5"
-                >
-                  {/* Icon */}
-                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-orange-500 text-white">
-                    <Icon size={22} />
-                  </div>
-
-                  {/* Card */}
-                  <div className="flex-1 rounded-xl border border-gray-100 bg-white px-5 py-4 shadow-sm transition hover:shadow-md">
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-semibold text-orange-500">
-                        {step.id}.
-                      </span>
-                      <h3 className="text-base sm:text-lg font-semibold text-gray-900">
-                        {step.title}
-                      </h3>
-                    </div>
-                    <p className="mt-2 text-sm text-gray-500 leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
+            {data.values?.map((item: any, index: number) => (
+              <div
+                key={item.id}
+                className="relative flex items-start gap-2.5 sm:gap-5"
+              >
+                {/* Icon */}
+                <div className="relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FFFAF5] text-[#F36A10] md:size-16 xl:mr-6 mr-0">
+                  <Image
+                    src={item.icon.url}
+                    alt={item.icon.alternativeText || item.title}
+                    width={22}
+                    height={22}
+                  />
                 </div>
-              )
-            })}
+
+                {/* Card */}
+                <div className="flex-1 rounded-2xl border border-gray-100 bg-white px-3 py-3 font-inter sm:px-6 sm:py-8">
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg font-semibold text-[#F36A10] sm:text-2xl">
+                      {(index + 1).toString().padStart(2, '0')}.
+                    </span>
+
+                    <h3 className="text-lg font-semibold text-[#1A1A1A] sm:text-2xl">
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  <p className="mt-3 text-sm leading-relaxed text-[#6F7377] sm:text-base">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
+
         </div>
       </div>
     </section>
