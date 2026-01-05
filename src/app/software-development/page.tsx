@@ -31,27 +31,27 @@ export default async function Page() {
   console.log("🚀 ~ Page ~ cardData:", cardData)
 
   const whySDTrackerData = blocks.find(
-    (b: any) => b.__component === "blocks.our-values-section" && b.id === 70
+    (b: any) => b.__component === "blocks.our-values-section" && b.id === 81
   );
 
   const ourProcess = blocks.find(
-    (b: any) => b.__component === "blocks.our-values-section" && b.id === 71
+    (b: any) => b.__component === "blocks.our-values-section" && b.id === 82
   );
   const industries = blocks.find(
-    (b: any) => b.__component === "blocks.policy-block" && b.id === 67
+    (b: any) => b.__component === "blocks.policy-block" && b.id === 75
   );
   const cardpolicy = blocks.find(
-    (b: any) => b.__component === "blocks.image-card-block" && b.id === 14
+    (b: any) => b.__component === "blocks.image-card-block" && b.id === 16
   );
   const developmentApproach = blocks.find(
-    (b: any) => b.__component === "blocks.our-values-section" && b.id === 72
+    (b: any) => b.__component === "blocks.our-values-section" && b.id === 83
   );
   const logos = blocks.find(
-    (b: any) => b.__component === "blocks.slider-block" && b.id === 44
+    (b: any) => b.__component === "blocks.slider-block" && b.id === 62
   );
 
   const whySDChooseIFAD = blocks.find(
-    (b: any) => b.__component === "blocks.our-values-section" && b.id === 73
+    (b: any) => b.__component === "blocks.our-values-section" && b.id === 84
   );
 
   const faqData = blocks.find(
