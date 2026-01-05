@@ -61,7 +61,6 @@ const MeetSDTracker = ({
             )}
           </div>
 
-          {/* RIGHT STATS */}
           <div className="grid grid-cols-2 gap-6">
             {cardData?.cards?.map((card: any) => (
               <StatCard

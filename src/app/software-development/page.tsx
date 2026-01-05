@@ -18,14 +18,17 @@ export default async function Page() {
   const heroData = blocks.find(
     (b: any) => b.__component === "blocks.cta-section"
   );
+  console.log("🚀 ~ Page ~ heroData:", heroData)
 
   const meetData = blocks.find(
-    (b: any) => b.__component === "blocks.policy-block" && b.id === 66
+    (b: any) => b.__component === "blocks.policy-block" && b.id === 74
   )
+  console.log("🚀 ~ Page ~ meetData:", meetData)
 
   const cardData = blocks.find(
-    (b: any) => b.__component === "blocks.card-section" && b.id === 36
+    (b: any) => b.__component === "blocks.card-section" && b.id === 40
   );
+  console.log("🚀 ~ Page ~ cardData:", cardData)
 
   const whySDTrackerData = blocks.find(
     (b: any) => b.__component === "blocks.our-values-section" && b.id === 70
