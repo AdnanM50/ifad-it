@@ -29,19 +29,19 @@ export default async function Page() {
   );
   const industries = blocks.find(
     (b: any) => b.__component === "blocks.policy-block" && b.id === 67
-  )
+  );
   const cardpolicy = blocks.find(
     (b: any) => b.__component === "blocks.image-card-block" && b.id === 14
-  )
+  );
   const developmentApproach = blocks.find(
-    (b: any) => b.__component === "blocks.our-values-section" && b.id === 72 
+    (b: any) => b.__component === "blocks.our-values-section" && b.id === 72
   );
   const logos = blocks.find(
-   (b: any) => b.__component === "blocks.slider-block" && b.id === 44
+    (b: any) => b.__component === "blocks.slider-block" && b.id === 44
   );
 
   const whySDChooseIFAD = blocks.find(
-    (b: any) => b.__component === "blocks.our-values-section" && b.id === 73 
+    (b: any) => b.__component === "blocks.our-values-section" && b.id === 73
   );
 
   const faqData = blocks.find(
@@ -57,9 +57,12 @@ export default async function Page() {
       {heroData && <ServiceSFHero data={heroData} />}
       {whySDTrackerData && <WhySDTracker data={whySDTrackerData} />}
       {ourProcess && <OurProcess data={ourProcess} />}
-      {industries && <IndustriesSection     policy={industries}
-          cards={cardpolicy} />}
-      {developmentApproach && <TechnologyStack logos={logos} data={developmentApproach} /> }
+      {industries && (
+        <IndustriesSection policy={industries} cards={cardpolicy} />
+      )}
+      {developmentApproach && (
+        <TechnologyStack logos={logos} data={developmentApproach} />
+      )}
       {whySDChooseIFAD && <WhySDChooseIFAD data={whySDChooseIFAD} />}
       {faqData && <ServiceSFFAQSection data={faqData} />}
       {bottomCTA && <ServiceSFCTA data={bottomCTA} />}

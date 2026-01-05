@@ -25,7 +25,6 @@ export default function OurProcess({ data }: any) {
 
         <div className="relative">
 
-          {/* Vertical dashed line (UNCHANGED) */}
           <div className="absolute left-8 top-6 bottom-20 hidden w-px border-l border-dashed border-orange-200 sm:block" />
 
           <div className="space-y-6">

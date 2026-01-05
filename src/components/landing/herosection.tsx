@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import PrimaryButton from "../common/primary-button"
 
 type HeroSectionProps = {
@@ -22,12 +23,17 @@ export function HeroSection({ data }: HeroSectionProps) {
 
   return (
     <section className="relative w-full h-[600px] md:h-[815px] pt-20 overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${data.media?.url})`,
-        }}
-      >
+      {/* LCP IMAGE FIX */}
+      <div className="absolute inset-0">
+        <Image
+          src={data.media?.url || ""}
+          alt={data.media?.alternativeText || "Hero background"}
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover object-center"
+        />
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
@@ -64,16 +70,8 @@ export function HeroSection({ data }: HeroSectionProps) {
             viewBox="0 0 15 21"
             fill="none"
           >
-            <path
-              d="M7.27 20.84V0.7"
-              stroke="white"
-              strokeWidth="2"
-            />
-            <path
-              d="M1 14l6 6 6-6"
-              stroke="white"
-              strokeWidth="2"
-            />
+            <path d="M7.27 20.84V0.7" stroke="white" strokeWidth="2" />
+            <path d="M1 14l6 6 6-6" stroke="white" strokeWidth="2" />
           </svg>
         </div>
       </div>
