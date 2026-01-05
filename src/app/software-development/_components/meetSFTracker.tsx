@@ -32,8 +32,8 @@ const MeetSDTracker = ({
             </p>
 
             {highlightText && (
-              <div className="mt-6 flex items-center gap-3 rounded-xl bg-[#FFF7F3] px-5 py-4 max-w-md">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFE5D9]">
+              <div className="mt-6 flex items-center gap-3 rounded-xl bg-[#FBFAF9] px-5 py-4 max-w-md">
+                <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[#FEF4EC]">
                   <svg
                     width="18"
                     height="18"
