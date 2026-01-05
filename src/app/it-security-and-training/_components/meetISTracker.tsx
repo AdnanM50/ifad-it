@@ -34,7 +34,7 @@ const MeetISTracker = ({
 
           <div>
             {/* Subtitle */}
-            <p className="section-title text-[#F36A10]">
+            <p className="section-title text-[#F36A10] capitalize!">
               {data.SubTitle}
             </p>
 
@@ -43,11 +43,11 @@ const MeetISTracker = ({
               {data.Title}
             </h2>
 
-            {/* Content + Highlight Card */}
+        
             {data.content
               ?.split('\n\n')
               .map((para, idx) => {
-                // Highlight card for bullet line
+
                 if (para.trim().startsWith('-')) {
                   return (
                     <div
@@ -73,7 +73,7 @@ const MeetISTracker = ({
                 return (
                   <p
                     key={idx}
-                    className="mt-4 section-description whitespace-pre-line"
+                    className="mt-4 section-description "
                   >
                     {para}
                   </p>
@@ -138,7 +138,7 @@ function FeatureCard({
 
   return (
     <div
-      className={`rounded-[16px] border p-6 ${style.bg} ${style.border}`}
+      className={`rounded-2xl border p-6 ${style.bg} ${style.border}`}
     >
       <div
         className={`mb-4 flex h-12 w-12 items-center justify-center rounded-[10px] ${style.iconBg}`}

@@ -4,7 +4,7 @@ const CTASection = ({ data }: { data: any }) => {
   if (!data) return null
 
   return (
-    <div className="relative py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 z-50">
+    <div className="relative py-10 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8 z-20">
       
       {/* BACKGROUND (UNCHANGED) */}
       <div className="absolute bg-[url('/background.png')] bg-cover bg-center bg-no-repeat inset-0 bg-[#F36A10] "></div>
