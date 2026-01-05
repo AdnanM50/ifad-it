@@ -27,7 +27,12 @@ export default async function Page() {
   const ourProcess = blocks.find(
     (b: any) => b.__component === "blocks.our-values-section" && b.id === 71
   );
-
+  const industries = blocks.find(
+    (b: any) => b.__component === "blocks.policy-block" && b.id === 67
+  )
+  const cardpolicy = blocks.find(
+    (b: any) => b.__component === "blocks.image-card-block" && b.id === 14
+  )
   const developmentApproach = blocks.find(
     (b: any) => b.__component === "blocks.our-values-section" && b.id === 72 
   );
@@ -52,7 +57,8 @@ export default async function Page() {
       {heroData && <ServiceSFHero data={heroData} />}
       {whySDTrackerData && <WhySDTracker data={whySDTrackerData} />}
       {ourProcess && <OurProcess data={ourProcess} />}
-      {/* <IndustriesSection /> */}
+      {industries && <IndustriesSection     policy={industries}
+          cards={cardpolicy} />}
       {developmentApproach && <TechnologyStack logos={logos} data={developmentApproach} /> }
       {whySDChooseIFAD && <WhySDChooseIFAD data={whySDChooseIFAD} />}
       {faqData && <ServiceSFFAQSection data={faqData} />}

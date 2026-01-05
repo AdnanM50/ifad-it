@@ -86,7 +86,7 @@ const Footer = ({ data }: { data: any }) => {
       </div>
 
       <div className="py-6 border-t container border-gray-700 flex flex-col sm:flex-row gap-3 justify-between">
-        <p>{data.copyright} | Designed & Developed by Khan IT</p>
+        <p>{data.copyright} | <a target="https://www.khanit.com.bd/" href="https://www.khanit.com.bd/">Designed & Developed by Khan IT</a></p>
         <div className="flex gap-4">
           {data.policyLinks.map((item: any) => (
             <Link key={item.id} href={item.href}>
