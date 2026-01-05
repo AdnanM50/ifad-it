@@ -9,6 +9,7 @@ import OurProcess from "./_components/ourProcess";
 import DevelopmentApproach from "./_components/developApproce";
 import TechnologyStack from "./_components/developApproce";
 import IndustriesSection from "./_components/industriesSection";
+import MeetSDTracker from "./_components/meetSFTracker";
 
 export default async function Page() {
   const page = await getServiceSoftwarePage("software-development");
@@ -18,6 +19,14 @@ export default async function Page() {
 
   const heroData = blocks.find(
     (b: any) => b.__component === "blocks.cta-section"
+  );
+
+  const meetData = blocks.find(
+    (b: any) => b.__component === "blocks.policy-block" && b.id === 66
+  )
+
+  const cardData = blocks.find(
+    (b: any) => b.__component === "blocks.card-section" && b.id === 36
   );
 
   const whySDTrackerData = blocks.find(
@@ -55,6 +64,7 @@ export default async function Page() {
   return (
     <div className="mt-[85px] lg:mt-[100px]">
       {heroData && <ServiceSFHero data={heroData} />}
+      <MeetSDTracker data={meetData} cardData={cardData} />
       {whySDTrackerData && <WhySDTracker data={whySDTrackerData} />}
       {ourProcess && <OurProcess data={ourProcess} />}
       {industries && (
