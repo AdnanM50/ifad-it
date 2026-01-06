@@ -29,7 +29,7 @@ const MeetISTracker = ({
 
   return (
     <section className="bg-white py-16 lg:py-[120px]">
-      <div className="container">
+      <div className="container xl:px-0 px-2">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
 
           <div>
@@ -155,7 +155,7 @@ function FeatureCard({
         {title}
       </h3>
 
-      <p className="mt-1 text-sm font-inter text-[#6F7377] whitespace-pre-line">
+      <p className="mt-1 text-sm font-inter text-[#6F7377] ">
         {description}
       </p>
     </div>

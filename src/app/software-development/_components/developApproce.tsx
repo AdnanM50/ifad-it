@@ -34,7 +34,8 @@ export default function TechnologyStack({ data, logos }: any) {
                   className="flex items-center gap-3"
                 >
                   {/* Icon */}
-                  <div
+                 <div className="">
+                   <div
                     className={`flex size-10 items-center justify-center rounded-[8px] ${
                       index === 0 ? 'bg-[#E8FDFB]' : 'bg-[#ECE8FD]'
                     }`}
@@ -46,6 +47,7 @@ export default function TechnologyStack({ data, logos }: any) {
                       height={18}
                     />
                   </div>
+                 </div>
 
                   {/* Text */}
                   <div>

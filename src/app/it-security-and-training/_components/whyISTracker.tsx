@@ -10,7 +10,7 @@ const WhyISTracker = ({ data }: { data: any }) => {
 
   return (
     <section className="bg-[#FCFCFD] py-20 lg:py-[120px]">
-      <div className="container">
+      <div className="container xl:px-0 px-2">
         {/* HEADER */}
         <div className="text-center">
           <p className="section-title capitalize!">{title}</p>
