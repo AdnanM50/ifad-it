@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/layout/navber";
 import Footer from "@/components/layout/footer";
 import { getGlobalData } from "@/lib/api/global";
+// import { Toaster } from "@/components/common/toaster";
+import { Toaster as HotToaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
   title: "IFAD IT",
@@ -23,6 +25,8 @@ export default function RootLayout({
         <Header data={global.header} />
         {children}
         <Footer data={global.footer} />
+        {/* <Toaster /> */}
+        <HotToaster position="bottom-right" />
 
       </body>
     </html>

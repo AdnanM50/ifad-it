@@ -6,7 +6,6 @@ import { useState } from "react";
 import toast from 'react-hot-toast';
 const ContactSection = ({ data, contactinfo }: { data: any, contactinfo: any } ) => {
 
-  // const { toast } = useInstantLayoutTransition()
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -38,7 +37,7 @@ const ContactSection = ({ data, contactinfo }: { data: any, contactinfo: any } )
 
       // toast.success("Message sent successfully");
       toast.success('Form submitted successfully', {
-  position: "bottom-right",
+  position: "top-center",
 })
       console.log("Message sent successfully");
       setName("");
