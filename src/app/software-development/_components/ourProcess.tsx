@@ -7,7 +7,7 @@ export default function OurProcess({ data }: any) {
 
   return (
     <section className="relative bg-white py-16 sm:py-[120px]">
-      <div className="mx-auto max-w-[996px] xl:px-0 px-4">
+      <div className="mx-auto max-w-[996px] xl:px-0 px-2">
 
         <div className="mb-14 text-center">
           <p className="section-title capitalize!">
