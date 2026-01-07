@@ -14,7 +14,7 @@ const CoreValuesSection = ({ data }: CoreValuesSectionProps) => {
 
   return (
     <section className="py-16 xl:py-[120px] xl:px-0 px-2 bg-white">
-      <div className="container">
+      <div className="container xl:px-0 px-2">
 
         {/* HEADER */}
         <div className="text-center mb-12">

@@ -55,7 +55,8 @@ const ServiceThFAQSection = ({ data }: { data: any }) => {
                 <span className="font-medium font-inter text-lg sm:text-xl text-[#1A1A1A]">
                   {faq.ques}
                 </span>
-
+<div className="">
+  
                 <span
                   className={`w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-[8px] transition-colors ${
                     openIndex === index
@@ -95,6 +96,7 @@ const ServiceThFAQSection = ({ data }: { data: any }) => {
                     </svg>
                   )}
                 </span>
+</div>
               </button>
 
               <div

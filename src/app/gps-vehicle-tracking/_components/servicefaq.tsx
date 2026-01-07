@@ -46,7 +46,8 @@ const ServiceFAQSection = ({ data }: { data: any }) => {
                   {faq.ques}
                 </span>
 
-                <span
+                <div className="">
+                  <span
                   className={`w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-[8px] transition-colors ${
                     openIndex === index
                       ? 'bg-orange-100 text-[#F36A10]'
@@ -85,6 +86,7 @@ const ServiceFAQSection = ({ data }: { data: any }) => {
                     </svg>
                   )}
                 </span>
+                </div>
               </button>
 
               <div
