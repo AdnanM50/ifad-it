@@ -20,39 +20,54 @@ export default async function Page() {
   );
 
 
-  const meetData = blocks.find(
-    (b: any) => b.__component === "blocks.policy-block" && b.id === 74
-  )
+  const meetData = blocks[1];
 
 
-  const cardData = blocks.find(
-    (b: any) => b.__component === "blocks.card-section" && b.id === 40
-  );
+  const cardData = blocks[2];
 
 
-  const whySDTrackerData = blocks.find(
-    (b: any) => b.__component === "blocks.our-values-section" && b.id === 81
-  );
+  const whySDTrackerData = blocks[3];
 
-  const ourProcess = blocks.find(
-    (b: any) => b.__component === "blocks.our-values-section" && b.id === 82
-  );
-  const industries = blocks.find(
-    (b: any) => b.__component === "blocks.policy-block" && b.id === 75
-  );
-  const cardpolicy = blocks.find(
-    (b: any) => b.__component === "blocks.image-card-block" && b.id === 16
-  );
-  const developmentApproach = blocks.find(
-    (b: any) => b.__component === "blocks.our-values-section" && b.id === 83
-  );
-  const logos = blocks.find(
-    (b: any) => b.__component === "blocks.slider-block" && b.id === 62
-  );
+  const ourProcess = blocks[4];
+  const industries = blocks[5];
+  const cardpolicy = blocks[6];
+  const developmentApproach = blocks[7];
+  const logos = blocks[8];
 
-  const whySDChooseIFAD = blocks.find(
-    (b: any) => b.__component === "blocks.our-values-section" && b.id === 84
-  );
+  const whySDChooseIFAD = blocks[9];
+  // const meetData = blocks.find(
+  //   (b: any) => b.__component === "blocks.policy-block" && b.id === 74
+  // )
+
+
+  // const cardData = blocks.find(
+  //   (b: any) => b.__component === "blocks.card-section" && b.id === 40
+  // );
+
+
+  // const whySDTrackerData = blocks.find(
+  //   (b: any) => b.__component === "blocks.our-values-section" && b.id === 81
+  // );
+
+  // const ourProcess = blocks.find(
+  //   (b: any) => b.__component === "blocks.our-values-section" && b.id === 82
+  // );
+  // const industries = blocks.find(
+  //   (b: any) => b.__component === "blocks.policy-block" && b.id === 75
+  // );
+  // const cardpolicy = blocks.find(
+  //   (b: any) => b.__component === "blocks.image-card-block" && b.id === 16
+  // );
+  // const developmentApproach = blocks.find(
+  //   (b: any) => b.__component === "blocks.our-values-section" && b.id === 83
+  // );
+  // const logos = blocks.find(
+  //   (b: any) => b.__component === "blocks.slider-block" && b.id === 62
+  // );
+
+  // const whySDChooseIFAD = blocks.find(
+  //   (b: any) => b.__component === "blocks.our-values-section" && b.id === 84
+  // );
 
   const faqData = blocks.find(
     (b: any) => b.__component === "blocks.faq-section"

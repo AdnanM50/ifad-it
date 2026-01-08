@@ -1,64 +1,72 @@
-// import { getServicePage } from "@/lib/serviceAPI"
-
-// import ServiceHero from "./_components/serviceHerosection"
-import MeetITracker from "./_components/meetITracker"
-import WhyITracker from "./_components/whyITracker"
-import VehicleTypes from "./_components/vehicleTypes"
-import WhyWeRecommend from "./_components/whyWeRecommend"
-import ServiceFAQSection from "./_components/servicefaq"
-import ServiceCTA from "./_components/ctaService"
-import { getServicePage } from "@/lib/api/service/servicegps"
-import ServiceHero from "./_components/serviceHerosection"
+import MeetITracker from "./_components/meetITracker";
+import WhyITracker from "./_components/whyITracker";
+import VehicleTypes from "./_components/vehicleTypes";
+import WhyWeRecommend from "./_components/whyWeRecommend";
+import ServiceFAQSection from "./_components/servicefaq";
+import ServiceCTA from "./_components/ctaService";
+import { getServicePage } from "@/lib/api/service/servicegps";
+import ServiceHero from "./_components/serviceHerosection";
 
 export default async function Page() {
-  const page = await getServicePage("gps-vehicle-tracking")
-  if (!page) return null
+  const page = await getServicePage("gps-vehicle-tracking");
+  if (!page) return null;
 
-  const blocks = page.blocks || []
+  const blocks = page.blocks || [];
 
   const heroData = blocks.find(
     (b: any) => b.__component === "blocks.cta-section"
-  )
+  );
 
-  const meetData = blocks.find(
-    (b: any) => b.__component === "blocks.policy-block" && b.Title === "Meet iTracker"
-  )
+  // const meetData = blocks.find(
+  //   (b: any) => b.__component === "blocks.policy-block" && b.Title === "Meet iTracker"
+  // )
 
-  const meetLink = blocks.find(
-    (b: any) => b.__component === "elements.link" && b.text === "Explore iTracker Solutions"
-  )
+  // const meetLink = blocks.find(
+  //   (b: any) => b.__component === "elements.link" && b.text === "Explore iTracker Solutions"
+  // )
 
-  const cardData = blocks.find(
-    (b: any) => b.__component === "blocks.card-section"
-  )
+  // const cardData = blocks.find(
+  //   (b: any) => b.__component === "blocks.card-section"
+  // )
 
-  const whyITrackerData = blocks.find(
-    (b: any) =>
-      b.__component === "blocks.our-values-section" &&
-      b.title === "Why iTracker Stands Out"
-  )
+  //     const whyITrackerData = blocks.find(
+  //   (b: any) =>
+  //     b.__component === "blocks.our-values-section" &&
+  //     b.title === "Why iTracker Stands Out"
+  // )
+  //  const vehicleTypesData = blocks.find(
+  //   (b: any) =>
+  //     b.__component === "blocks.our-values-section" &&
+  //     b.title === "Versatile Solutions"
+  // )
 
-  const vehicleTypesData = blocks.find(
-    (b: any) =>
-      b.__component === "blocks.our-values-section" &&
-      b.title === "Versatile Solutions"
-  )
+  //  const recommendData = blocks.find(
+  //   (b: any) => b.__component === "blocks.policy-block" && b.Title === "Why We Recommend iTracker"
+  // )
 
-  const recommendData = blocks.find(
-    (b: any) => b.__component === "blocks.policy-block" && b.Title === "Why We Recommend iTracker"
-  )
+  // const recommendLink = blocks.find(
+  //   (b: any) => b.__component === "elements.link" && b.text === "Price Inquiry"
+  // )
+  const meetData = blocks[1];
+  const meetLink = blocks[2];
 
-  const recommendLink = blocks.find(
-    (b: any) => b.__component === "elements.link" && b.text === "Price Inquiry"
-  )
+  const cardData = blocks[3];
+
+  const whyITrackerData = blocks[4];
+
+  const vehicleTypesData = blocks[5];
+
+  const recommendData = blocks[6];
+
+  const recommendLink = blocks[7];
 
   const faqData = blocks.find(
     (b: any) => b.__component === "blocks.faq-section"
-  )
+  );
 
   const bottomCTA = blocks
     .filter((b: any) => b.__component === "blocks.cta-section")
-    .at(-1)
+    .at(-1);
 
   return (
     <div className="mt-[85px] lg:mt-[100px]">
@@ -80,5 +88,5 @@ export default async function Page() {
 
       {bottomCTA && <ServiceCTA data={bottomCTA} />}
     </div>
-  )
+  );
 }

@@ -28,17 +28,22 @@ export default async function Page() {
   const securityData = blocks.find(
     (b: any) => b.__component === 'blocks.our-values-section'
   )
-  const itTraningProgram = blocks.find(
-    (b: any) => b.__component === 'blocks.our-values-section' && b.id === 75 
-  )
+  const itTraningProgram = blocks[4]
 
-  const serveClient = blocks.find(
-    (b: any) => b.__component === 'blocks.our-values-section' && b.id === 76 
-  )
+  const serveClient = blocks[5]
 
-  const whyISChooseIFAD = blocks.find(
-    (b: any) => b.__component === 'blocks.our-values-section' && b.id === 77 
-  )
+  const whyISChooseIFAD = blocks[6]
+  // const itTraningProgram = blocks.find(
+  //   (b: any) => b.__component === 'blocks.our-values-section' && b.id === 75 
+  // )
+
+  // const serveClient = blocks.find(
+  //   (b: any) => b.__component === 'blocks.our-values-section' && b.id === 76 
+  // )
+
+  // const whyISChooseIFAD = blocks.find(
+  //   (b: any) => b.__component === 'blocks.our-values-section' && b.id === 77 
+  // )
 
   const faqData = blocks.find(
     (b: any) => b.__component === 'blocks.faq-section'

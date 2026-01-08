@@ -18,50 +18,49 @@ export default async function Page() {
 
   const blocks = page.blocks || []
 
-  // ========= BLOCK EXTRACTION =========
-
-  // 🔹 Hero CTA (TOP)
   const heroData = blocks.find(
     (b: any) =>
-      b.__component === "blocks.cta-section" &&
-      b.title?.includes("Turn Data Into Decisions")
+      b.__component === "blocks.cta-section" 
   )
 
-  // 🔹 Meet MSI (Policy + Cards)
-  const meetData = blocks.find(
-    (b: any) =>
-      b.__component === "blocks.policy-block" &&
-      b.SubTitle === "The Challenge"
-  )
+  // const meetData = blocks.find(
+  //   (b: any) =>
+  //     b.__component === "blocks.policy-block" &&
+  //     b.SubTitle === "The Challenge"
+  // )
+  const meetData = blocks[1]
 
   const meetCards = blocks.find(
     (b: any) => b.__component === "blocks.card-section"
   )
 
-  // 🔹 Our Services
-  const servicesData = blocks.find(
-    (b: any) =>
-      b.__component === "blocks.our-values-section" &&
-      b.title === "Our Services"
-  )
+  const servicesData = blocks[3]
+  // const servicesData = blocks.find(
+  //   (b: any) =>
+  //     b.__component === "blocks.our-values-section" &&
+  //     b.title === "Our Services"
+  // )
 
   // 🔹 Industries (Policy + Image Cards)
-  const industriesPolicy = blocks.find(
-    (b: any) =>
-      b.__component === "blocks.policy-block" &&
-      b.SubTitle === "Industries"
-  )
+  const industriesPolicy = blocks[4]
+
+  // const industriesPolicy = blocks.find(
+  //   (b: any) =>
+  //     b.__component === "blocks.policy-block" &&
+  //     b.SubTitle === "Industries"
+  // )
 
   const industriesCards = blocks.find(
     (b: any) => b.__component === "blocks.image-card-block"
   )
 
   // 🔹 Why Choose IFAD (Policy + Text Cards)
-  const whyChoosePolicy = blocks.find(
-    (b: any) =>
-      b.__component === "blocks.policy-block" &&
-      b.SubTitle === "Why Us"
-  )
+  const whyChoosePolicy = blocks[6]
+  // const whyChoosePolicy = blocks.find(
+  //   (b: any) =>
+  //     b.__component === "blocks.policy-block" &&
+  //     b.SubTitle === "Why Us"
+  // )
 
   const whyChooseCards = blocks.find(
     (b: any) => b.__component === "blocks.text-cards"
