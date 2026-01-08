@@ -22,11 +22,12 @@ export default async function HomePage() {
   )
 
   // ================= TRUSTED =================
-  const trustedData = blocks.find(
-    (b: any) =>
-      b.__component === "blocks.slider-block" &&
-      b.heading === "Trusted by 100+ Companies"
-  )
+  const trustedData = blocks[1]
+  // const trustedData = blocks.find(
+  //   (b: any) =>
+  //     b.__component === "blocks.slider-block" &&
+  //     b.heading === "Trusted by 100+ Companies"
+  // )
 
   // ================= ABOUT + STATS =================
   const aboutData = blocks.find(
@@ -43,11 +44,12 @@ export default async function HomePage() {
   )
 
   // ================= TECH STACK =================
-  const techStackData = blocks.find(
-    (b: any) =>
-      b.__component === "blocks.slider-block" &&
-      b.heading === "Technology Stack"
-  )
+  const techStackData = blocks[5]
+  // const techStackData = blocks.find(
+  //   (b: any) =>
+  //     b.__component === "blocks.slider-block" &&
+  //     b.heading === "Technology Stack"
+  // )
 
   // ================= WHY CHOOSE =================
   const whyChooseData = blocks.find(
@@ -65,11 +67,12 @@ export default async function HomePage() {
   )
 
   // ================= FEATURED =================
-  const featuredData = blocks.find(
-    (b: any) =>
-      b.__component === "blocks.slider-block" &&
-      b.heading === "Featured On"
-  )
+  const featuredData = blocks[9]
+  // const featuredData = blocks.find(
+  //   (b: any) =>
+  //     b.__component === "blocks.slider-block" &&
+  //     b.heading === "Featured On"
+  // )
 
   return (
     <>
