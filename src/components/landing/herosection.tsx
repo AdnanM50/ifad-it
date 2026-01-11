@@ -34,7 +34,7 @@ export function HeroSection({ data }: HeroSectionProps) {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className=" hero-bg-shadow" />
       </div>
 
       {/* Content */}

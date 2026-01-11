@@ -49,13 +49,13 @@ const AboutSection = ({
             </div>
           </div>
 
-          <div className="relative rounded-lg">
+          <div className="relative rounded-[24px]">
             <Image
               src={data.image?.url}
               alt={data.image?.alternativeText || "About IFAD IT"}
               width={578}
               height={611}
-              className="w-full h-auto xl:w-[578px] xl:h-[611px] mx-auto object-cover relative z-20"
+              className="w-full h-auto xl:w-[578px] xl:h-[611px] rounded-[24px] mx-auto object-cover relative z-20"
             />
           </div>
         </div>
