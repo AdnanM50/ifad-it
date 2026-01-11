@@ -80,7 +80,7 @@ export default async function HomePage() {
 
       {trustedData && <TustedSection data={trustedData} />}
 
-      {/* 🔥 ABOUT + STATS (IMPORTANT FIX) */}
+
       {aboutData && (
         <AboutSection data={aboutData} stats={statsData} />
       )}
