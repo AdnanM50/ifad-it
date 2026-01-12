@@ -41,12 +41,10 @@ export default function ServeClient({ data }: { data: any }) {
                 />
               </div>
 
-              {/* TITLE */}
-              <h3 className="sm:text-xl textbase font-inter font-semibold text-[#1A1A1A]">
+              <h3 className="sm:text-xl text-base font-inter font-semibold text-[#1A1A1A]">
                 {item.title}
               </h3>
 
-              {/* DESCRIPTION */}
               <p className="mt-2 text-xs sm:text-base font-inter leading-relaxed text-[#6B7280] whitespace-pre-line">
                 {item.description}
               </p>

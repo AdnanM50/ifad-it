@@ -19,7 +19,7 @@ export default async function Page() {
             {articles.map((item: any) => (
               <div
                 key={item.id}
-                className="group border border-[#EBECF0] bg-white rounded-xl overflow-hidden transition hover:shadow-lg h-[480px] flex flex-col"
+                className="group border font-inter border-[#EBECF0] bg-white rounded-xl overflow-hidden transition hover:shadow-lg h-[480px] flex flex-col"
               >
                 <div className="relative h-80 w-full rounded-t-xl overflow-hidden">
                   <Image

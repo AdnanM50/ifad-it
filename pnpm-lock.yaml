@@ -17,6 +17,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      dateformat:
+        specifier: ^5.0.3
+        version: 5.0.3
       framer-motion:
         specifier: ^12.23.25
         version: 12.23.25(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -430,6 +433,10 @@ packages:
 
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
+
+  dateformat@5.0.3:
+    resolution: {integrity: sha512-Kvr6HmPXUMerlLcLF+Pwq3K7apHpYmGDVqrxcDasBg86UcKeTSNWbEzU8bwdXnxnR44FtMhJAxI4Bov6Y/KUfA==}
+    engines: {node: '>=12.20'}
 
   detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
@@ -932,6 +939,8 @@ snapshots:
   clsx@2.1.1: {}
 
   csstype@3.2.3: {}
+
+  dateformat@5.0.3: {}
 
   detect-libc@2.1.2: {}
 
