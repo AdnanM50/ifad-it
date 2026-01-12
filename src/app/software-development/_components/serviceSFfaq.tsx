@@ -30,7 +30,7 @@ const ServiceSFFAQSection = ({ data }: { data: any }) => {
           {faq?.map((item: any, index: number) => (
             <div
               key={item.id}
-              className="bg-white rounded-[8px] border border-[#EBECF0] transition-all duration-1000"
+              className="bg-white rounded-xl border border-[#EBECF0] transition-all duration-1000"
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -42,7 +42,7 @@ const ServiceSFFAQSection = ({ data }: { data: any }) => {
 
                 <div className="">
                   <span
-                    className={`w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-[8px] transition-colors ${
+                    className={`w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-xl transition-colors ${
                       openIndex === index
                         ? "bg-orange-100 text-[#F36A10]"
                         : "bg-[#F36A10] text-white"

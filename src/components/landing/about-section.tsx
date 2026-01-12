@@ -57,10 +57,19 @@ const AboutSection = ({
               height={611}
               className="w-full h-auto xl:w-[578px] xl:h-[611px] rounded-[24px] mx-auto object-cover relative z-20"
             />
+            <div className="absolute md:flex hidden -bottom-6 right-6 z-10">
+              <Image
+                src="/obj.png"
+                alt="object"
+                width={100}
+                height={100}
+                className="w-full h-auto"
+              />
+            </div>
+
           </div>
         </div>
 
-        {/* RIGHT CONTENT */}
         <div className="w-full lg:w-1/2">
           <h3 className="section-title">
             {data.subHeading}
@@ -101,7 +110,6 @@ const AboutSection = ({
         </div>
       </div>
 
-      {/* STATS (unchanged) */}
       <CountingAnimation data={stats} />
     </div>
   )

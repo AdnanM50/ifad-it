@@ -38,7 +38,7 @@ const MissionVisionSection = ({ data }: { data: any[] }) => {
             >
               {/* TEXT */}
               <div className="md:w-1/2 space-y-4">
-                <div className="flex items-center gap-3">
+                <div className=" gap-3">
                   <Image
                     src={item.icon.url}
                     alt={item.icon.alternativeText || item.title}
@@ -48,7 +48,6 @@ const MissionVisionSection = ({ data }: { data: any[] }) => {
                   <h3 className="section-title">{item.title}</h3>
                 </div>
 
-                {/* Normal paragraphs */}
                 {normalLines.map((line: string, i: number) => (
                   <p key={i} className="section-description">
                     {line}
