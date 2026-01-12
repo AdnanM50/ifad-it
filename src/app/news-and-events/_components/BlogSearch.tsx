@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import dateFormat from "dateformat";
+import { format } from "date-fns";
+
 
 interface BlogItem {
   slug: string;
@@ -166,7 +167,7 @@ export default function BlogSearch({ allBlogs }: BlogSearchProps) {
                     {item.title}
                   </Link>
                   <p className="text-xs text-orange-500 mt-1">
-                  {dateFormat(item.createdAt, "mediumDate")}
+                  {format(item.createdAt, "dd MMM yyyy")}
                   </p>
                 </div>
               </div>;
