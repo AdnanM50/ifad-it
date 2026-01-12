@@ -55,7 +55,7 @@ const Footer = ({ data }: { data: any }) => {
 
         {/* Links */}
         <div className="lg:ml-auto">
-          <h3 className="font-semibold text-lg mb-4">Important Links</h3>
+          <h3 className="font-semibold text-xl mb-4">Important Links</h3>
           <ul className="space-y-2 text-sm">
             {data.navigation.map((item: any) => (
               <li className="text-base" key={item.id}>
@@ -67,7 +67,7 @@ const Footer = ({ data }: { data: any }) => {
 
         {/* Contact */}
         <div className="lg:ml-auto">
-          <h3 className="font-semibold text-lg mb-4">Get In Touch</h3>
+          <h3 className="font-semibold text-xl mb-4">Get In Touch</h3>
           <div className="space-y-3 text-base">
             <p className="flex gap-2">
               <MapPin size={18} />
@@ -75,11 +75,13 @@ const Footer = ({ data }: { data: any }) => {
                 {data.contact.adress}
               </span>
             </p>
-            <p className="flex gap-2">
-              <Phone size={18} />{data.contact.call}
+            <p className="flex gap-2 items-center">
+              <Phone size={18} />
+         <span>     {data.contact.call}</span>
             </p>
-            <p className="flex gap-2">
-              <Mail size={18} />{data.contact.email}
+            <p className="flex gap-2 items-center">
+              <Mail size={18} />
+              <span>{data.contact.email}</span>
             </p>
           </div>
         </div>
@@ -90,7 +92,7 @@ const Footer = ({ data }: { data: any }) => {
         <div className="flex gap-4">
           {data.policyLinks.map((item: any) => (
             <Link key={item.id} href={item.href}>
-              {item.text}
+              {item.text} 
             </Link>
           ))}
         </div>

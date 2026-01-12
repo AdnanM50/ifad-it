@@ -36,7 +36,7 @@ const ServiceFAQSection = ({ data }: { data: any }) => {
           {data.faq?.map((faq: any, index: number) => (
             <div
               key={faq.id}
-              className="bg-white rounded-[8px] border border-[#EBECF0] transition-all duration-300"
+              className="bg-white rounded-[8px] border border-[#EBECF0] transition-all duration-1000"
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -90,7 +90,7 @@ const ServiceFAQSection = ({ data }: { data: any }) => {
               </button>
 
               <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`overflow-hidden transition-all duration-1000 ease-in-out ${
                   openIndex === index
                     ? 'max-h-[1000px] opacity-100'
                     : 'max-h-0 opacity-0'
