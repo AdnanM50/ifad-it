@@ -31,7 +31,7 @@ export default function ServeClient({ data }: { data: any }) {
               className="flex flex-col items-center rounded-xl border border-[#E5E7EB] bg-white px-6 py-8 text-center"
             >
               {/* ICON */}
-              <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-[#FFF1E8]">
+              <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-[#FFFAF5]">
                 <Image
                   src={item.icon?.url}
                   alt={item.icon?.alternativeText || item.title}

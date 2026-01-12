@@ -346,7 +346,7 @@ box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.05);
 .card-hover2:hover {
  border-radius: 24px;
 background: var(--Color-White, #FFF);
-
+   transition-duration: 1000ms;
 box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.05);
 border: none ! important;
 }

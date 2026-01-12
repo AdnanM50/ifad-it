@@ -54,7 +54,7 @@ const MeetISTracker = ({
                       key={idx}
                       className="mt-6 flex items-center gap-4 rounded-[16px] bg-[#FBFAF9] px-6 py-4"
                     >
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FEF4EC]">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-[12px] bg-[#FEF4EC]">
                         <Image
                           src={cards.cards[0].icon.url}
                           alt={cards.cards[0].icon.alternativeText || 'Trusted'}

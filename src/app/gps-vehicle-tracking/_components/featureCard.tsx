@@ -10,7 +10,7 @@ function FeatureCard({
   description: string
 }) {
   return (
-    <div className="card-hover2 rounded-3xl border border-[#EBECF0] transition-shadow duration-700 bg-white py-8 px-6 ">
+    <div className="card-hover2 rounded-3xl border border-[#EBECF0] transition-shadow duration-1000 bg-white py-8 px-6 ">
       <div className="flex size-16 items-center justify-center rounded-full bg-[#FFFAF5] text-[#F3680C]">
         {icon}
       </div>

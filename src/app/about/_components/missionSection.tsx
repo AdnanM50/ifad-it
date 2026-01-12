@@ -33,19 +33,19 @@ const MissionVisionSection = ({ data }: { data: any[] }) => {
             <div
               key={item.id}
               className={`flex flex-col ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                index % 2 === 0 ? ' md:flex-row-reverse' : 'md:flex-row'
               } items-center gap-10`}
             >
               {/* TEXT */}
               <div className="md:w-1/2 space-y-4">
-                <div className=" gap-3">
+                <div className="">
                   <Image
                     src={item.icon.url}
                     alt={item.icon.alternativeText || item.title}
                     width={40}
                     height={40}
                   />
-                  <h3 className="section-title">{item.title}</h3>
+                  <h3 className="md:text-[32px] text-2xl font-semibold sm:mt-6 mt-3.5 font-inter text-[#1A1A1A]">{item.title}</h3>
                 </div>
 
                 {normalLines.map((line: string, i: number) => (
@@ -60,7 +60,7 @@ const MissionVisionSection = ({ data }: { data: any[] }) => {
                     {bulletLines.map((line: string, i: number) => (
                       <li key={i} className="flex gap-3">
                         <CheckIcon />
-                        <span className="section-description">
+                        <span className="section-description text-[#1A1A1A]!">
                           {line.replace(/^-/, '').trim()}
                         </span>
                       </li>
@@ -70,13 +70,13 @@ const MissionVisionSection = ({ data }: { data: any[] }) => {
               </div>
 
               {/* IMAGE */}
-              <div className="md:w-1/2 rounded-xl overflow-hidden shadow-lg">
+              <div className="md:w-1/2 rounded-xl max-h-[395px] overflow-hidden shadow-lg">
                 <Image
                   src={item.image.url}
                   alt={item.image.alternativeText || item.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover"
+                  width={1000}
+                  height={1000}
+                  className="w-full h-full object-fill"
                 />
               </div>
             </div>

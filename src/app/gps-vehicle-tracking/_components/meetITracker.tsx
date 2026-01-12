@@ -47,8 +47,9 @@ const MeetITracker = ({
 
           {/* RIGHT STATS */}
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4 md:gap-6">
-            {cardData?.cards?.map((card: any) => (
+            {cardData?.cards?.map((card: any, idx: number) => (
               <StatCard
+                index={idx} // Pass index instead of card.id for reliable array access
                 key={card.id}
                 value={card.title}
                 label={card.description}
@@ -70,16 +71,44 @@ function StatCard({
   label,
   iconUrl,
   iconAlt,
+  index,
 }: {
   value: string
   label: string
   iconUrl?: string
   iconAlt?: string
+  index: number
 }) {
+  const styles = [
+    {
+      bg: 'bg-[#FAFDFF]',
+      iconBg: 'bg-[#EBF7FE]',
+      border: 'border-[#DDF0FD]',
+    },
+    {
+      bg: 'bg-[#FFFBFA]',
+      iconBg: 'bg-[#FDEFEC]',
+      border: 'border-[#FDEBE7]',
+    },
+    {
+      bg: 'bg-[#FFFDFA]',
+      iconBg: 'bg-[#FEF6EB]',
+      border: 'border-[#FEF0DD]',
+    },
+    {
+      bg: 'bg-[#FBFEFD]',
+      iconBg: 'bg-[#EEFBF7]',
+      border: 'border-[#CDF4E6]',
+    },
+  ]
+
+  // Use index to pick a style (cycle through if more than 4 cards)
+  const style = styles[index % styles.length]
+
   return (
-    <div className="flex flex-col items-center justify-center rounded-[16px] border border-[#DDF0FD] p-6 text-center bg-[#FAFDFF]">
+    <div className={`flex flex-col items-center justify-center rounded-[16px] border ${style.border} p-6 text-center ${style.bg}`}>
       
-      <div className="mb-4 flex size-12 items-center justify-center rounded-md bg-[#EBF7FE]">
+      <div className={`mb-4 flex size-12 items-center justify-center rounded-md ${style.iconBg}`}>
         {iconUrl && (
           <img
             src={iconUrl}
