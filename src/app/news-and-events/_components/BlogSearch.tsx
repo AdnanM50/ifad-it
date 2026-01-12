@@ -63,7 +63,7 @@ export default function BlogSearch({ allBlogs }: BlogSearchProps) {
   };
 
   return (
-    <div className="p-5 rounded-lg">
+    <div className="p-5 rounded-lg font-inter">
       <h3 className="font-semibold mb-4">Search Post</h3>
       
       {/* Search Input - Layout exactly as in your original */}
