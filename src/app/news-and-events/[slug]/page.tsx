@@ -3,7 +3,8 @@ import { getSingleBlog } from "@/lib/api/blogDetailAPI";
 import Image from "next/image";
 import Link from "next/link";
 import BlogSearch from "../_components/BlogSearch";
-// import BlogSearch from "@/components/BlogSearch"; // Import the client component
+import { format } from "date-fns";
+import { ar } from "date-fns/locale";
 
 export default async function SingleNewsPage({
   params,
@@ -40,6 +41,8 @@ export default async function SingleNewsPage({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
           <div className="lg:col-span-8">
+
+            <h1 className="sm:text-xl mb-1 text-lg font-inter"><span className="text-orange-500">{article?.blocks[0]?.type}</span> . {format(article?.createdAt, "dd MMM yyyy")}</h1>
             {article.image?.url && (
               <div className="relative w-full sm:w-[90%] h-auto sm:h-[420px] rounded-lg overflow-hidden mb-8">
                 <Image
@@ -51,6 +54,7 @@ export default async function SingleNewsPage({
                 />
               </div>
             )}
+               <h1 className="sm:text-base text-end mb-1 w-full sm:w-[90%] text-lg font-inter"> {format(article?.updatedAt, "dd MMM yyyy")} . <span className="text-orange-500">Last update</span> </h1>
 
             <h1 className="text-3xl md:text-4xl font-bold leading-snug text-[#1A1A1A] mb-6">
               {article.title}

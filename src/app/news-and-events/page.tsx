@@ -1,7 +1,7 @@
 import { getArticles } from "@/lib/api/blogAPI";
 import Image from "next/image";
 import Link from "next/link";
-// import { useRouter } from "next/navigation";
+import { format } from "date-fns";
 
 export default async function Page() {
   const articles = await getArticles();
@@ -45,7 +45,7 @@ export default async function Page() {
                   <p className="mt-3 text-sm md:text-base text-[#6F7377] leading-relaxed line-clamp-4">
                     {item.description}
                   </p>
-
+{/* <h1 className="sm:text-xl mb-1 text-lg font-inter"><span className="text-orange-500">{item?.type}</span> . {format(item?.createdAt, "dd MMM yyyy")}</h1> */}
                   <div className="mt-auto pt-6">
                     <Link
                       href={`/news-and-events/${item.slug}`}
