@@ -19,13 +19,15 @@ interface Props {
 }
 
 export default function SocialShare({ url, title }: Props) {
+  if (!url) return null;
+
   return (
     <div className="flex items-center gap-3 my-6">
       <span className="text-sm font-medium text-gray-600">
         Share:
       </span>
 
-      <FacebookShareButton url={url} quote={title}>
+      <FacebookShareButton url={url} title={title}>
         <FacebookIcon size={36} round />
       </FacebookShareButton>
 

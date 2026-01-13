@@ -1,9 +1,7 @@
 import { getArticles } from "@/lib/api/blogAPI";
 import { getSingleBlog } from "@/lib/api/blogDetailAPI";
 import Image from "next/image";
-import Link from "next/link";
 import BlogSearch from "../_components/BlogSearch";
-// import SocialShare from "../_components/SocialShare";
 import { format } from "date-fns";
 import SocialShare from "../_components/SocialShare";
 
@@ -16,6 +14,8 @@ export default async function SingleNewsPage({
 
   const article = await getSingleBlog(slug);
   const recent = await getArticles();
+const baseUrl = process.env.NEXT_PUBLIC_API_URL || "https://essential-angel-fbef6af473.strapiapp.com";
+const shareUrl = `${baseUrl}/news-and-events/${article.slug}`;
 
   if (!article) {
     return (
@@ -37,7 +37,6 @@ export default async function SingleNewsPage({
       createdAt: item.createdAt,
     })) || [];
 
-  const shareUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/news/${article.slug}`;
 
   return (
     <section className="mt-[90px] lg:mt-[110px] py-16 sm:py-[120px]">
