@@ -14,7 +14,7 @@ export default async function SingleNewsPage({
 
   const article = await getSingleBlog(slug);
   const recent = await getArticles();
-const baseUrl = process.env.NEXT_PUBLIC_API_URL || "https://essential-angel-fbef6af473.strapiapp.com";
+const baseUrl =  "https://ifad-it.vercel.app/";
 const shareUrl = `${baseUrl}/news-and-events/${article.slug}`;
 
   if (!article) {
