@@ -3,8 +3,9 @@ import { getSingleBlog } from "@/lib/api/blogDetailAPI";
 import Image from "next/image";
 import Link from "next/link";
 import BlogSearch from "../_components/BlogSearch";
+// import SocialShare from "../_components/SocialShare";
 import { format } from "date-fns";
-
+import SocialShare from "../_components/SocialShare";
 
 export default async function SingleNewsPage({
   params,
@@ -12,6 +13,7 @@ export default async function SingleNewsPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
   const article = await getSingleBlog(slug);
   const recent = await getArticles();
 
@@ -27,22 +29,32 @@ export default async function SingleNewsPage({
     (b: any) => b.__component === "blocks.news-detail-section"
   );
 
-  // Prepare blog data for the search component
-  const blogData = recent?.map((item: any) => ({
-    slug: item.slug,
-    title: item.title,
-    image: item.image,
-    createdAt: item.createdAt,
-  })) || [];
+  const blogData =
+    recent?.map((item: any) => ({
+      slug: item.slug,
+      title: item.title,
+      image: item.image,
+      createdAt: item.createdAt,
+    })) || [];
+
+  const shareUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/news/${article.slug}`;
 
   return (
     <section className="mt-[90px] lg:mt-[110px] py-16 sm:py-[120px]">
       <div className="container xl:px-0 px-2">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          
+
+          {/* MAIN CONTENT */}
           <div className="lg:col-span-8">
 
-            <h1 className="sm:text-xl mb-1 text-lg font-inter gap-2 flex"><span className="text-orange-500">{article?.blocks[0]?.type}</span> <span></span>  .  <span></span>     {format(new Date(article?.createdAt), "MMMM dd, yyyy")}</h1>
+            <h1 className="sm:text-xl mb-1 text-lg font-inter gap-2 flex">
+              <span className="text-orange-500">
+                {article?.blocks?.[0]?.type}
+              </span>
+              <span>.</span>
+              {format(new Date(article.createdAt), "MMMM dd, yyyy")}
+            </h1>
+
             {article.image?.url && (
               <div className="relative w-full sm:w-[90%] h-auto sm:h-[420px] rounded-lg overflow-hidden mb-8">
                 <Image
@@ -51,21 +63,29 @@ export default async function SingleNewsPage({
                   width={4000}
                   height={4000}
                   className="object-fill w-full h-full transition-transform duration-500 group-hover:scale-105"
+                  priority
                 />
               </div>
             )}
-               {/* <h1 className="sm:text-base text-end mb-1 w-full sm:w-[90%] text-lg font-inter"> {format(article?.updatedAt, "dd MMM yyyy")} . <span className="text-orange-500">Last update</span> </h1> */}
+
+            {/* ✅ SOCIAL SHARE SECTION */}
+         <div className="flex justify-end w-full sm:w-[90%]">
+             <SocialShare
+              url={shareUrl}
+              title={article.title}
+            />
+         </div>
 
             <h1 className="text-3xl md:text-4xl font-bold leading-snug text-[#1A1A1A] mb-6">
               {article.title}
             </h1>
 
-            <p className="text-gray-600 text-xl! font-inter! mb-6">
+            <p className="text-gray-600 text-xl font-inter mb-6">
               {article.description}
             </p>
 
             {detailBlock && (
-              <article className="prose max-w-none prose-p:leading-relaxed prose-p:text-gray-700 text-lg font-inter!">
+              <article className="prose max-w-none prose-p:leading-relaxed prose-p:text-gray-700 text-lg font-inter">
                 <p className="whitespace-pre-line">
                   {detailBlock.content}
                 </p>
@@ -73,10 +93,11 @@ export default async function SingleNewsPage({
             )}
           </div>
 
+          {/* SIDEBAR */}
           <aside className="lg:col-span-4 space-y-4">
-            {/* Use the client component for search */}
             <BlogSearch allBlogs={blogData} />
           </aside>
+
         </div>
       </div>
     </section>
