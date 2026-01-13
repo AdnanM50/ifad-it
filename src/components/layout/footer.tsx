@@ -90,10 +90,11 @@ const Footer = ({ data }: { data: any }) => {
       <div className="py-6 border-t container border-gray-700 flex flex-col sm:flex-row gap-3 justify-between">
         <p>{data.copyright} | <a target="https://www.khanit.com.bd/" href="https://www.khanit.com.bd/">Designed & Developed by Khan IT</a></p>
         <div className="flex gap-4">
-          {data.policyLinks.map((item: any) => (
-            <Link key={item.id} href={item.href}>
-              {item.text} 
-            </Link>
+          {data.policyLinks.map((item: any , index: number) => (
+           <span key={item.id}>
+    <Link href={item.href}>{item.text}</Link>
+    {index === 0 && " | "}
+  </span>
           ))}
         </div>
       </div>

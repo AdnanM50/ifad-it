@@ -56,12 +56,12 @@ export default async function SingleNewsPage({
               {article.title}
             </h1>
 
-            <p className="text-gray-600 font-inter! mb-6">
+            <p className="text-gray-600 text-xl! font-inter! mb-6">
               {article.description}
             </p>
 
             {detailBlock && (
-              <article className="prose max-w-none prose-p:leading-relaxed prose-p:text-gray-700">
+              <article className="prose max-w-none prose-p:leading-relaxed prose-p:text-gray-700 text-lg font-inter!">
                 <p className="whitespace-pre-line">
                   {detailBlock.content}
                 </p>

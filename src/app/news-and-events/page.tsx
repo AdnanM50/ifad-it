@@ -1,9 +1,11 @@
 import { getArticles } from "@/lib/api/blogAPI";
 import Image from "next/image";
 import Link from "next/link";
+// import { useRouter } from "next/navigation";
 
 export default async function Page() {
   const articles = await getArticles();
+  // const route = useRouter();
 
   return (
     <div className="mt-[85px] lg:mt-[100px]">
@@ -21,7 +23,10 @@ export default async function Page() {
                 key={item.id}
                 className="group border font-inter border-[#EBECF0] bg-white rounded-xl overflow-hidden transition hover:shadow-lg h-[480px] flex flex-col"
               >
-                <div className="relative h-80 w-full rounded-t-xl overflow-hidden">
+              <Link
+                  href={`/news-and-events/${item.slug}`}
+                  className="relative h-80 w-full block overflow-hidden"
+                >
                   <Image
                     src={item.image?.url}
                     alt={item.image?.alternativeText || item.title}
@@ -29,13 +34,13 @@ export default async function Page() {
                     height={1000}
                     className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                   />
-                </div>
+                </Link>
 
                 {/* TEXT */}
                 <div className="p-6 flex flex-col h-full">
-                  <h3 className="text-lg md:text-xl font-semibold text-[#1A1A1A] leading-snug">
+                  <Link href={`/news-and-events/${item.slug}`} className="text-lg md:text-xl font-semibold text-[#1A1A1A] leading-snug">
                     {item.title}
-                  </h3>
+                  </Link>
 
                   <p className="mt-3 text-sm md:text-base text-[#6F7377] leading-relaxed line-clamp-4">
                     {item.description}
