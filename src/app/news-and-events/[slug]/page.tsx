@@ -46,13 +46,13 @@ const shareUrl = `${baseUrl}/news-and-events/${article.slug}`;
           {/* MAIN CONTENT */}
           <div className="lg:col-span-8">
 
-            <h1 className="sm:text-xl mb-1 text-lg font-inter gap-2 flex">
+            {/* <h1 className="sm:text-xl mb-1 text-lg font-inter gap-2 flex">
               <span className="text-orange-500">
                 {article?.blocks?.[0]?.type}
               </span>
               <span>.</span>
               {format(new Date(article.createdAt), "MMMM dd, yyyy")}
-            </h1>
+            </h1> */}
 
             {article.image?.url && (
               <div className="relative w-full sm:w-[90%] h-auto sm:h-[420px] rounded-lg overflow-hidden mb-8">
@@ -67,8 +67,14 @@ const shareUrl = `${baseUrl}/news-and-events/${article.slug}`;
               </div>
             )}
 
-            {/* ✅ SOCIAL SHARE SECTION */}
-         <div className="flex justify-end w-full sm:w-[90%]">
+         <div className="flex sm:flex-row flex-col justify-between items-center w-full sm:w-[90%]">
+           <h1 className="sm:text-xl mb-1 text-lg font-inter gap-2 flex">
+              <span className="text-orange-500">
+                {article?.blocks?.[0]?.type}
+              </span>
+              <span>.</span>
+              {format(new Date(article.createdAt), "MMMM dd, yyyy")}
+            </h1>
              <SocialShare
               url={shareUrl}
               title={article.title}
