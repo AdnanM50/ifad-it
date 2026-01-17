@@ -25,8 +25,8 @@ export function HeroSection({ data }: HeroSectionProps) {
   if (!data) return null
 
   const isVideo =
-    data.media?.url?.endsWith(".mp4") ||
-    data.media?.url?.endsWith(".webm")
+    !!data.media?.url &&
+    (data.media.url.endsWith(".mp4") || data.media.url.endsWith(".webm"))
 
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [isMuted, setIsMuted] = useState(true)
@@ -53,14 +53,14 @@ export function HeroSection({ data }: HeroSectionProps) {
               className="w-full h-full object-cover"
             />
 
-            {/* Sound Toggle Icon */}
+            {/* SOUND BUTTON (VIDEO ONLY) */}
             <button
               onClick={toggleSound}
               aria-label="Toggle sound"
               className="absolute bottom-6 right-6 z-20 bg-black/60 hover:bg-black/80 p-2 rounded-full transition"
             >
               {isMuted ? (
-                /* Mute Icon */
+                /* MUTE ICON */
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -77,7 +77,7 @@ export function HeroSection({ data }: HeroSectionProps) {
                   <line x1="17" y1="9" x2="23" y2="15" />
                 </svg>
               ) : (
-                /* Sound On Icon */
+                /* SOUND ON ICON */
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -97,6 +97,7 @@ export function HeroSection({ data }: HeroSectionProps) {
             </button>
           </>
         ) : (
+          /* IMAGE ONLY (NO SOUND BUTTON) */
           <Image
             src={data.media?.url || ""}
             alt={data.media?.alternativeText || "Hero background"}
