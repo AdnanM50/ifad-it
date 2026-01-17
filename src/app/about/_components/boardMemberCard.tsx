@@ -27,8 +27,8 @@ const BoardMemberCard: React.FC<BoardMemberCardProps> = ({ member, index,nameCla
         width={1000}
             height={1000}
         //   fill
-          style={{ objectFit: 'cover' }}
-          className="transition-transform duration-300 rounded-t-lg hover:scale-105"
+          // style={{ objectFit: 'cover' }}
+          className="transition-transform duration-300 w-full h-full object-contain rounded-t-lg hover:scale-105 sm:object-fill"
         />
       </div>
       <div className="sm:py-6 py-4 px-[9px] text-center">

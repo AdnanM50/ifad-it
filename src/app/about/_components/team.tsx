@@ -17,7 +17,6 @@ const BoardMembers = ({ data }: { data: any[] }) => {
     <section className="py-12 px-6 xl:px-0 sm:py-16 md:py-[120px] bg-[#FCFCFD]">
       <div className="max-w-7xl mx-auto">
 
-        {/* ===================== BOARD MEMBERS ===================== */}
         {boardMembers.length > 0 && (
           <>
             <div className="text-center mb-8">
