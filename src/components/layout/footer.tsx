@@ -19,7 +19,7 @@ const Footer = ({ data }: { data: any }) => {
   if (!data) return null
 
   return (
-    <footer className="bg-[#141414] text-white font-inter pt-[79px] xl:px-0 px-4">
+    <footer className="bg-[#141414] text-white font-inter pt-[79px] xl:px-0 px-3">
       <div className="container grid gap-12 md:grid-cols-2 pb-8 lg:grid-cols-3">
 
         {/* Left */}
@@ -36,7 +36,7 @@ const Footer = ({ data }: { data: any }) => {
             </h2>
           </div>
 
-          <p className="text-xl font-normal mb-6">
+          <p className="sm:text-lg text-base font-normal mb-6">
             {data.description}
           </p>
 

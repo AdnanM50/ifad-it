@@ -73,7 +73,7 @@ export default function IndustriesSection({ policy, cards }: any) {
 
   return (
     <section className="bg-white py-24 sm:py-[120px]">
-      <div className="container xl:px-0 px-2">
+      <div className="container">
         {/* Header */}
         <div className="mb-14 text-center">
           <p className="section-title capitalize!">

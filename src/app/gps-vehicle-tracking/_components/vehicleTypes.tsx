@@ -7,7 +7,7 @@ export default function VehicleTypes({ data }: { data: any }) {
 
   return (
     <section className="bg-white py-24 lg:py-[120px]">
-      <div className="container xl:px-0 px-2">
+      <div className="container">
         {/* HEADER */}
         <div className="text-center">
           <p className="section-title capitalize!">

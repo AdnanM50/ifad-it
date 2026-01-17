@@ -84,8 +84,8 @@ const ServiceSection = ({ data }: ServiceSectionProps) => {
                   target={service.cta.isExternal ? "_blank" : "_self"}
                   className="w-full"
                 >
-                  <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-[8px] flex items-center justify-center space-x-2 transition-colors">
-                    <span className="text-xl font-inter font-medium">
+                  <button className="w-full bg-[#F36A10] hover:bg-orange-600 text-white py-2 px-4 rounded-[8px] flex items-center justify-center space-x-2 transition-colors">
+                    <span className="sm:text-xl text-base font-inter font-medium">
                       {service.cta.text}
                     </span>
 

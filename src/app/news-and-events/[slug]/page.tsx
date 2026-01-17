@@ -40,7 +40,7 @@ const shareUrl = `${baseUrl}/news-and-events/${article.slug}`;
 
   return (
     <section className="mt-[90px] lg:mt-[110px] py-16 sm:py-[120px]">
-      <div className="container xl:px-0 px-2">
+      <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
           {/* MAIN CONTENT */}

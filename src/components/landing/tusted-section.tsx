@@ -23,7 +23,7 @@ const TrustedSection = ({ data }: TrustedSectionProps) => {
       </h2>
 
       {/* Marquee Container */}
-      <div className="bg-[#F36A10] py-8 overflow-hidden">
+      <div className="bg-[#F36A10] py-5  sm:py-8 overflow-hidden">
         <div className="flex items-center gap-6 sm:gap-12 whitespace-nowrap animate-marquee">
           {marqueeItems.map((logo, index) => (
             <div

@@ -6,7 +6,7 @@ const ServiceFAQSection = ({ data }: { data: any }) => {
   if (!data) return null
 
   // Open the 2nd FAQ by default (same behavior)
-  const [openIndex, setOpenIndex] = useState<number | null>(1)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)

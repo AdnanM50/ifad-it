@@ -16,7 +16,7 @@ export default async function Page() {
       </section>
 
       <section className="py-20 sm:py-[120px]">
-        <div className="container xl:px-0 px-2">
+        <div className="container">
           <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {articles.map((item: any) => (
               <div

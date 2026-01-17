@@ -14,7 +14,7 @@ const BoardMembers = ({ data }: { data: any[] }) => {
   const leadershipMembers = leadershipBlock?.teams || []
 
   return (
-    <section className="py-12 px-2 xl:px-0 sm:py-16 md:py-[120px] bg-[#FCFCFD]">
+    <section className="py-12 px-6 xl:px-0 sm:py-16 md:py-[120px] bg-[#FCFCFD]">
       <div className="max-w-7xl mx-auto">
 
         {/* ===================== BOARD MEMBERS ===================== */}

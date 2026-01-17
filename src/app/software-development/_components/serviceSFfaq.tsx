@@ -7,8 +7,7 @@ const ServiceSFFAQSection = ({ data }: { data: any }) => {
 
   const { title, headline, subTitle, faq } = data;
 
-  const [openIndex, setOpenIndex] = useState<number | null>(
-    faq && faq.length > 1 ? 1 : null
+  const [openIndex, setOpenIndex] = useState<number | null>( null
   );
 
   const toggleFAQ = (index: number) => {
@@ -42,7 +41,7 @@ const ServiceSFFAQSection = ({ data }: { data: any }) => {
 
                 <div className="">
                   <span
-                    className={`w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-xl transition-colors ${
+                    className={`w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-[8px] transition-colors ${
                       openIndex === index
                         ? "bg-orange-100 text-[#F36A10]"
                         : "bg-[#F36A10] text-white"

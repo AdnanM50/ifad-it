@@ -22,7 +22,7 @@ const MissionVisionSection = ({ data }: { data: any[] }) => {
 
   return (
     <section className="py-12 md:py-[120px] bg-white">
-      <div className="container xl:px-0 px-2 space-y-20">
+      <div className="container space-y-20">
         {data.map((item, index) => {
           const lines = item.content?.split('\n').filter(Boolean) || []
 

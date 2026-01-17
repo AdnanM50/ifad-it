@@ -21,20 +21,33 @@ type HeroSectionProps = {
 export function HeroSection({ data }: HeroSectionProps) {
   if (!data) return null
 
+  const isVideo = data.media?.url?.endsWith(".mp4") || data.media?.url?.endsWith(".webm")
+
   return (
     <section className="relative w-full h-[600px] md:h-[815px] pt-20 overflow-hidden">
-      {/* LCP IMAGE FIX */}
+      {/* MEDIA */}
       <div className="absolute inset-0">
-        <Image
-          src={data.media?.url || ""}
-          alt={data.media?.alternativeText || "Hero background"}
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className=" hero-bg-shadow" />
+        {isVideo ? (
+          <video
+            src={data.media?.url}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover hero-bg-shadow"
+          />
+        ) : (
+          <Image
+            src={data.media?.url || ""}
+            alt={data.media?.alternativeText || "Hero background"}
+            fill
+            priority
+            fetchPriority="high"
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        )}
+        <div className="hero-bg-shadow" />
       </div>
 
       {/* Content */}
@@ -52,9 +65,7 @@ export function HeroSection({ data }: HeroSectionProps) {
             href={data.cta.href}
             target={data.cta.isExternal ? "_blank" : "_self"}
           >
-            <PrimaryButton>
-              {data.cta.text}
-            </PrimaryButton>
+            <PrimaryButton>{data.cta.text}</PrimaryButton>
           </Link>
         )}
       </div>

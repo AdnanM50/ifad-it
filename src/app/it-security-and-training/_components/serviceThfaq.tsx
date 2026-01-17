@@ -14,9 +14,7 @@ const ServiceThFAQSection = ({ data }: { data: any }) => {
   const faqs: FAQItem[] = data.faq || []
 
   // Open 2nd FAQ by default (same behavior as before)
-  const [openIndex, setOpenIndex] = useState<number | null>(
-    faqs.length > 1 ? 1 : 0
-  )
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)

@@ -258,6 +258,7 @@ body {
 .container {
   max-width: 1420px;
   margin: 0 auto;
+  @apply xl:px-0 sm:px-4 px-6 ; 
 }
 
 .amiko-regular {
@@ -328,6 +329,9 @@ background: linear-gradient(180deg, rgba(243, 243, 243, 0.05) 0%, rgba(141, 141,
 
 .chooes-us-shadow:hover {
 box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.05);
+border: none ! important;
+  transition-duration: 2000ms ;
+  transform-style: initial;
 }
 .swiper-button-next:hover,
 .swiper-button-prev:hover {

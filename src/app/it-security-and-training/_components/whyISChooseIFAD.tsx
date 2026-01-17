@@ -8,7 +8,7 @@ export default function WhyISChooseIFAD({ data }: any) {
 
   return (
     <section className="bg-white py-24 sm:py-[120px]">
-      <div className="container xl:px-0 px-2">
+      <div className="container">
         {/* HEADER */}
         <div className="mb-14 text-center">
           <p className="section-title capitalize!"> {data?.title}</p>

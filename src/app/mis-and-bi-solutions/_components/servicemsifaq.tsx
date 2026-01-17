@@ -23,9 +23,7 @@ const ServiceMSIFAQSection = ({ data }: ServiceMSIFAQSectionProps) => {
   const faqs = data.faq || []
 
   // Open the 2nd FAQ by default (same behavior)
-  const [openIndex, setOpenIndex] = useState<number | null>(
-    faqs.length > 1 ? 1 : 0
-  )
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)

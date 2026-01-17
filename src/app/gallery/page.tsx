@@ -31,7 +31,7 @@ const Page = () => {
           {data?.title}
         </h1>
       </div>
-      <div className="container xl:px-0 px-2 py-12 sm:py-16 md:py-20 lg:py-[120px] mx-auto">
+      <div className="container py-12 sm:py-16 md:py-20 lg:py-[120px] mx-auto">
 
       <h2 className="section-subtitle text-center mb-8">
         {data?.blocks[0]?.heading}
