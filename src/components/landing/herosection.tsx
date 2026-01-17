@@ -1,3 +1,6 @@
+'use client'
+
+import { useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import PrimaryButton from "../common/primary-button"
@@ -21,21 +24,78 @@ type HeroSectionProps = {
 export function HeroSection({ data }: HeroSectionProps) {
   if (!data) return null
 
-  const isVideo = data.media?.url?.endsWith(".mp4") || data.media?.url?.endsWith(".webm")
+  const isVideo =
+    data.media?.url?.endsWith(".mp4") ||
+    data.media?.url?.endsWith(".webm")
+
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+  const [isMuted, setIsMuted] = useState(true)
+
+  const toggleSound = () => {
+    if (!videoRef.current) return
+    videoRef.current.muted = !isMuted
+    setIsMuted(!isMuted)
+  }
 
   return (
     <section className="relative w-full h-[600px] md:h-[815px] pt-20 overflow-hidden">
       {/* MEDIA */}
       <div className="absolute inset-0">
         {isVideo ? (
-          <video
-            src={data.media?.url}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover hero-bg-shadow"
-          />
+          <>
+            <video
+              ref={videoRef}
+              src={data.media?.url}
+              autoPlay
+              loop
+              muted={isMuted}
+              playsInline
+              className="w-full h-full object-cover"
+            />
+
+            {/* Sound Toggle Icon */}
+            <button
+              onClick={toggleSound}
+              aria-label="Toggle sound"
+              className="absolute bottom-6 right-6 z-20 bg-black/60 hover:bg-black/80 p-2 rounded-full transition"
+            >
+              {isMuted ? (
+                /* Mute Icon */
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  <line x1="23" y1="9" x2="17" y2="15" />
+                  <line x1="17" y1="9" x2="23" y2="15" />
+                </svg>
+              ) : (
+                /* Sound On Icon */
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                </svg>
+              )}
+            </button>
+          </>
         ) : (
           <Image
             src={data.media?.url || ""}
@@ -47,10 +107,11 @@ export function HeroSection({ data }: HeroSectionProps) {
             className="object-cover object-center"
           />
         )}
+
         <div className="hero-bg-shadow" />
       </div>
 
-      {/* Content */}
+      {/* CONTENT */}
       <div className="relative container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
         <h1 className="text-4xl md:text-5xl arial-font lg:text-6xl font-bold text-white mb-4 max-w-4xl text-balance">
           {data.heading}
@@ -70,7 +131,7 @@ export function HeroSection({ data }: HeroSectionProps) {
         )}
       </div>
 
-      {/* Scroll Indicator */}
+      {/* SCROLL INDICATOR */}
       <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
         <div className="w-[30px] h-[50px] border-2 border-white rounded-full flex items-center justify-center">
           <svg
